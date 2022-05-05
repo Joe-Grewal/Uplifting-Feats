@@ -1,0 +1,5 @@
+CREATE TABLE likes (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_who_likes INTEGER REFERENCES users(id) ON DELETE CASCADE,
+  liked_profile INTEGER REFERENCES users(id) ON DELETE CASCADE
+  );
