@@ -16,7 +16,7 @@ INSERT INTO users (user_name, first_name, last_name, email, password, profile_im
   'weight loss',
   'Low Carb',
   'Weightlifting',
-  'I am a software developer mom who likes to lift',
+  'Before I began my weight-loss journey, I lacked confidence, motivation, and self-esteem. I hid in my house to avoid being seen by anyone who had known me before I gained weight. My self-isolation and lack of confidence was starting to affect my marriage and friendships. At 26, I hit my heaviest weight of 200 pounds. I had reflected on the past year and realized that it had consisted of going to work, then immediately coming home to just sit in the house with my husband and kids. I decided that night that I had had enough. I was going to start working on making myself feel and look better. After researching and trying different workouts programs and exercises, I found that I loved how my body reacted to lifting and targeted body sculpting. There were times where I indulged for days and weeks at a time. However, I never lost sight of my goal and the reasons why I wanted to lose weight and get healthier.',
   'Avoid sugar if possible(e.g., soft drinks, fruit juices, ice cream among many others). Limit intake of pasta, cereal and bread. Be careful with cheese and nuts, as it''s easy to overeat on them. Don''t eat more than one piece of fruit per day',
   'To maintain discipline about my workout and diet. Do one outdoor workout per week. Try new group fitness class'
 ),
