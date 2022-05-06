@@ -10,7 +10,7 @@ VALUES(
   'Low Carb and Self-care',
   'My weight loss allowed me to understand that I am important, that it is okay to give myself permission to take care of me. Creating a routine to take care of myself is not being selfish—it is self-care, and I need it. I have regained my confidence and discovered a new passion for fitness. However, the upsides do not come all at once. I found that you have to take the time to celebrate the little wins and changes. The goal is progress, not perfection.',
   'I began going to the gym first thing in the morning. I would be at the gym at 5:00 a.m., so I could start my day off with a workout and still be home in time to help get my three children ready for school. Also, prioritizing the beginning of my day to my workouts reduces the likelihood that I will find an excuse not to go to the gym.',
-  'soda, cookies, turkey burger, skim milk, vegetables',
+  'turkey burger, skim milk, vegetables, eggs, protein shakes, sweet potato',
   2
   ),
   (
