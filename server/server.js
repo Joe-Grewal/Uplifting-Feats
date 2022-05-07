@@ -30,9 +30,19 @@ app.use(express.json()); //req.body
 app.use(express.urlencoded({ extended: true })); // use to parse form data in req.body, extended: true to allow nested objects in req.body
 
 const loginRoutes = require("./src/routes/login.js");
+const usersRoutes = require("./src/routes/users.js");
+const entriesRoutes = require("./src/routes/entries.js");
+const likesRoutes = require("./src/routes/likes.js");
+const sharesRoutes = require("./src/routes/shares.js");
+const filterRoutes = require("./src/routes/filter.js");
 const samplehomeRoutes = require("./src/routes/samplehome.js");
 
 app.use("/login", loginRoutes(db));
+app.use("/api/users", usersRoutes(db));
+app.use("/api/entries", entriesRoutes(db));
+app.use("/api/likes", likesRoutes(db));
+app.use("/api/shares", sharesRoutes(db));
+app.use("/api/filter", filterRoutes(db));
 app.use("/home", samplehomeRoutes(db));
 
 app.post("/logout", (req, res) => {
