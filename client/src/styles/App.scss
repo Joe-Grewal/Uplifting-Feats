@@ -1,3 +1,5 @@
+/* nav component */
+
 .navigation{
   position: fixed;
   display: flex;
@@ -15,4 +17,47 @@
 
 .navlinks, a {
   padding: 10px;
+}
+
+
+/* bio component */
+
+.picturebox {
+  padding-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name_and_goal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: -5px;
+}
+
+.name {
+  font-size: 1.5em;
+  display: inline;
+  padding-right: 10px;
+  text-align: center;
+}
+
+.fitnessgoal {
+  align-self: center;
+  font-size: 1em;
+  background-color: hotpink;
+  padding: 7px;
+}
+
+.profilestats {
+  margin: 0;
+  text-align: center;
+  line-height: 1.5em;
+}
+
+.stick {
+  font-size: 1.25em;
+  font-weight: 600;
+  color: purple;
 }
