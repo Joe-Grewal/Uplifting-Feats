@@ -12,7 +12,7 @@ const cookies = require("cookie-session");
 app.use(
   cookies({
     name: "session",
-    keys: ["user_name", "user_id"],
+    keys: ["user_id"],
   })
 );
 
@@ -30,8 +30,15 @@ app.use(express.json()); //req.body
 app.use(express.urlencoded({ extended: true })); // use to parse form data in req.body, extended: true to allow nested objects in req.body
 
 const loginRoutes = require("./src/routes/login.js");
+const samplehomeRoutes = require("./src/routes/samplehome.js");
 
 app.use("/login", loginRoutes(db));
+app.use("/home", samplehomeRoutes(db));
+
+app.post("/logout", (req, res) => {
+  req.session = null;
+  res.redirect("/home");
+});
 
 app.listen(port, () => {
   console.log(`server is up and listening on port ${port}`);
