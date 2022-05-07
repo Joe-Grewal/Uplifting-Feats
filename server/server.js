@@ -12,7 +12,7 @@ const cookies = require("cookie-session");
 app.use(
   cookies({
     name: "session",
-    keys: ["user_name", "user_id"],
+    keys: ["user_id"],
   })
 );
 
@@ -35,6 +35,7 @@ const entriesRoutes = require("./src/routes/entries.js");
 const likesRoutes = require("./src/routes/likes.js");
 const sharesRoutes = require("./src/routes/shares.js");
 const filterRoutes = require("./src/routes/filter.js");
+const samplehomeRoutes = require("./src/routes/samplehome.js");
 
 app.use("/login", loginRoutes(db));
 app.use("/api/users", usersRoutes(db));
@@ -42,6 +43,12 @@ app.use("/api/entries", entriesRoutes(db));
 app.use("/api/likes", likesRoutes(db));
 app.use("/api/shares", sharesRoutes(db));
 app.use("/api/filter", filterRoutes(db));
+app.use("/home", samplehomeRoutes(db));
+
+app.post("/logout", (req, res) => {
+  req.session = null;
+  res.redirect("/home");
+});
 
 app.listen(port, () => {
   console.log(`server is up and listening on port ${port}`);
