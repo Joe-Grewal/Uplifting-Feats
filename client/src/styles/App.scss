@@ -53,7 +53,7 @@
   margin: 0;
   text-align: center;
   line-height: 1.5em;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .stick {
@@ -62,57 +62,102 @@
   color: purple;
 }
 
+
 /* BIODIVS component */
 
 .outer_container {
-  padding-top: 10px;
-  display: flex;
-  flex-direction: row;
   margin: auto;
+  margin-bottom: 10px;
+  display: grid;
   width: 60%;
-  height: 100%;
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
   
-}
-
-.inner_left_container {
-  width: 65%;
-  margin: 5px;
 }
 
 .about_me {
+  grid-area: 1 / 1 / 3 / 2; 
+  height: 598px;
+  padding: 0 20px 10px;
   background-color: #E1D0EE;
-  padding-top: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
-  height: 600px;
-  
-  
-}
+  overflow: scroll;
 
-.inner_right_container {
-  width: 35%;
-  margin: 5px; 
 }
 
 .health_tips {
-  padding-top: 10px;
+  grid-area: 1 / 2 / 2 / 3;
+  height: 289px;
+  padding: 0 20px 10px;
   background-color: #B4F1FA;
-  padding-left: 30px;
-  padding-right: 30px;
-  margin-bottom: 10px;
-  height: 290px;
-  
+  overflow: scroll;
 }
 
 .future_goals {
-  padding-top: 10px;
+  grid-area: 2 / 2 / 3 / 3;
+  height: 289px;
+  padding: 0 20px 10px;
   background-color: #FFF1B4;
-  padding-left: 30px;
-  padding-right: 30px;
-  height: 290px;
+  overflow: scroll;
+
 }
 
 h3 {
   text-align: center;
   color: #6A18A8
+}
+
+
+/* MyHealthJournal component */
+
+.outer_container2 {
+  margin: auto;
+  display: grid;
+  width: 60%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 75px 300px 200px 75px;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  background-color: #CDD5F8;
+}
+
+
+.my_health_journal_w_buttons { 
+  grid-area: 1 / 1 / 2 / 3;
+  display: flex;
+  margin: 10px;
+  align-items: center;
+  justify-content: space-between
+}
+
+.entry { 
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #FFE1E0;
+  grid-area: 2 / 1 / 3 / 3; 
+  overflow: scroll;
+}
+
+.my_workout_routine { 
+  margin: 10px;
+  padding: 10px 20px;
+  grid-area: 3 / 1 / 4 / 2; 
+  background-color: #DAF4F5;
+  overflow: scroll;
+}
+
+.my_diet_diary { 
+  margin: 10px;
+  padding: 10px 20px;
+  grid-area: 3 / 2 / 4 / 3; 
+  background-color: #FFD5F3;
+  overflow: scroll;
+}
+
+.bottom_w_buttons { 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: 4 / 1 / 5 / 3; 
 }
