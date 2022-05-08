@@ -10,7 +10,8 @@ export default function MyHealthJournal () {
 
       <div className="entry">
         <h3>Entry Name, Entry Date</h3>
-        <p></p></div>
+        <p></p>
+      </div>
       
       
       <div className="my_workout_routine">
@@ -19,7 +20,8 @@ export default function MyHealthJournal () {
       </div>
 
       <div className="my_diet_diary">
-        <h3>Diet Diary:</h3><p></p>
+        <h3>Diet Diary:</h3>
+        <p></p>
       </div>
 
     <div className="bottom_w_buttons">
