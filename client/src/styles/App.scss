@@ -1,4 +1,4 @@
-/* nav component */
+/* NAV component */
 
 .navigation{
   position: fixed;
@@ -20,7 +20,7 @@
 }
 
 
-/* bio component */
+/* BIO component */
 
 .picturebox {
   padding-top: 10%;
@@ -45,7 +45,6 @@
 
 .fitnessgoal {
   align-self: center;
-  font-size: 1em;
   background-color: hotpink;
   padding: 7px;
 }
@@ -54,10 +53,66 @@
   margin: 0;
   text-align: center;
   line-height: 1.5em;
+  padding-bottom: 10px;
 }
 
 .stick {
   font-size: 1.25em;
   font-weight: 600;
   color: purple;
+}
+
+/* BIODIVS component */
+
+.outer_container {
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 60%;
+  height: 100%;
+  
+}
+
+.inner_left_container {
+  width: 65%;
+  margin: 5px;
+}
+
+.about_me {
+  background-color: #E1D0EE;
+  padding-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 600px;
+  
+  
+}
+
+.inner_right_container {
+  width: 35%;
+  margin: 5px; 
+}
+
+.health_tips {
+  padding-top: 10px;
+  background-color: #B4F1FA;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-bottom: 10px;
+  height: 290px;
+  
+}
+
+.future_goals {
+  padding-top: 10px;
+  background-color: #FFF1B4;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 290px;
+}
+
+h3 {
+  text-align: center;
+  color: #6A18A8
 }

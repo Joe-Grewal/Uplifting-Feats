@@ -1,5 +1,6 @@
 import React from "react";
 import Profile from "../images/Abby.jpg"
+
 export default function Bio () {
 
   return (
