@@ -28,13 +28,7 @@ export default function Filters () {
         <select className="dropdown" name="gender" id="gender">
         <option value="male">Male</option>
         <option value="female">Female</option>
-        <option value="agender">Agender</option>
-        <option value="cisgender">Cisgender</option>
-        <option value="genderfluid">Genderfluid</option>
-        <option value="genderqueer">Genderqueer</option>
-        <option value="intersex">Intersex</option>
-        <option value="noncorfming">Nonconforming</option>
-        <option value="trans">trans</option>
+        <option value="female">Other</option>
         </select>
       </div>
 
