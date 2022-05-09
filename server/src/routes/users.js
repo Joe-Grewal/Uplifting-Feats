@@ -19,6 +19,7 @@ module.exports = (db) => {
   //get a single user
   router.get("/:id", (req, res) => {
     const id = req.params.id;
+    req.session.user_id = req.params.id; //set session user_id to id of user being viewed
     let query = `SELECT * FROM users WHERE id = $1;`;
     queryParams = [id];
     console.log("query:", query, "queryParams:", queryParams);
@@ -55,7 +56,7 @@ module.exports = (db) => {
       req.body["primary_workout"],
       req.body["about_me"],
       req.body["tips"],
-      req.body["future_goals"]
+      req.body["future_goals"],
     ];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
@@ -74,7 +75,7 @@ module.exports = (db) => {
     let query = `UPDATE users SET user_name = $1, first_name = $2, last_name = $3, email = $4, 
                  password = $5, profile_img_url = $6, age = $7, gender = $8, height = $9, 
                  weight = $10, country = $11, fitness_goal = $12, diet_type = $13, primary_workout = $14, 
-                 about_me = $15, tips = $16, future_goals = $17 WHERE id = $18;`
+                 about_me = $15, tips = $16, future_goals = $17 WHERE id = $18;`;
     const queryParams = [
       req.body["user_name"],
       req.body["first_name"],
@@ -93,7 +94,7 @@ module.exports = (db) => {
       req.body["about_me"],
       req.body["tips"],
       req.body["future_goals"],
-      req.session.user_id
+      req.session.user_id,
     ];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)

@@ -3,29 +3,26 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.post("/", (req, res) => {
-    const creds = Buffer.from(req.headers.authorization.split(" ")[1], "base64")
-      .toString()
-      .split(":");
-    const user_name = creds[0];
-    const password = creds[1];
-    const query = `SELECT * FROM users WHERE user_name = '${user_name}' AND password = '${password}';`;
-    //console.log(query);
-    // console.log(req);
-    // console.log(req.headers);
+    const username = req.body.username;
+    const password = req.body.password;
+    let query = `SELECT * FROM users WHERE user_name = '${username}' AND password = '${password}';`;
     db.query(query)
       .then((data) => {
-        // console.log(data);
-        user = data.rows[0];
+        const user = data.rows[0];
+        console.log("query:", query);
+        console.log("user", user);
         if (user) {
           req.session.user_id = user.id;
           res.json({ user });
         } else {
-          res.status(401).json({ error: "invalid user name or password" });
+          res.status(401).json({ error: "Incorrect username or password" });
         }
+        console.log("req.session.user_id:", req.session.user_id);
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
       });
   });
+
   return router;
 };
