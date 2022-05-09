@@ -19,7 +19,12 @@ export default function App() {
           <br></br>
         </p>
       </div>
-      {/* <Filters/> */}
+      <Filters/>
+      <div>
+        <p>
+          <br></br>
+        </p>
+      </div>
       <EditProfile/>
     </>
   );

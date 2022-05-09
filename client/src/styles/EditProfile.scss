@@ -2,3 +2,39 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+.outer_form_container {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #E1D0EE;
+  border-radius: 20px;
+  margin: auto;
+  width: 70%;
+}
+
+.form_fields {
+  margin:auto;
+  width: 100%;
+}
+
+.text_field {
+  border: none;
+  border-radius: 20px;
+  background-color: #F2EDF5;
+}
+
+#gender-select {
+  color: #6A18A8
+}
+
+#fitness-goal-select {
+  color: #6A18A8
+}
+
+#diet-type-select {
+  color: #6A18A8
+}
+
+#primary-workout-select {
+  color: #6A18A8
+}
