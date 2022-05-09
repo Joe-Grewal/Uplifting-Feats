@@ -1,32 +1,51 @@
-/* NAV component */
-
-.navigation{
+/* NAV component -------------------*/
+.nav_container {
+  display: flex;
   position: fixed;
+  width: 100%;
+  height: 70px;
+  background-color: #F2EDF5;
+}
+.navigation{
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
+  margin: auto;
+  width: 70%;
   height: 70px;
-  background-color: plum;
+  background-color: #F2EDF5
 }
 
-.navlogo {
+.logo {
   margin-right: auto;
   font-size: larger;
 }
 
-.navlinks, a {
+.logo_link {
   padding: 10px;
+  color: #E32EB0;
+  text-decoration: none;
+}
+
+.right_links {
+  padding: 10px;
+  color: #6A18A8;
+  text-decoration: none;
+ 
 }
 
 
-/* BIO component */
-
+/* BIO component -------------------*/
 .picturebox {
-  padding-top: 10%;
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.profile_picture_frame {
+  border: solid 4px #6A18A8;
+  border-radius: 20px;
 }
 
 .name_and_goal {
@@ -41,12 +60,17 @@
   display: inline;
   padding-right: 10px;
   text-align: center;
+  font-weight: 700;
 }
 
 .fitnessgoal {
   align-self: center;
-  background-color: hotpink;
-  padding: 7px;
+  text-align: center;
+  color: white;
+  background-color: #E32EB0;
+  border-radius: 20px;
+  width: 25%;
+  padding: 10px;
 }
 
 .profilestats {
@@ -59,17 +83,16 @@
 .stick {
   font-size: 1.25em;
   font-weight: 600;
-  color: purple;
+  color: #E32EB0;
 }
 
 
-/* BIODIVS component */
-
+/* BIODIVS component -------------------*/
 .outer_container {
   margin: auto;
   margin-bottom: 10px;
   display: grid;
-  width: 60%;
+  width: 70%;
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 10px;
@@ -78,6 +101,7 @@
 }
 
 .about_me {
+  border-radius: 20px;
   grid-area: 1 / 1 / 3 / 2; 
   height: 598px;
   padding: 0 20px 10px;
@@ -87,6 +111,7 @@
 }
 
 .health_tips {
+  border-radius: 20px;
   grid-area: 1 / 2 / 2 / 3;
   height: 289px;
   padding: 0 20px 10px;
@@ -95,6 +120,7 @@
 }
 
 .future_goals {
+  border-radius: 20px;
   grid-area: 2 / 2 / 3 / 3;
   height: 289px;
   padding: 0 20px 10px;
@@ -105,51 +131,74 @@
 
 h3 {
   text-align: center;
-  color: #6A18A8
+  color: #6A18A8;
 }
 
-
-/* MyHealthJournal component */
-
+/* MYHEALTHJOURNAL component -------------------*/
 .outer_container2 {
+  border-radius: 20px;
   margin: auto;
   display: grid;
-  width: 60%;
+  width: 70%;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 75px 300px 200px 75px;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
   background-color: #CDD5F8;
 }
-
 
 .my_health_journal_w_buttons { 
   grid-area: 1 / 1 / 2 / 3;
   display: flex;
-  margin: 10px;
+  margin: 0px 20px;
   align-items: center;
   justify-content: space-between
 }
 
-.entry { 
-  margin: 10px;
-  padding: 10px 20px;
+/*buttons*/
+.next {
+  background-color: #5B70E0;
+  color: white;
+  margin-right: 4%;
+  width: 8%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+}
+
+.previous {
+  background-color: #5B70E0;
+  color: white;
+  width: 12%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+}
+/*buttons end*/
+
+.entry {
+  border-radius: 20px;
+  margin: 10px 20px;
+  margin-bottom: 10px;
+  padding: 0 20px 10px;
   background-color: #FFE1E0;
   grid-area: 2 / 1 / 3 / 3; 
   overflow: scroll;
 }
 
 .my_workout_routine { 
-  margin: 10px;
-  padding: 10px 20px;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-right: 5px;
+  padding: 0 20px 10px;
   grid-area: 3 / 1 / 4 / 2; 
   background-color: #DAF4F5;
   overflow: scroll;
 }
 
 .my_diet_diary { 
-  margin: 10px;
-  padding: 10px 20px;
+  border-radius: 20px;
+  margin-right: 20px;
+  margin-left: 5px;
+  padding: 0 20px 10px;
   grid-area: 3 / 2 / 4 / 3; 
   background-color: #FFD5F3;
   overflow: scroll;
@@ -161,3 +210,105 @@ h3 {
   justify-content: center;
   grid-area: 4 / 1 / 5 / 3; 
 }
+
+/*button*/
+.view_all {
+  background-color: #B145CC;
+  color: white;
+  width: 18%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+}
+/*button end*/
+
+
+/* FILTERS component -------------------*/
+
+.search_filters_container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 70%;
+  height: 300px;
+  margin: auto;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  background-color: white;
+  }
+  
+  .age_range { 
+    padding-top: 10px;
+    border-radius: 20px;
+    background-color: #A8B3E6;
+    grid-area: 1 / 1 / 2 / 2; 
+    
+  }
+  
+  .gender { 
+    padding-top: 10px;
+    border-radius: 20px;
+    background-color: #84DEC2;
+    grid-area: 1 / 2 / 2 / 3; 
+  }
+  
+  .height { 
+    padding-top: 10px;
+    border-radius: 20px;
+    background-color:#D380C3;
+    grid-area: 1 / 3 / 2 / 4; 
+    display:flex;
+    flex-direction: column;
+  }
+
+  .enter_height {
+    width: 40%;
+    height: 8px;
+    border: 0;
+    align-self: center;
+    border-radius: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-left: 15px;
+    font-size: 1em;
+  }
+
+  
+  
+  .diet {
+    padding-top: 10px;
+    border-radius: 20px;
+    background-color:#A1DFE2;
+    grid-area: 2 / 1 / 3 / 2; 
+  }
+
+  .dropdown {
+    background-color: #F2EDF5;
+    font-size: 1em;
+    border: 0;
+    border-radius: 10px;
+    padding: 8px;
+    display:flex;
+    margin: auto;
+  }
+
+  .dropdown:hover {
+    border:0;
+    color: #E32EB0;
+    background-color: white;
+  }
+
+  .primary_workout { 
+    padding-top: 10px;
+    border-radius: 20px;
+    background-color:#F7B8B6;
+    grid-area: 2 / 2 / 3 / 3; 
+  }
+  
+  .fitness_goal { 
+    padding-top: 10px;
+    border-radius: 20px;
+    background-color:#FCDD89;
+    grid-area: 2 / 3 / 3 / 4; 
+  }
+

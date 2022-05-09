@@ -4,6 +4,7 @@ import Nav from './Nav';
 import Bio from './Bio';
 import BioDivs from './BioDivs';
 import MyHealthJournal from './MyHealthJournal';
+import Filters from './Filters';
 
 export default function App() {
   return (
@@ -12,6 +13,8 @@ export default function App() {
     <Bio/>
     <BioDivs/>
     <MyHealthJournal/>
+    <div><p><br></br></p></div>
+    {/* <Filters/> */}
     </>
   );
 }
