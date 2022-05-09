@@ -5,7 +5,7 @@ import Bio from "./Bio";
 import BioDivs from "./BioDivs";
 import MyHealthJournal from "./MyHealthJournal";
 import Filters from "./Filters";
-import EditProfile from "./EditProfile"
+import EditProfile from "./EditProfile";
 
 export default function App() {
   return (
