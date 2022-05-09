@@ -5,6 +5,7 @@ import Bio from "./Bio";
 import BioDivs from "./BioDivs";
 import MyHealthJournal from "./MyHealthJournal";
 import Filters from "./Filters";
+import EditProfile from "./EditProfile"
 
 export default function App() {
   return (
@@ -18,7 +19,13 @@ export default function App() {
           <br></br>
         </p>
       </div>
-      {/* <Filters/> */}
+      <Filters/>
+      <div>
+        <p>
+          <br></br>
+        </p>
+      </div>
+      <EditProfile/>
     </>
   );
 }
