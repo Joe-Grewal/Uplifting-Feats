@@ -1,18 +1,35 @@
 import {useState} from 'react';
-import { Typography } from '@mui/material';
-import { Button } from '@mui/material';
-import { Container } from '@mui/material';
-import { TextField } from '@mui/material';
-import { FormControl } from '@mui/material';
-import { InputLabel } from '@mui/material';
-import { MenuItem } from '@mui/material';
-import { Select } from '@mui/material';
+import { Typography, Button, Container, TextField, FormControl, InputLabel, MenuItem, Select, IconButton, OutlinedInput, InputAdornment } from '@mui/material';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff'
+import FaceIcon from '@mui/icons-material/Face';
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import SaveRoundedIcon from '@mui/icons-material/SaveRounded';
 import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
 import axios from 'axios';
 import "../styles/EditProfile.scss"
 
 export default function EditProfile() {
+
+  const [values, setValues] = useState({
+    password: '',
+    weight: '',
+    showPassword: false,
+  });
+
+  const handleClickShowPassword = () => {
+    setValues({
+      ...values,
+      showPassword: !values.showPassword,
+    });
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
   //form input values below
   const [profileImageUrl, setProfileImageUrl] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -57,8 +74,34 @@ export default function EditProfile() {
   const handleReset = (e) => {
     e.preventDefault();
 
-    //change all fields to null by grabbing form id
-    document.getElementById("edit-profile-form").reset();  
+    //reseting error back to false before clearing all fields
+    setProfileImageUrlError(false);
+    setFirstNameError(false);
+    setLastNameError(false);
+    setUserNameError(false);
+    setEmailError(false);
+    setPasswordError(false);
+    setConfirmPasswordError(false);
+    setAgeError(false);
+    setGenderError(false);
+    setHeightError(false);
+    setCountryError(false);
+    setFitnessGoalError(false);
+    setWeightError(false);
+    setDietTypeError(false);
+    setPrimaryWorkoutError(false);
+    setAboutMeError(false);
+    setHealthTipsError(false);
+    setFutureGoalsError(false);
+
+    //empty all fields by grabbing form id and setting menu values to null
+    document.getElementById("edit-profile-form").reset(); 
+    setGender("");
+    setFitnessGoal("");
+    setDietType("");
+    setPrimaryWorkout("");
+    setPassword("");
+    setConfirmPassword("");
   }
 
   //on save profile button click
@@ -107,6 +150,10 @@ export default function EditProfile() {
    if (confirmPassword === "") {
     setConfirmPasswordError(true);
    }
+   if (password && confirmPassword && (password !== confirmPassword)) {
+     setPasswordError(true);
+     setConfirmPasswordError(true);
+   }
    if (age === "") {
     setAgeError(true);
    }
@@ -150,7 +197,8 @@ export default function EditProfile() {
 
     if (profileImageUrl && firstName && lastName && userName && email && password && 
       confirmPassword && age && gender && height && country && fitnessGoal &&
-      weight && dietType && primaryWorkout && aboutMe && healthTips && futureGoals) {
+      weight && dietType && primaryWorkout && aboutMe && healthTips && futureGoals
+      && (password === confirmPassword)) {
       axios.put("api/users/1", { user_name: userName, first_name: firstName, last_name: lastName, email: email, password: password, profile_img_url: profileImageUrl, age: age, gender: gender, height: height, weight: weight, country: country, fitness_goal: fitnessGoal, diet_type: dietType, primary_workout: primaryWorkout, about_me: aboutMe, tips: healthTips, future_goals: futureGoals });
     }
   }
@@ -173,7 +221,15 @@ export default function EditProfile() {
           variant="outlined" 
           color="secondary" 
           fullWidth
+          placeholder="Profile Image Url *"
           required
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <FaceIcon />
+              </InputAdornment>
+            ),
+          }}
           error={profileImageUrlError}
         />
         <div>
@@ -205,7 +261,15 @@ export default function EditProfile() {
           sx={{
             width: "50%"
           }}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <AccountCircle />
+              </InputAdornment>
+            ),
+          }}
           onChange={(e) => setUserName(e.target.value)}
+          placeholder="Username *"
           label="Username"
           variant="outlined"
           color="secondary"
@@ -225,7 +289,7 @@ export default function EditProfile() {
         />
         </div>
         <div>
-        <TextField 
+        {/* <TextField 
           sx={{
             width: "50%"
           }}
@@ -234,9 +298,33 @@ export default function EditProfile() {
           variant="outlined"
           color="secondary"
           required
+          type='password'
           error={passwordError}
-        />
-        <TextField 
+        /> */}
+        <FormControl sx={{ width: '50%' }}>
+        <InputLabel htmlFor="outlined-adornment-password">Password *</InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-password"
+            type={values.showPassword ? 'text' : 'password'}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            error={passwordError}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
+            label="Password"
+          />
+        </FormControl>
+        {/* <TextField 
           sx={{
           width: "50%"
           }}
@@ -245,8 +333,32 @@ export default function EditProfile() {
           variant="outlined"
           color="secondary"
           required
+          type='password'
           error={confirmPasswordError}
-        />
+        /> */}
+         <FormControl sx={{ width: '50%' }}>
+        <InputLabel htmlFor="outlined-adornment-confirm-password">Confirm Password *</InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-confirm-password"
+            type={values.showPassword ? 'text' : 'password'}
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            error={confirmPasswordError}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {values.showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
+            label="Password"
+          />
+        </FormControl>
         </div>
         <div>
         <TextField 
@@ -286,8 +398,12 @@ export default function EditProfile() {
           sx={{
             width: "33%"
           }}
+          id="outlined-height-end-adornment"
+          InputProps={{
+            endAdornment: <InputAdornment position="end">inches</InputAdornment>,
+          }}
           onChange={(e) => setHeight(e.target.value)}
-          label="Height (in inches)"
+          label="Height"
           variant="outlined"
           color="secondary"
           required
@@ -332,11 +448,15 @@ export default function EditProfile() {
         </Select>
         </FormControl>
         <TextField 
+          id="outlined-weight-end-adornment"
           sx={{
             width: "33%"
           }}
+          InputProps={{
+            endAdornment: <InputAdornment position="end">lbs</InputAdornment>,
+          }}
           onChange={(e) => setWeight(e.target.value)}
-          label="Weight (in lbs)"
+          label="Weight"
           variant="outlined"
           color="secondary"
           required
@@ -351,6 +471,11 @@ export default function EditProfile() {
           error={dietTypeError}>
         <InputLabel id="diet-type-select">Diet Type *</InputLabel>
         <Select
+        startAdornment={
+          <InputAdornment position="start">
+            <RestaurantIcon />
+          </InputAdornment>
+          }
           fullWidth
           onChange={(e) => setDietType(e.target.value)}
           id="diet-type-select"
@@ -378,6 +503,11 @@ export default function EditProfile() {
           error={primaryWorkoutError}>
         <InputLabel id="primary-workout-select">Primary Workout *</InputLabel>
         <Select 
+          startAdornment={
+            <InputAdornment position="start">
+              <FitnessCenterIcon />
+            </InputAdornment>
+            }
           fullWidth
           onChange={(e) => setPrimaryWorkout(e.target.value)}
           id="primary-workout-select"
