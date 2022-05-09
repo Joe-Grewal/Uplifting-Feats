@@ -53,6 +53,14 @@ export default function EditProfile() {
   const [healthTipsError, setHealthTipsError] = useState(false);
   const [futureGoalsError, setFutureGoalsError] = useState(false);
 
+  //on reset all button click
+  const handleReset = (e) => {
+    e.preventDefault();
+
+    //change all fields to null by grabbing form id
+    document.getElementById("edit-profile-form").reset();  
+  }
+
   //on save profile button click
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -562,6 +570,7 @@ export default function EditProfile() {
     </Container>
       <div id="buttons_icons">
         <Button
+          onClick={handleReset}
           type="submit" 
           color="secondary" 
           variant="contained"
