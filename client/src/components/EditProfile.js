@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import { Typography, Button, Container, TextField, FormControl, InputLabel, MenuItem, Select, IconButton, OutlinedInput, InputAdornment } from '@mui/material';
+import { Button, Container, TextField, FormControl, InputLabel, MenuItem, Select, IconButton, OutlinedInput, InputAdornment } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import FaceIcon from '@mui/icons-material/Face';
@@ -207,7 +207,7 @@ export default function EditProfile() {
     <div className="outer_form_container">
 
     <Container size="sm">
-      <form noValidate autoComplete="off" className="form_fields">
+      <form noValidate autoComplete="off" className="form_fields" id="edit-profile-form">
         <TextField
         sx={{
           "& .MuiInputLabel-root": {color: '#6A18A8'},
