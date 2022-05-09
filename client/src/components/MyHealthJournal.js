@@ -5,11 +5,11 @@ export default function MyHealthJournal () {
   return (
     <div className="outer_container2">
       <div className="my_health_journal_w_buttons">
-        <button>PREVIOUS</button><h3>My Health Journal</h3><button>NEXT</button>
+        <button className="previous">PREVIOUS</button><h3>My Health Journal</h3><button className="next">NEXT</button>
       </div>
 
       <div className="entry">
-        <h3>Entry Name, Entry Date</h3>
+        <h3 className="entry_name">Entry Name:</h3><span><strong>Entry Date:</strong></span>
         <p></p>
       </div>
       
@@ -25,7 +25,7 @@ export default function MyHealthJournal () {
       </div>
 
     <div className="bottom_w_buttons">
-      <button>VIEW ALL ENTRIES</button>
+      <button className="view_all">VIEW ALL ENTRIES</button>
     </div>
   </div>
     
