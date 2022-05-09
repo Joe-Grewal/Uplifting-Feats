@@ -156,18 +156,19 @@ export default function EditProfile() {
   }
 
   return (
+    <div className="outer_form_container">
+
     <Container size="sm">
-      <Typography
-        variant="h6" 
-        color="textSecondary"
-        component="h2"
-        gutterBottom
-      >
-        Update User Profile
-      </Typography>
-      
-      <form noValidate autoComplete="off" id="edit-profile-form">
-        <TextField 
+      <form noValidate autoComplete="off" className="form_fields">
+        <TextField
+        sx={{
+          "& .MuiInputLabel-root": {color: '#6A18A8'},
+          "& .MuiOutlinedInput-root": {
+          "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+          },
+          mb: '20px'
+        }}
+          className="text_field"
           onChange={(e) => setProfileImageUrl(e.target.value)}
           label="Profile Image Url" 
           variant="outlined" 
@@ -179,8 +180,16 @@ export default function EditProfile() {
         <div>
         <TextField 
           sx={{
-            width: "50%"
+            width: "48%",
+            "& .MuiInputLabel-root": {color: '#6A18A8'},
+          "& .MuiOutlinedInput-root": {
+          "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+          },
+          mb: '20px',
+          mr: '10px'
+
           }}
+          className="text_field"
           onChange={(e) => setFirstName(e.target.value)}
           label="First Name"
           variant="outlined"
@@ -190,8 +199,15 @@ export default function EditProfile() {
         />
          <TextField 
           sx={{
-            width: "50%"
+            width: "48%",
+            "& .MuiInputLabel-root": {color: '#6A18A8'},
+          "& .MuiOutlinedInput-root": {
+          "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+          },
+          mb: '20px',
+          ml: '10px'
           }}
+          className="text_field"
           onChange={(e) => setLastName(e.target.value)}
           label="Last Name"
           variant="outlined"
@@ -203,8 +219,15 @@ export default function EditProfile() {
         <div>
         <TextField 
           sx={{
-            width: "50%"
+            width: "48%",
+            "& .MuiInputLabel-root": {color: '#6A18A8'},
+          "& .MuiOutlinedInput-root": {
+          "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+          },
+          mb: '20px',
+          mr: '10px'
           }}
+          className="text_field"
           onChange={(e) => setUserName(e.target.value)}
           label="Username"
           variant="outlined"
@@ -214,8 +237,15 @@ export default function EditProfile() {
         />
         <TextField 
           sx={{
-            width: "50%"
+            width: "48%",
+            "& .MuiInputLabel-root": {color: '#6A18A8'},
+          "& .MuiOutlinedInput-root": {
+          "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+          },
+          mb: '20px',
+          ml: '10px'
           }}
+          className="text_field"
           onChange={(e) => setEmail(e.target.value)}
           label="Email"
           variant="outlined"
@@ -227,8 +257,15 @@ export default function EditProfile() {
         <div>
         <TextField 
           sx={{
-            width: "50%"
+            width: "48%",
+            "& .MuiInputLabel-root": {color: '#6A18A8'},
+          "& .MuiOutlinedInput-root": {
+          "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+          },
+          mb: '20px',
+          mr: '10px'
           }}
+          className="text_field"
           onChange={(e) => setPassword(e.target.value)}
           label="Password"
           variant="outlined"
@@ -238,8 +275,15 @@ export default function EditProfile() {
         />
         <TextField 
           sx={{
-          width: "50%"
+            width: "48%",
+            "& .MuiInputLabel-root": {color: '#6A18A8'},
+          "& .MuiOutlinedInput-root": {
+          "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+          },
+          mb: '20px',
+          ml: '10px'
           }}
+          className="text_field"
           onChange={(e) => setConfirmPassword(e.target.value)}
           label="Confirm Password"
           variant="outlined"
@@ -251,8 +295,16 @@ export default function EditProfile() {
         <div>
         <TextField 
           sx={{
-            width: "33%"
+            width: "30.5%",
+            "& .MuiInputLabel-root": {color: '#6A18A8'},
+            "& .MuiOutlinedInput-root": {
+            "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+            },
+            mb: '20px',
+            mr: '10px'
+            
           }}
+          className="text_field"
           onChange={(e) => setAge(e.target.value)}
           label="Age"
           variant="outlined"
@@ -262,11 +314,21 @@ export default function EditProfile() {
         />
         <FormControl  
           sx={{
-            width: "34%"
+            width: "30.5%",
+            "& .MuiInputLabel-root": {color: '#6A18A8'},
+            "& .MuiOutlinedInput-root": {
+            "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+            },
+            mr: '10px',
+            ml: '10px',
+            bgcolor: '#F2EDF5',
+            borderRadius: '20px'
           }}
+          className=".dropdown"
           error={genderError}>
         <InputLabel id="gender-select">Gender *</InputLabel>
         <Select
+          className="dropdown_menu"
           fullWidth
           onChange={(e) => setGender(e.target.value)}
           labelId="gender-select-label"
@@ -284,8 +346,15 @@ export default function EditProfile() {
         </FormControl>
         <TextField 
           sx={{
-            width: "33%"
+            width: "30.5%",
+            "& .MuiInputLabel-root": {color: '#6A18A8'},
+            "& .MuiOutlinedInput-root": {
+            "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+            },
+            mb: '20px',
+            ml: '10px'
           }}
+          className="text_field"
           onChange={(e) => setHeight(e.target.value)}
           label="Height (in inches)"
           variant="outlined"
@@ -297,8 +366,15 @@ export default function EditProfile() {
         <div>
         <TextField 
           sx={{
-            width: "33%"
+            width: "30.5%",
+            "& .MuiInputLabel-root": {color: '#6A18A8'},
+            "& .MuiOutlinedInput-root": {
+            "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+            },
+            mb: '20px',
+            mr: '10px'
           }}
+          className="text_field"
           onChange={(e) => setCountry(e.target.value)}
           label="Country"
           variant="outlined"
@@ -308,7 +384,15 @@ export default function EditProfile() {
         />
         <FormControl  
           sx={{
-            width: "34%"
+            width: "30.5%",
+            "& .MuiInputLabel-root": {color: '#6A18A8'},
+            "& .MuiOutlinedInput-root": {
+            "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+            },
+            mr: '10px',
+            ml: '10px',
+            bgcolor: '#F2EDF5',
+            borderRadius: '20px'
           }}
           error={fitnessGoalError}>
         <InputLabel id="fitness-goal-select">Fitness Goal *</InputLabel>
@@ -333,8 +417,15 @@ export default function EditProfile() {
         </FormControl>
         <TextField 
           sx={{
-            width: "33%"
+            width: "30.5%",
+            "& .MuiInputLabel-root": {color: '#6A18A8'},
+            "& .MuiOutlinedInput-root": {
+            "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+            },
+            mb: '20px',
+            ml: '10px'
           }}
+          className="text_field"
           onChange={(e) => setWeight(e.target.value)}
           label="Weight (in lbs)"
           variant="outlined"
@@ -346,7 +437,15 @@ export default function EditProfile() {
         <div>
         <FormControl  
           sx={{
-            width: "50%"
+            width: "48%",
+            "& .MuiInputLabel-root": {color: '#6A18A8'},
+            "& .MuiOutlinedInput-root": {
+            "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+            },
+            mr: '10px',
+            mb: '20px',
+            bgcolor: '#F2EDF5',
+            borderRadius: '20px'
           }}
           error={dietTypeError}>
         <InputLabel id="diet-type-select">Diet Type *</InputLabel>
@@ -373,7 +472,15 @@ export default function EditProfile() {
         </FormControl>
         <FormControl  
           sx={{
-            width: "50%"
+            width: "48%",
+            "& .MuiInputLabel-root": {color: '#6A18A8'},
+            "& .MuiOutlinedInput-root": {
+            "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+            },
+            ml: '10px',
+            mb: '20px',
+            bgcolor: '#F2EDF5',
+            borderRadius: '20px'
           }}
           error={primaryWorkoutError}>
         <InputLabel id="primary-workout-select">Primary Workout *</InputLabel>
@@ -401,6 +508,14 @@ export default function EditProfile() {
         </FormControl>
         </div>
         <TextField 
+        sx={{
+          "& .MuiInputLabel-root": {color: '#6A18A8'},
+          "& .MuiOutlinedInput-root": {
+          "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+          },
+          mb: '20px',
+        }}
+          className="text_field"
           onChange={(e) => setAboutMe(e.target.value)}
           label="About Me"
           variant="outlined"
@@ -411,7 +526,15 @@ export default function EditProfile() {
           required
           error={aboutMeError}
         />
-        <TextField 
+        <TextField
+        sx={{
+          "& .MuiInputLabel-root": {color: '#6A18A8'},
+          "& .MuiOutlinedInput-root": {
+          "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+          },
+          mb: '20px',
+        }}
+          className="text_field"
           onChange={(e) => setHealthTips(e.target.value)}
           label="Health Tips"
           variant="outlined"
@@ -422,7 +545,15 @@ export default function EditProfile() {
           required
           error={healthTipsError}
         />
-        <TextField 
+        <TextField
+        sx={{
+          "& .MuiInputLabel-root": {color: '#6A18A8'},
+          "& .MuiOutlinedInput-root": {
+          "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
+          },
+          mb: '20px',
+        }} 
+          className="text_field"
           onChange={(e) => setFutureGoals(e.target.value)}
           label="Future Goals"
           variant="outlined"
@@ -434,7 +565,10 @@ export default function EditProfile() {
           error={futureGoalsError}
         />
 
-        <div id="buttons_icons">
+        
+      </form>
+    </Container>
+      <div id="buttons_icons">
         <Button
           onClick={handleReset}
           type="submit" 
@@ -453,9 +587,8 @@ export default function EditProfile() {
         >
           Save Profile
         </Button>
-        </div>
-      </form>
+      </div>
 
-    </Container>
+    </div>
   )
 }
