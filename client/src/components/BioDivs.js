@@ -9,7 +9,7 @@ export default function BioDivs() {
   const getBioDivs = async () => {
     try {
       let response = await axios.get("/api/users/3");
-      console.log(response);
+      //console.log(response);
       setAboutMe(response.data.user.about_me);
       setHealthTips(response.data.user.tips);
       setFutureGoals(response.data.user.future_goals);
