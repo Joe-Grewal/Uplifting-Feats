@@ -6,6 +6,7 @@ import BioDivs from "./BioDivs";
 import MyHealthJournal from "./MyHealthJournal";
 import Filters from "./Filters";
 import EditProfile from "./EditProfile";
+import CreateEntryForm from "./CreateEntryForm";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
         </p>
       </div>
       <EditProfile/>
+      <CreateEntryForm/>
     </>
   );
 }
