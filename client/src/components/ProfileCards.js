@@ -1,17 +1,17 @@
 import React from "react";
-import Profile from "../images/Abby.jpg";
+import ProfilePic from "../images/Abby.jpg";
 import Like from "../images/like.svg";
 import Share from "../images/share.svg";
 
-export default function SelectProfile () {
+export default function ProfileCards () {
 
   return (
 
     <div className="outer_profile_card_container">
       
       <div className="profile_card_one">
-        <img src={Profile} alt="profile" className="tiny_profile_image"/>
-        <h3 className="profile_name">Abby Xxxxxx</h3>
+        <img src={ProfilePic} alt="profile" className="tiny_profile_image"/>
+        <h3 className="profile_name">Abby Mylastnameis</h3>
       </div>
 
       <div className="profile_card_two">
