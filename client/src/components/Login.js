@@ -35,9 +35,10 @@ export default function Login() {
       console.log(response);
       setSuccess(true);
       //setRedirect(true);
-      //return response;
+      return response;
     } catch (error) {
       console.log(error);
+      setErrMsg("Wrong credentials. Please try again.");
     }
   };
 
@@ -50,19 +51,17 @@ export default function Login() {
       {success ? (
         <section>
           <h1>Login Successful</h1>
-          <p>
-            <a href="/home">Click here</a> to go to the home page.
-          </p>
+          <p>You are now logged in </p>
         </section>
       ) : (
         <section>
-          <p
+          <h3
             ref={errRef}
             className={errMsg ? "errmsg" : "offscreen"}
             aria-live="assertive"
           >
             {errMsg}
-          </p>
+          </h3>
           <h1>Login</h1>
           <form onSubmit={handleSubmit}>
             <label htmlFor="username">Username:</label>
