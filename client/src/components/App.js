@@ -6,7 +6,8 @@ import BioDivs from "./BioDivs";
 import MyHealthJournal from "./MyHealthJournal";
 import Filters from "./Filters";
 import EditProfile from "./EditProfile";
-import SelectProfile from "./SelectProfile";
+import ProfileCards from "./ProfileCards";
+import EntryCards from "./EntryCards";
 
 export default function App() {
   return (
@@ -32,7 +33,13 @@ export default function App() {
           <br></br>
         </p>
       </div>
-      <SelectProfile/>
+      <ProfileCards/>
+      <div>
+        <p>
+          <br></br>
+        </p>
+      </div>
+      <EntryCards/>
       <div>
         <p>
           <br></br>
