@@ -207,7 +207,7 @@ export default function EditProfile() {
     <div className="outer_form_container">
 
     <Container size="sm">
-      <form noValidate autoComplete="off" className="form_fields">
+      <form noValidate autoComplete="off" className="form_fields" id="edit-profile-form">
         <TextField
         sx={{
           "& .MuiInputLabel-root": {color: '#6A18A8'},
@@ -227,7 +227,7 @@ export default function EditProfile() {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <FaceIcon />
+                <FaceIcon id="face"/>
               </InputAdornment>
             ),
           }}
@@ -236,14 +236,13 @@ export default function EditProfile() {
         <div>
         <TextField 
           sx={{
-            width: "48%",
+            width: "49%",
             "& .MuiInputLabel-root": {color: '#6A18A8'},
           "& .MuiOutlinedInput-root": {
           "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
           },
           mb: '20px',
-          mr: '10px'
-
+          mr: '1%'
           }}
           className="text_field"
           onChange={(e) => setFirstName(e.target.value)}
@@ -255,13 +254,13 @@ export default function EditProfile() {
         />
          <TextField 
           sx={{
-            width: "48%",
+            width: "49%",
             "& .MuiInputLabel-root": {color: '#6A18A8'},
           "& .MuiOutlinedInput-root": {
           "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
           },
           mb: '20px',
-          ml: '10px'
+          ml: '1%'
           }}
           className="text_field"
           onChange={(e) => setLastName(e.target.value)}
@@ -275,18 +274,18 @@ export default function EditProfile() {
         <div>
         <TextField 
           sx={{
-            width: "48%",
+            width: "49%",
             "& .MuiInputLabel-root": {color: '#6A18A8'},
           "& .MuiOutlinedInput-root": {
           "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
           },
           mb: '20px',
-          mr: '10px'
+          mr: '1%'
           }}
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <AccountCircle />
+                <AccountCircle id="account"/>
               </InputAdornment>
             ),
           }}
@@ -301,13 +300,13 @@ export default function EditProfile() {
         />
         <TextField 
           sx={{
-            width: "48%",
+            width: "49%",
             "& .MuiInputLabel-root": {color: '#6A18A8'},
           "& .MuiOutlinedInput-root": {
           "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
           },
           mb: '20px',
-          ml: '10px'
+          ml: '1%'
           }}
           className="text_field"
           onChange={(e) => setEmail(e.target.value)}
@@ -340,25 +339,28 @@ export default function EditProfile() {
         /> */}
         <FormControl 
           sx={{
-            width: "48%",
+            width: "49%",
             "& .MuiInputLabel-root": {color: '#6A18A8'},
             "& .MuiOutlinedInput-root": {
             "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
           },
           mb: '20px',
-          mr: '10px'
+          mr: '1%',
           }}
           className="text_field">
-        <InputLabel htmlFor="outlined-adornment-password">Password *</InputLabel>
+        <InputLabel htmlFor="outlined-adornment-password" id="password0">Password *</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
             type={values.showPassword ? 'text' : 'password'}
             value={password}
+            variant="outlined"
+            color="secondary"
             onChange={(e) => setPassword(e.target.value)}
             error={passwordError}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
+                id="eye1"
                   aria-label="toggle password visibility"
                   onClick={handleClickShowPassword}
                   onMouseDown={handleMouseDownPassword}
@@ -392,25 +394,28 @@ export default function EditProfile() {
         /> */}
          <FormControl 
           sx={{
-            width: "48%",
+            width: "49%",
             "& .MuiInputLabel-root": {color: '#6A18A8'},
             "& .MuiOutlinedInput-root": {
             "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
           },
           mb: '20px',
-          mr: '10px'
+          ml: '1%',
           }}
           className="text_field">
-        <InputLabel htmlFor="outlined-adornment-confirm-password">Confirm Password *</InputLabel>
+        <InputLabel id="password1" htmlFor="outlined-adornment-confirm-password">Confirm Password *</InputLabel>
           <OutlinedInput
             id="outlined-adornment-confirm-password"
             type={values.showPassword ? 'text' : 'password'}
             value={confirmPassword}
+            variant="outlined"
+            color="secondary"
             onChange={(e) => setConfirmPassword(e.target.value)}
             error={confirmPasswordError}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
+                id="eye2"
                   aria-label="toggle password visibility"
                   onClick={handleClickShowPassword}
                   onMouseDown={handleMouseDownPassword}
@@ -427,14 +432,13 @@ export default function EditProfile() {
         <div>
         <TextField 
           sx={{
-            width: "30.5%",
+            width: "32%",
             "& .MuiInputLabel-root": {color: '#6A18A8'},
             "& .MuiOutlinedInput-root": {
             "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
             },
             mb: '20px',
-            mr: '10px'
-            
+            mr: '1%',
           }}
           className="text_field"
           onChange={(e) => setAge(e.target.value)}
@@ -446,13 +450,13 @@ export default function EditProfile() {
         />
         <FormControl  
           sx={{
-            width: "30.5%",
+            width: "32%",
             "& .MuiInputLabel-root": {color: '#6A18A8'},
             "& .MuiOutlinedInput-root": {
             "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
             },
-            mr: '10px',
-            ml: '10px',
+            ml: '1%',
+            mr: '1%',
             bgcolor: '#F2EDF5',
             borderRadius: '20px'
           }}
@@ -478,13 +482,13 @@ export default function EditProfile() {
         </FormControl>
         <TextField 
           sx={{
-            width: "30.5%",
+            width: "32%",
             "& .MuiInputLabel-root": {color: '#6A18A8'},
             "& .MuiOutlinedInput-root": {
             "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
             },
-            mb: '20px',
-            ml: '10px'
+            ml: '1%',
+            mb: '20px'
           }}
           id="outlined-height-end-adornment"
           InputProps={{
@@ -502,13 +506,13 @@ export default function EditProfile() {
         <div>
         <TextField 
           sx={{
-            width: "30.5%",
+            width: "32%",
             "& .MuiInputLabel-root": {color: '#6A18A8'},
             "& .MuiOutlinedInput-root": {
             "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
             },
             mb: '20px',
-            mr: '10px'
+            mr: '1%',
           }}
           className="text_field"
           onChange={(e) => setCountry(e.target.value)}
@@ -520,13 +524,13 @@ export default function EditProfile() {
         />
         <FormControl  
           sx={{
-            width: "30.5%",
+            width: "32%",
             "& .MuiInputLabel-root": {color: '#6A18A8'},
             "& .MuiOutlinedInput-root": {
             "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
             },
-            mr: '10px',
-            ml: '10px',
+            ml: '1%',
+            mr: '1%',
             bgcolor: '#F2EDF5',
             borderRadius: '20px'
           }}
@@ -554,13 +558,13 @@ export default function EditProfile() {
         <TextField 
           id="outlined-weight-end-adornment"
           sx={{
-            width: "30.5%",
+            width: "32%",
             "& .MuiInputLabel-root": {color: '#6A18A8'},
             "& .MuiOutlinedInput-root": {
             "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
             },
             mb: '20px',
-            ml: '10px'
+            ml: '1%',
           }}
           InputProps={{
             endAdornment: <InputAdornment position="end">lbs</InputAdornment>,
@@ -577,12 +581,12 @@ export default function EditProfile() {
         <div>
         <FormControl  
           sx={{
-            width: "48%",
+            width: "49%",
             "& .MuiInputLabel-root": {color: '#6A18A8'},
             "& .MuiOutlinedInput-root": {
             "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
             },
-            mr: '10px',
+            mr: '1%',
             mb: '20px',
             bgcolor: '#F2EDF5',
             borderRadius: '20px'
@@ -592,7 +596,7 @@ export default function EditProfile() {
         <Select
         startAdornment={
           <InputAdornment position="start">
-            <RestaurantIcon />
+            <RestaurantIcon id="cutlery"/>
           </InputAdornment>
           }
           fullWidth
@@ -617,12 +621,12 @@ export default function EditProfile() {
         </FormControl>
         <FormControl  
           sx={{
-            width: "48%",
+            width: "49%",
             "& .MuiInputLabel-root": {color: '#6A18A8'},
             "& .MuiOutlinedInput-root": {
             "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
             },
-            ml: '10px',
+            ml: '1%',
             mb: '20px',
             bgcolor: '#F2EDF5',
             borderRadius: '20px'
@@ -632,7 +636,7 @@ export default function EditProfile() {
         <Select 
           startAdornment={
             <InputAdornment position="start">
-              <FitnessCenterIcon />
+              <FitnessCenterIcon id="weights"/>
             </InputAdornment>
             }
           fullWidth

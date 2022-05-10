@@ -6,7 +6,12 @@ import BioDivs from "./BioDivs";
 import MyHealthJournal from "./MyHealthJournal";
 import Filters from "./Filters";
 import EditProfile from "./EditProfile";
+<<<<<<< HEAD
 import CreateEntryForm from "./CreateEntryForm";
+=======
+import ProfileCards from "./ProfileCards";
+import EntryCards from "./EntryCards";
+>>>>>>> origin/main
 
 export default function App() {
   return (
@@ -27,7 +32,27 @@ export default function App() {
         </p>
       </div>
       <EditProfile/>
+<<<<<<< HEAD
       <CreateEntryForm/>
+=======
+      <div>
+        <p>
+          <br></br>
+        </p>
+      </div>
+      <ProfileCards/>
+      <div>
+        <p>
+          <br></br>
+        </p>
+      </div>
+      <EntryCards/>
+      <div>
+        <p>
+          <br></br>
+        </p>
+      </div>
+>>>>>>> origin/main
     </>
   );
 }
