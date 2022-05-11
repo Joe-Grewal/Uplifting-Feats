@@ -29,13 +29,15 @@ export default function BDeleteEntry () {
 
   return (
     <ThemeProvider theme={theme}>
-      <Button id="delete_entry_button"
+      <div className="delete_entry_button">
+      <Button
       onClick={() => {
-      alert('clicked');
+        alert('clicked');
       }}
       variant="contained">
         DELETE ENTRY
     </Button>
+      </div>
   </ThemeProvider>
   )
 }

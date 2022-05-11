@@ -32,7 +32,7 @@ export default function MyHealthJournal () {
       </div>
 
     <div className="bottom_w_buttons">
-      <BViewAllEntries/><BAddEntry/><BEditEntry/><BDeleteEntry/>
+      <BViewAllEntries/>
     </div>
   </div>
     

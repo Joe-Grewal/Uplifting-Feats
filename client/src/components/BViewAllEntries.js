@@ -29,13 +29,15 @@ export default function BViewAllEntries () {
 
   return (
     <ThemeProvider theme={theme}>
-      <Button id="view_all_entries_button"
+      <div className="view_all_entries_button">
+      <Button
       onClick={() => {
       alert('clicked');
       }}
       variant="contained">
         VIEW ALL ENTRIES
     </Button>
+    </div>
   </ThemeProvider>
   )
 }

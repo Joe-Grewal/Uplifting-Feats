@@ -29,13 +29,15 @@ export default function BEditEntry () {
 
   return (
     <ThemeProvider theme={theme}>
-      <Button id="edit_entry_button"
+      <div className="edit_entry_button">
+      <Button
       onClick={() => {
       alert('clicked');
       }}
       variant="contained">
         EDIT ENTRY
     </Button>
+    </div>
   </ThemeProvider>
   )
 }

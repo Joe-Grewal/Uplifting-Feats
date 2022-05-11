@@ -48,6 +48,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 15px;
 }
 
 .profile_picture_frame {
@@ -56,6 +57,7 @@
 }
 
 .name_and_goal {
+  padding-top: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -119,7 +121,7 @@ span {
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  
+
 }
 
 .about_me {
@@ -168,37 +170,40 @@ h3 {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 75px 300px 200px 75px;
   background-color: #CDD5F8;
+  padding-bottom: 20px;
 }
 
 .my_health_journal_w_buttons { 
   grid-area: 1 / 1 / 2 / 3;
   display: flex;
   margin: 0px 20px;
+  padding-top: 15px;
   align-items: center;
   justify-content: space-between
 }
 
 /*buttons*/
-.next {
-  background-color: #5B70E0;
-  color: white;
-  margin-left: 6%;
-  width: 8%;
-  height: 40px;
-  padding: 10px;
-  border: none;
-  border-radius: 20px;
-}
+// .next {
+//   background-color: #5B70E0;
+//   color: white;
+//   margin-left: 6%;
+//   width: 8%;
+//   height: 40px;
+//   padding: 10px;
+//   padding-top: 15px;
+//   border: none;
+//   border-radius: 20px;
+// }
 
-.previous {
-  background-color: #5B70E0;
-  color: white;
-  width: 12%;
-  height: 40px;
-  padding: 10px;
-  border: none;
-  border-radius: 20px;
-}
+// .previous {
+//   background-color: #5B70E0;
+//   color: white;
+//   width: 12%;
+//   height: 40px;
+//   padding: 10px;
+//   border: none;
+//   border-radius: 20px;
+// }
 /*buttons end*/
 
 .entry {
@@ -231,24 +236,80 @@ h3 {
   overflow: scroll;
 }
 
-.bottom_w_buttons { 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-area: 4 / 1 / 5 / 3; 
+/* ENTRIES BUTTONS ALL, EDIT, ADD, DELETE -------------------*/
+.view_all_entries_button {
+  margin: 10px;
 }
 
-/*button*/
-.view_all {
-  background-color: #B145CC;
-  color: white;
-  width: 18%;
-  height: 40px;
-  padding: 10px;
-  border: none;
-  border-radius: 20px;
+.add_entry_button {
+  margin: 10px;
 }
-/*button end*/
+
+.edit_entry_button {
+  margin: 10px;
+}
+
+.delete_entry_button {
+  margin: 10px;
+}
+
+.bottom_w_buttons { 
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  grid-area: 4 / 1 / 5 / 3; 
+  padding-top: 15px
+}
+
+// /*button*/
+// .view_all {
+//   background-color: #B145CC;
+//   color: white;
+//   width: 18%;
+//   height: 40px;
+//   padding: 10px;
+//   border: none;
+//   border-radius: 20px;
+// }
+// /*button end*/
+
+/* LIKE_SMALL & SHARE_SMALL component -------------------*/
+.like_small_container {
+  display: flex;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+  
+  .small_like_image {
+    width: 70%;
+    grid-area: 1 / 1 / 2 / 2; 
+  }
+
+  .number_of_likes { 
+    // margin: -10%;
+    font-family: "Hoss Round";
+    font-weight: bold;
+    grid-area: 1 / 2 / 2 / 3; 
+  }
+
+  .likes_pink {
+    font-family: "Hoss Round";
+    font-weight: bold;
+    color: #E32EB0;
+  }
+
+  .small_share_image {
+    width: 80%;
+    grid-area: 1 / 1 / 2 / 2; 
+  }
+
+
+
+
 
 
 /* FILTERS component -------------------*/
@@ -470,7 +531,6 @@ h2 {
   .large_like_button {
     display: inline-flex;
     flex-direction: row;
-    margin-left: 50px;
     margin-top: -20px;
   }
 
@@ -484,6 +544,7 @@ h2 {
   }
 
   .like_image_large {
+    width: 14%;
     margin-left: 20px;
   }
 
@@ -492,7 +553,6 @@ h2 {
   .large_share_button {
     display: inline-flex;
     flex-direction: row;
-    margin-left: 100px;
     margin-top: -20px;
   }
 
@@ -506,5 +566,20 @@ h2 {
   }
 
   .share_image_large {
+    width: 20%;
     margin-left: 20px;
   }
+
+    /* UPDATE PROFILE Button Component and BOTTOM BUTTON SERIES w/ SMALL SHARE AND LIKES BUTTONS -------------------*/
+  .update_profile_button {
+    margin-left: 5%;
+    margin-right: 5%
+  }
+
+  .profile_bottom_w_buttons {
+    display: flex;
+    margin:auto;
+    padding: 40px;
+    justify-content: center;
+  }
+
