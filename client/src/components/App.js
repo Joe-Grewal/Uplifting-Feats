@@ -8,6 +8,22 @@ import Filters from "./Filters";
 import EditProfile from "./EditProfile";
 import ProfileCards from "./ProfileCards";
 import EntryCards from "./EntryCards";
+import BSeeProfile from "./BSeeProfile";
+import BSubmit from "./BSubmit";
+import BBackToProfile from "./BBackToProfile";
+import BSend from "./BSend";
+import BUpdateProfile from "./BUpdateProfile";
+import BResetAll from "./BResetAll";
+import BSaveEntry from "./BSaveEntry";
+import BSaveProfile from "./BSaveProfile";
+import BPrevious from "./BPrevious";
+import BNext from "./BNext";
+import BViewAllEntries from "./BViewAllEntries";
+import BAddEntry from "./BAddEntry";
+import BEditEntry from "./BEditEntry";
+import BDeleteEntry from "./BDeleteEntry";
+import BLike from "./BLike";
+import BShare from "./BShare";
 
 export default function App() {
   return (
@@ -40,6 +56,12 @@ export default function App() {
         </p>
       </div>
       <EntryCards/>
+      <div>
+        <p>
+          <br></br>
+        </p>
+      </div>
+      <BSeeProfile/><BSubmit/><BBackToProfile/><BSend/><BUpdateProfile/><BResetAll/><BSaveEntry/><BSaveProfile/><BPrevious/><BNext/><BViewAllEntries/><BAddEntry/><BEditEntry/><BDeleteEntry/><BLike/><BShare/>
       <div>
         <p>
           <br></br>

@@ -464,3 +464,47 @@ h2 {
   grid-area: 2 / 1 / 3 / 2; 
   overflow: scroll;
 }
+
+  /* LIKE BUTTON LARGE  component -------------------*/
+
+  .large_like_button {
+    display: inline-flex;
+    flex-direction: row;
+    margin-left: 50px;
+    margin-top: -20px;
+  }
+
+  .like_button {
+    margin-left: 20px;
+  }
+
+  .large_like_text {
+    font-size: 1.25em;
+    margin-top: 50px;
+  }
+
+  .like_image_large {
+    margin-left: 20px;
+  }
+
+  /* LIKE BUTTON LARGE  component -------------------*/
+
+  .large_share_button {
+    display: inline-flex;
+    flex-direction: row;
+    margin-left: 100px;
+    margin-top: -20px;
+  }
+
+  .share_button {
+    margin-left: 20px;
+  }
+
+  .large_share_text {
+    font-size: 1.25em;
+    margin-top: 50px;
+  }
+
+  .share_image_large {
+    margin-left: 20px;
+  }
