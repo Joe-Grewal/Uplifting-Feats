@@ -29,13 +29,15 @@ export default function BAddEntry () {
 
   return (
     <ThemeProvider theme={theme}>
-      <Button id="add_entry_button"
+      <div className="add_entry_button">
+      <Button
       onClick={() => {
       alert('clicked');
       }}
       variant="contained">
         ADD ENTRY
     </Button>
+    </div>
   </ThemeProvider>
   )
 }
