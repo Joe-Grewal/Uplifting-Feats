@@ -33,7 +33,7 @@ export default function Filters () {
       </div>
 
       <div className="height">
-       <h3>Height</h3>
+       <h3>Height:</h3>
        <input className="enter_height" type="text" placeholder="Height in inches"/>
       </div>
 

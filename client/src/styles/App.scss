@@ -1,3 +1,5 @@
+
+
 /* NAV component -------------------*/
 .nav_container {
   display: flex;
@@ -22,18 +24,23 @@
 }
 
 .logo_link {
+  font-family: "Hoss Round";
+  font-weight: bold;
+  font-size: 1.33em;
   padding: 10px;
   color: #E32EB0;
   text-decoration: none;
 }
 
 .right_links {
+  font-family: "Hoss Round";
+  font-weight: regular;
+  font-size: 1.125em;
   padding: 10px;
   color: #6A18A8;
   text-decoration: none;
  
 }
-
 
 /* BIO component -------------------*/
 .picturebox {
@@ -56,11 +63,12 @@
 }
 
 .name {
-  font-size: 1.5em;
+  font-family: "Hoss Round";
+  font-weight: bold;
+  font-size: 1.33em;
   display: inline;
   padding-right: 10px;
   text-align: center;
-  font-weight: 700;
 }
 
 .fitnessgoal {
@@ -74,6 +82,9 @@
 }
 
 .profilestats {
+  font-family: "Hoss Round";
+  font-weight: regular;
+  font-size: 1em;
   margin: 0;
   text-align: center;
   line-height: 1.5em;
@@ -86,6 +97,17 @@
   color: #E32EB0;
 }
 
+p {
+  font-family: "Hoss Round";
+  font-weight: regular;
+  font-size: 1em;
+}
+
+span {
+  font-family: "Hoss Round";
+  font-weight: bold;
+  font-size: 1em;
+}
 
 /* BIODIVS component -------------------*/
 .outer_container {
@@ -130,6 +152,9 @@
 }
 
 h3 {
+  font-family: "Hoss Round";
+  font-weight: bold;
+  font-size: 1.25em;
   text-align: center;
   color: #6A18A8;
 }
@@ -386,6 +411,8 @@ h2 {
 .number_of_likes_shares {
   margin: 0;
   padding: 5px;
+  font-family: "Hoss Round";
+  font-weight: regular;
   font-size:.875em;
   font-weight: 700px;
 }
@@ -437,3 +464,47 @@ h2 {
   grid-area: 2 / 1 / 3 / 2; 
   overflow: scroll;
 }
+
+  /* LIKE BUTTON LARGE  component -------------------*/
+
+  .large_like_button {
+    display: inline-flex;
+    flex-direction: row;
+    margin-left: 50px;
+    margin-top: -20px;
+  }
+
+  .like_button {
+    margin-left: 20px;
+  }
+
+  .large_like_text {
+    font-size: 1.25em;
+    margin-top: 50px;
+  }
+
+  .like_image_large {
+    margin-left: 20px;
+  }
+
+  /* LIKE BUTTON LARGE  component -------------------*/
+
+  .large_share_button {
+    display: inline-flex;
+    flex-direction: row;
+    margin-left: 100px;
+    margin-top: -20px;
+  }
+
+  .share_button {
+    margin-left: 20px;
+  }
+
+  .large_share_text {
+    font-size: 1.25em;
+    margin-top: 50px;
+  }
+
+  .share_image_large {
+    margin-left: 20px;
+  }

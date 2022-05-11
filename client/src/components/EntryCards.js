@@ -1,7 +1,4 @@
 import React from "react";
-import ProfilePic from "../images/Abby.jpg";
-import Like from "../images/like.svg";
-import Share from "../images/share.svg";
 
 export default function EntryCards () {
 
