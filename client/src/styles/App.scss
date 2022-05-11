@@ -1,3 +1,5 @@
+
+
 /* NAV component -------------------*/
 .nav_container {
   display: flex;
@@ -22,18 +24,23 @@
 }
 
 .logo_link {
+  font-family: "Hoss Round";
+  font-weight: bold;
+  font-size: 1.33em;
   padding: 10px;
   color: #E32EB0;
   text-decoration: none;
 }
 
 .right_links {
+  font-family: "Hoss Round";
+  font-weight: regular;
+  font-size: 1.125em;
   padding: 10px;
   color: #6A18A8;
   text-decoration: none;
  
 }
-
 
 /* BIO component -------------------*/
 .picturebox {
@@ -56,11 +63,12 @@
 }
 
 .name {
-  font-size: 1.5em;
+  font-family: "Hoss Round";
+  font-weight: bold;
+  font-size: 1.33em;
   display: inline;
   padding-right: 10px;
   text-align: center;
-  font-weight: 700;
 }
 
 .fitnessgoal {
@@ -74,6 +82,9 @@
 }
 
 .profilestats {
+  font-family: "Hoss Round";
+  font-weight: regular;
+  font-size: 1em;
   margin: 0;
   text-align: center;
   line-height: 1.5em;
@@ -86,6 +97,17 @@
   color: #E32EB0;
 }
 
+p {
+  font-family: "Hoss Round";
+  font-weight: regular;
+  font-size: 1em;
+}
+
+span {
+  font-family: "Hoss Round";
+  font-weight: bold;
+  font-size: 1em;
+}
 
 /* BIODIVS component -------------------*/
 .outer_container {
@@ -130,6 +152,9 @@
 }
 
 h3 {
+  font-family: "Hoss Round";
+  font-weight: bold;
+  font-size: 1.25em;
   text-align: center;
   color: #6A18A8;
 }
@@ -159,6 +184,7 @@ h3 {
   color: white;
   margin-left: 6%;
   width: 8%;
+  height: 40px;
   padding: 10px;
   border: none;
   border-radius: 20px;
@@ -168,6 +194,7 @@ h3 {
   background-color: #5B70E0;
   color: white;
   width: 12%;
+  height: 40px;
   padding: 10px;
   border: none;
   border-radius: 20px;
@@ -216,6 +243,7 @@ h3 {
   background-color: #B145CC;
   color: white;
   width: 18%;
+  height: 40px;
   padding: 10px;
   border: none;
   border-radius: 20px;
@@ -272,8 +300,6 @@ h3 {
     padding-left: 15px;
     font-size: 1em;
   }
-
-  
   
   .diet {
     padding-top: 10px;
@@ -312,7 +338,7 @@ h3 {
     grid-area: 2 / 3 / 3 / 4; 
   }
 
-  /* SELECTPROFILE component -------------------*/
+  /* PROFILECARDS component -------------------*/
 
 .outer_profile_card_container {
   display: flex;
@@ -331,7 +357,7 @@ h3 {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  padding-left: 10px;
+  margin: 10px;
 } 
 
 .tiny_profile_image {
@@ -342,18 +368,23 @@ h3 {
   border: solid 3px #E32EB0;
 }
 
+.profile_name {
+  text-align: left;
+}
+
 .profile_card_two {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin: 10px;
 }
 
 .see_profile_button {
   background-color: #B145CC;
   color: white;
   width: 70%;
-  height: 40%;
+  height: 40px;
   border: none;
   border-radius: 20px;
 }
@@ -369,7 +400,8 @@ h2 {
   display:flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px;
+  margin: 10px;
+  margin-right: 20px;
 }
 
 .like_image {
@@ -379,6 +411,8 @@ h2 {
 .number_of_likes_shares {
   margin: 0;
   padding: 5px;
+  font-family: "Hoss Round";
+  font-weight: regular;
   font-size:.875em;
   font-weight: 700px;
 }
@@ -392,5 +426,85 @@ h2 {
   margin: 10px;
 }
 
+  /* ENTRYCARD component -------------------*/
 
+.outer_entry_card_container {
+  border-radius: 20px;
+  margin: auto;
+  display: grid;
+  width: 70%;
+  height: 250px;
+  grid-template-columns: 1fr;
+  grid-template-rows: .25fr 1fr;
+  grid-row-gap: 20px;
+  background-color: #E1D0EE;
+}
 
+.view_all_button_container { 
+  margin: 20px;
+  display: flex;
+  justify-content: flex-end;
+  grid-area: 1 / 1 / 3 / 2; 
+}
+
+.view_all_button {
+  color: white;
+  border: none;
+  height: 40px;
+  width: 175px;
+  background-color: #B145CC;
+  border-radius: 20px;
+}
+
+  .entry_preview { 
+  border-radius: 20px;
+  margin: 20px;
+  background-color: #DAF4F5;
+  padding: 0 20px 10px;
+  grid-area: 2 / 1 / 3 / 2; 
+  overflow: scroll;
+}
+
+  /* LIKE BUTTON LARGE  component -------------------*/
+
+  .large_like_button {
+    display: inline-flex;
+    flex-direction: row;
+    margin-left: 50px;
+    margin-top: -20px;
+  }
+
+  .like_button {
+    margin-left: 20px;
+  }
+
+  .large_like_text {
+    font-size: 1.25em;
+    margin-top: 50px;
+  }
+
+  .like_image_large {
+    margin-left: 20px;
+  }
+
+  /* LIKE BUTTON LARGE  component -------------------*/
+
+  .large_share_button {
+    display: inline-flex;
+    flex-direction: row;
+    margin-left: 100px;
+    margin-top: -20px;
+  }
+
+  .share_button {
+    margin-left: 20px;
+  }
+
+  .large_share_text {
+    font-size: 1.25em;
+    margin-top: 50px;
+  }
+
+  .share_image_large {
+    margin-left: 20px;
+  }
