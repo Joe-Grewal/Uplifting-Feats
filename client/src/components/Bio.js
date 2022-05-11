@@ -17,7 +17,7 @@ export default function Bio() {
   const getBio = async () => {
     try {
       let response = await axios.get("/api/users/3");
-      console.log(response);
+      // console.log(response);
       setName(response.data.user.user_name);
       setAge(response.data.user.age);
       setFitGoal(response.data.user.fitness_goal);
