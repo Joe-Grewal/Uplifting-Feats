@@ -1,103 +1,88 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function Login() {
-  const userRef = useRef(); // hook that allows us to access the DOM element
-  const errRef = useRef();
-
+export default function Login3() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [errMsg, setErrMsg] = useState("");
-  const [success, setSuccess] = useState(false);
-  //const [redirect, setRedirect] = useState(false);
+
+  const [user, setUser] = useState();
 
   useEffect(() => {
-    userRef.current.focus(); // focus on the username input field when the page loads and the component is mounted to the DOM
+    const loggedInUser = localStorage.getItem("user_details");
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      setUser(foundUser);
+    }
   }, []);
 
-  useEffect(() => {
-    setErrMsg("");
-  }, [username, password]);
+  const handleLogout = () => {
+    setUser({});
+    setUsername("");
+    setPassword("");
+    localStorage.clear();
+    window.location.href = "/";
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = { username, password };
-
     try {
-      let response = await axios(
-        {
-          method: "POST",
-          url: "/api/login",
-          data: user,
-        },
-        { withCredentials: true }
-      );
-      console.log(response);
-      setSuccess(true);
-      //setRedirect(true);
+      const response = await axios.post("/api/login", user);
+      //console.log(response);
+      setUser(response.data);
+      localStorage.setItem("user_details", JSON.stringify(response.data));
+      //Put code here for redirecting to profile page
+      console.log(response.data.user.user_name);
       return response;
     } catch (error) {
       console.log(error);
-      setErrMsg("Wrong credentials. Please try again.");
+      window.alert("Incorrect username or password");
+      window.location.href = "/";
     }
   };
 
-  // if (redirect) {
-  //   return <Redirect to="/home" />; // Redirect is a property of react router dom, this will get enabled when the package is installed.
-  // }
+  if (user) {
+    return (
+      <section>
+        <br />
+        <h1>
+          Welcome <span>{user.user.user_name} !</span>
+        </h1>
+        <button onClick={handleLogout}>Logout</button>
+      </section>
+    );
+  }
 
   return (
     <>
-      {success ? (
-        <section>
-          <h1>Login Successful</h1>
-          <p>You are now logged in </p>
-        </section>
-      ) : (
-        <section>
-          <h3
-            ref={errRef}
-            className={errMsg ? "errmsg" : "offscreen"}
-            aria-live="assertive"
-          >
-            {errMsg}
-          </h3>
-          <h1>Login</h1>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="username">Username:</label>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              ref={userRef}
-              autoComplete="off"
-              onChange={(e) => {
-                setUsername(e.target.value);
-              }}
-              value={username}
-              required
-            />
-            <label htmlFor="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              name="pasword"
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-              value={password}
-              required
-            />
-            <button>Sign In</button>
-          </form>
-          <p>
-            Don't have an account?{" "}
-            <span className="line">
-              <a href="#">Sign Up</a>
-            </span>
-          </p>
-        </section>
-      )}
+      <section>
+        <h1> Sign In</h1>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            autoComplete="off"
+            value={username}
+            required
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button type="submit">Sign In</button>
+        </form>
+        <p>
+          Dont have an account? <a href="/signup">Sign Up</a>
+        </p>
+      </section>
     </>
   );
 }

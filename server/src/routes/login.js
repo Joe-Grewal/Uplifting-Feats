@@ -8,19 +8,20 @@ module.exports = (db) => {
     let query = `SELECT * FROM users WHERE user_name = '${username}' AND password = '${password}';`;
     db.query(query)
       .then((data) => {
-        const user = data.rows[0];
         console.log("query:", query);
-        console.log("user", user);
-        if (user) {
+        if (data.rows[0]) {
+          const user = data.rows[0];
+          console.log("user", user);
           req.session.user_id = user.id;
           res.json({ user });
         } else {
           res.status(401).json({ error: "Incorrect username or password" });
+          res.send("No user found. Try again");
         }
         console.log("req.session.user_id:", req.session.user_id);
       })
       .catch((err) => {
-        res.status(500).json({ error: err.message });
+        res.status(401).json({ error: err.message });
       });
   });
 
