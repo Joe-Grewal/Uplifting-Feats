@@ -17,7 +17,6 @@ export default function MyHealthJournal() {
     try {
       let response = await axios.get("/api/myentry");
       console.log(response);
-      console.log(response.data.user.entry_name);
       setStory(response.data.user.my_story);
       setEntryname(response.data.user.entry_name);
       setmyDiet(response.data.user.my_diet);

@@ -47,7 +47,6 @@ app.use("/api/entries", entriesRoutes(db));
 app.use("/api/likes", likesRoutes(db));
 app.use("/api/shares", sharesRoutes(db));
 app.use("/api/filter", filterRoutes(db));
-//app.use("/home", samplehomeRoutes(db));
 app.use("/api/myprofile", myprofileRoutes(db));
 app.use("/api/myentry", myEntriesRoutes(db));
 

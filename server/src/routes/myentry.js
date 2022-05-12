@@ -8,7 +8,6 @@ module.exports = (db) => {
     // req.session.user_id = req.params.id; //set session user_id to id of user being viewed
     let query = `SELECT * FROM entries WHERE id = $1;`;
     queryParams = [cookieId];
-    console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
       .then((data) => {
         const user = data.rows[0];
