@@ -204,17 +204,20 @@ export default function EditProfile() {
   }
 
   return (
+    <div className="form">
     <div className="outer_form_container">
 
-    <Container size="sm">
+    <Container size="sm" id="move">
       <form noValidate autoComplete="off" className="form_fields" id="edit-profile-form">
         <TextField
+       
         sx={{
           "& .MuiInputLabel-root": {color: '#6A18A8'},
           "& .MuiOutlinedInput-root": {
           "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
           },
-          mb: '20px'
+          mb: '20px',
+          width: '100%',
         }}
           className="text_field"
           onChange={(e) => setProfileImageUrl(e.target.value)}
@@ -743,6 +746,7 @@ export default function EditProfile() {
         </Button>
       </div>
 
+    </div>
     </div>
   )
 }

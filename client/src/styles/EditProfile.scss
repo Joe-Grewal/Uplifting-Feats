@@ -1,15 +1,23 @@
-#buttons_icons {
-  display: flex;
-  justify-content: space-evenly;
+.form {
+  width: 70%;
+  margin: auto;
+
 }
 
 .outer_form_container {
-  padding-top: 40px;
+  margin-top: 100px;
   padding-bottom: 40px;
   background-color: #E1D0EE;
   border-radius: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#move {
+  padding-top: 40px;
   margin: auto;
-  width: 70%;
 }
 
 .text_field {
@@ -17,6 +25,7 @@
   border-radius: 20px;
   background-color: #F2EDF5;
 }
+
 
 #face {
   color: #6A18A8
