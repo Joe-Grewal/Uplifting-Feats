@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Profile from "../images/Abby.jpg";
+// import Profile from "../images/Abby.jpg";
 
 export default function Bio() {
   const [name, setName] = useState("");
@@ -16,7 +16,7 @@ export default function Bio() {
 
   const getBio = async () => {
     try {
-      let response = await axios.get("/api/users/3");
+      let response = await axios.get("/api/myprofile");
       // console.log(response);
       setName(response.data.user.user_name);
       setAge(response.data.user.age);
@@ -27,6 +27,7 @@ export default function Bio() {
       setDiet(response.data.user.diet_type);
       setPrimaryWorkout(response.data.user.primary_workout);
       setWeight(response.data.user.weight);
+      setProfileImg(response.data.user.profile_img_url);
     } catch (error) {
       console.log(error);
     }
@@ -38,7 +39,7 @@ export default function Bio() {
 
   return (
     <div className="picturebox">
-      <img src={Profile} alt="profile" className="profile_picture_frame" />
+      <img src={profileImg} alt="profile" className="profile_picture_frame" />
       <section>
         <div className="name_and_goal">
           <p className="name">{name}</p>
