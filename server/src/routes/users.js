@@ -25,6 +25,21 @@ module.exports = (db) => {
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
       .then((data) => {
+        const user = data.rows;
+        res.json({ user });
+      })
+      .catch((err) => {
+        res.status(500).json({ error: err.message });
+      });
+  });
+
+  //get all logs for a single user
+  router.get("/:id/log", (req, res) => {
+    const id = req.session.user_id;
+    req.session.user_id = req.params.id; //set session user_id to id of user being viewed
+    let query = `SELECT * FROM users WHERE id = ${id}`;
+    db.query(query)
+      .then((data) => {
         const user = data.rows[0];
         res.json({ user });
       })
@@ -32,6 +47,7 @@ module.exports = (db) => {
         res.status(500).json({ error: err.message });
       });
   });
+
   //create a user
   router.post("/", (req, res) => {
     req.session.user_id = req.params.id;
