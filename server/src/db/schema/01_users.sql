@@ -17,5 +17,6 @@ CREATE TABLE users (
   primary_workout VARCHAR(25) NOT NULL,
   about_me TEXT NOT NULL,
   tips TEXT NOT NULL,
-  future_goals TEXT NOT NULL
+  future_goals TEXT NOT NULL,
+  bmi  float(4) NOT NULL
   );
