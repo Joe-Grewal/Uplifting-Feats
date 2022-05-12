@@ -217,7 +217,7 @@ export default function EditProfile() {
           "& > fieldset": { borderColor: "#6A18A8", borderRadius: '20px'},
           },
           mb: '20px',
-          width: '100%',
+          // width: '100%',
         }}
           className="text_field"
           onChange={(e) => setProfileImageUrl(e.target.value)}

@@ -34,14 +34,11 @@ export default function Filters2 () {
             "& .MuiOutlinedInput-root": { bgcolor: 'white', borderRadius: '20px',
             "& > fieldset": { color: 'white', borderColor: "white", borderRadius: '20px'},
           },
-          hover: 'white',
           borderRadius: '20px',
           mb: '10px'
           }}
-          className="text_field"
-          color="secondary"
           >
-            <label for="age"><h3>Age:</h3></label>
+            <label for="age"><h3>Age Range:</h3></label>
         <Select
           className="dropdown_menu"
           fullWidth
@@ -50,6 +47,8 @@ export default function Filters2 () {
           id="age-select"
           label="Age*"
           value={age}
+          variant="outlined"
+          color="secondary"
         >
         <MenuItem value={"20-25"}>20 - 25</MenuItem>
         <MenuItem value={"25-30"}>25 - 30</MenuItem>
@@ -85,8 +84,6 @@ export default function Filters2 () {
           borderRadius: '20px',
           mb: '10px'
           }}
-          className="text_field"
-          color="secondary"
           >
             <label for="gender"><h3>Gender:</h3></label>
         <Select
@@ -96,7 +93,9 @@ export default function Filters2 () {
           labelId="gender-select-label"
           id="gender-select"
           label="Gender*"
-          value={gender}      
+          value={gender}     
+          variant="outlined"
+          color="secondary"
         >
         <MenuItem value={"male"}>Male</MenuItem>
         <MenuItem value={"female"}>Female</MenuItem>
@@ -120,7 +119,7 @@ export default function Filters2 () {
           borderRadius: '20px',
           mb: '10px'
           }}
-          className="text_field"
+          variant="outlined"
           color="secondary"
           // id="outlined-height-end-adornment"
           InputProps={{
@@ -146,8 +145,6 @@ export default function Filters2 () {
           borderRadius: '20px',
           mb: '10px'
           }}
-          className="text_field"
-          color="secondary"
           >
             <label for="Diet Type"><h3>Diet Type:</h3></label>
 
@@ -159,6 +156,8 @@ export default function Filters2 () {
           labelId="Diet-Type"
           label="Diet Type"
           value={dietType}
+          variant="outlined"
+          color="secondary"
         >
         <MenuItem value={"vegetarian"}>Vegetarian</MenuItem>
         <MenuItem value={"keto"}>Keto</MenuItem>
@@ -186,9 +185,6 @@ export default function Filters2 () {
           borderRadius: '20px',
           mb: '10px'
           }}
-          className="text_field"
-          color="secondary"
-          // variant="outlined"
           >
             <label for="Primary Workout"><h3>Primary Workout:</h3></label>
         <Select 
@@ -198,6 +194,8 @@ export default function Filters2 () {
           labelId="Primary-Workout"
           label="Primary Workout"
           value={primaryWorkout}
+          variant="outlined"
+          color="secondary"
         >
         <MenuItem value={"cardio"}>Cardio</MenuItem>
         <MenuItem value={"hiit"}>HIIT</MenuItem>
