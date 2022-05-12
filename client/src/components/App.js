@@ -7,6 +7,7 @@ import My_Profile_logged_in from "../pages/My_Profile_logged_in";
 import My_Profile_NOT_logged_in from "../pages/My_Profile_NOT_logged_in";
 import EditProfile from "./EditProfile";
 import Login from "./Login";
+import Search from "../pages/Search";
 
 export default function App() {
   return (
@@ -14,14 +15,15 @@ export default function App() {
       <Nav />
       {/* <My_Profile_logged_in/> */}
       {/* <My_Profile_NOT_logged_in/> */}
-      <Router>
+      <Search />
+      {/* <Router>
         <Routes>
         <Route path="/" element={<My_Profile_NOT_logged_in/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/My_Profile" element={<My_Profile_logged_in/>}/>
           <Route path="/update_profile" element={<EditProfile/>}/>
         </Routes>
-      </Router>
+      </Router> */}
     </>
   );
 }

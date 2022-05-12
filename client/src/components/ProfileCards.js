@@ -1,31 +1,37 @@
 import React from "react";
 import ProfilePic from "../images/Abby.jpg";
-import Like from "../images/like.svg";
-import Share from "../images/share.svg";
-
+import BSeeProfile from "./BSeeProfile"
+import Like_small from "./Like_small"
+import Share_small from "./Share_small"
 export default function ProfileCards () {
 
   return (
+    <div className="profile_card_container_spacing">
 
     <div className="outer_profile_card_container">
-      
-      <div className="profile_card_one">
+
+      <div className="profile_card_image">
         <img src={ProfilePic} alt="profile" className="tiny_profile_image"/>
+      </div>
+
+      <div className="profile_card_copy">
         <h3 className="profile_name">Abby Mylastnameis</h3>
       </div>
 
-      <div className="profile_card_two">
-        <button className="see_profile_button"><h2>SEE PROFILE</h2></button>
+      <div className="see_profile_button">
+        <BSeeProfile/>
+      </div>
+      
+      <div className="likes">
+        <Like_small/>
       </div>
 
-      <div className="profile_card_three">
-        <img src={Like} alt="like" className="like_image"/>
-        <p className="number_of_likes_shares"><strong>12345<span className="likes_shares"> LIKES</span></strong></p>
-        <img src={Share} alt="share" className="share_image"/>
-        <p className="number_of_likes_shares"><strong>12345<span className="likes_shares"> SHARES</span></strong></p>
+      <div className="shares">
+        <Share_small/>
       </div>
-
 
    </div> 
+
+   </div>
   )
 }
