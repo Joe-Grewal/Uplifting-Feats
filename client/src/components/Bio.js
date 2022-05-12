@@ -1,22 +1,43 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Profile from "../images/Abby.jpg";
+// import Profile from "../images/Abby.jpg";
 
 export default function Bio() {
   const [name, setName] = useState("");
-  const [age, setAge] = useState("");
+  const [age, setAge] = useState(0);
   const [profileImg, setProfileImg] = useState(""); //this doesn't return the image
   const [fitGoal, setFitGoal] = useState("");
   const [gender, setGender] = useState("");
-  const [height, setHeight] = useState("");
+  const [height, setHeight] = useState(0);
   const [country, setCountry] = useState("");
   const [diet, setDiet] = useState("");
   const [primaryWorkout, setPrimaryWorkout] = useState("");
-  const [weight, setWeight] = useState("");
+  const [weight, setWeight] = useState(0);
+  const [bmi, setBmi] = useState(0);
+
+  const options = {
+    method: "GET",
+    url: "https://fitness-calculator.p.rapidapi.com/bmi",
+    params: { age: "25", weight: "65", height: "180" },
+    headers: {
+      "X-RapidAPI-Host": "fitness-calculator.p.rapidapi.com",
+      "X-RapidAPI-Key": "39af0b6b19mshcb25c6004b475d1p1c84b4jsn4141178f10aa",
+    },
+  };
+
+  axios
+    .request(options)
+    .then(function (response) {
+      console.log(response.data);
+      setBmi(response.data.health);
+    })
+    .catch(function (error) {
+      console.error(error);
+    });
 
   const getBio = async () => {
     try {
-      let response = await axios.get("/api/users/3");
+      let response = await axios.get("/api/myprofile");
       // console.log(response);
       setName(response.data.user.user_name);
       setAge(response.data.user.age);
@@ -27,6 +48,7 @@ export default function Bio() {
       setDiet(response.data.user.diet_type);
       setPrimaryWorkout(response.data.user.primary_workout);
       setWeight(response.data.user.weight);
+      setProfileImg(response.data.user.profile_img_url);
     } catch (error) {
       console.log(error);
     }
@@ -34,11 +56,12 @@ export default function Bio() {
 
   useEffect(() => {
     getBio();
+    setBmi();
   }, []);
 
   return (
     <div className="picturebox">
-      <img src={Profile} alt="profile" className="profile_picture_frame" />
+      <img src={profileImg} alt="profile" className="profile_picture_frame" />
       <section>
         <div className="name_and_goal">
           <p className="name">{name}</p>
@@ -54,7 +77,7 @@ export default function Bio() {
           {diet} <span className="stick">|</span>{" "}
           <strong>Primary Workout:</strong> {primaryWorkout}{" "}
           <span className="stick">|</span> <strong>Weight:</strong> {weight}
-          lbs. <span className="stick">|</span> <strong>BMI:</strong> XXXX{" "}
+          lbs. <span className="stick">|</span> <strong>BMI:</strong> {bmi}{" "}
         </p>
       </section>
     </div>

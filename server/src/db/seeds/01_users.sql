@@ -1,7 +1,11 @@
 INSERT INTO users (user_name, first_name, last_name, email, password, profile_img_url, age, gender, height, weight, country, fitness_goal, diet_type, primary_workout, about_me, tips, future_goals)
-      VALUES('Joe_Grewal', 'Joe', 'Grewal', 'grewaljoe20@gmail.com', 'password', 
-      'https://media.istockphoto.com/photos/profile-view-of-athletic-man-drinking-water-in-a-gyms-locker-room-picture-id1217959406?k=20&m=1217959406&s=612x612&w=0&h=NwAcniqba_a-osIDLutKCaqjrXHfOT2qMi5qcDCRdrY=',
-      28, 'Male', 71, 200, 'Canada', 'Weight Gain', 'Carnivore', 'Strength Training', 'I will update this info later', 'I will update this info later', 'I will update this info later'),
+  VALUES
+  ('Joe_Grewal', 'Joe', 'Grewal', 'grewaljoe20@gmail.com', 'password', 
+  'https://media.istockphoto.com/photos/profile-view-of-athletic-man-drinking-water-in-a-gyms-locker-room-picture-id1217959406?k=20&m=1217959406&s=612x612&w=0&h=NwAcniqba_a-osIDLutKCaqjrXHfOT2qMi5qcDCRdrY=',
+  28, 'male', 71, 200, 'Canada', 'weight gain', 'carnivore', 'strength training', 
+  'Welcome! I originally started my fitness journey back during the early days of high school. I was very skinny at the time and was looking to put on some muscle to get stronger. I would quickly eat my packed lunch everyday and then use the school gym to lift weights for around 40min. I didn''t really know what I was doing at that time or have any sort of plan, but through consistency I started seeing results. Midway through high school I stopped being as consistent and eventually dropped my daily workouts after a period of time where the gym was closed for renovations. I didn’’t start working out on a consistent basis again until a few years after I finished high school. When I did eventually return to a daily workout routine, I changed my workouts from full body workouts to splits where I would target individual muscles on different days of the week.', 
+  'Focus on consistency rather than intensity when working out (at least the beginning). Rather than burning yourself out with heavy workouts that leave you feeling very sore the next day, try lifting weights at about 70 percent of your max lifting capacity. Using this approach would make it easier for you to transform the act of working out into a daily habit as well as allowing you to focus more on proper lifting form/technique. Once it has become established as a habit, you can then look to increase  the intensity of workouts and also diversify the types of exercises in your routine.', 
+  'To fix slight muscle imbalance between individual arms and put on 5-10 pounds of muscle mass while also burning off at least 10 pounds of fat. And adjusting my diet to include more healthy choices and less bad ones.'),
   ('abbyEF',
   'Abby',
   'EF',

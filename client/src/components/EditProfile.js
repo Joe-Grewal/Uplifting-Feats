@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import { Button, Container, TextField, FormControl, InputLabel, MenuItem, Select, IconButton, OutlinedInput, InputAdornment } from '@mui/material';
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
@@ -8,10 +8,44 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import FitnessCenterIcon from '@mui/icons-material/FitnessCenter';
 import SaveRoundedIcon from '@mui/icons-material/SaveRounded';
 import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
+import {useNavigate} from "react-router-dom";
 import axios from 'axios';
 import "../styles/EditProfile.scss"
 
 export default function EditProfile() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const getProfileInfo = async () => {
+      try {
+        let response = await axios.get("/api/myprofile");
+        // console.log(response);
+        setId(response.data.user.id);
+        setProfileImageUrl(response.data.user.profile_img_url);
+        setFirstName(response.data.user.first_name);
+        setLastName(response.data.user.last_name);
+        setUserName(response.data.user.user_name);
+        setEmail(response.data.user.email);
+        setPassword(response.data.user.password);
+        setConfirmPassword(response.data.user.password);
+        setAge(response.data.user.age);
+        setFitnessGoal(response.data.user.fitness_goal);
+        setGender(response.data.user.gender);
+        setHeight(response.data.user.height);
+        setCountry(response.data.user.country);
+        setDietType(response.data.user.diet_type);
+        setPrimaryWorkout(response.data.user.primary_workout);
+        setWeight(response.data.user.weight);
+        setAboutMe(response.data.user.about_me);
+        setHealthTips(response.data.user.tips);
+        setFutureGoals(response.data.user.future_goals);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getProfileInfo()
+  }, [])
 
   const [values, setValues] = useState({
     password: '',
@@ -31,6 +65,7 @@ export default function EditProfile() {
   };
 
   //form input values below
+  const [id, setId] = useState("");
   const [profileImageUrl, setProfileImageUrl] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -96,12 +131,24 @@ export default function EditProfile() {
 
     //empty all fields by grabbing form id and setting menu values to null
     document.getElementById("edit-profile-form").reset(); 
+    setProfileImageUrl("");
+    setFirstName("");
+    setLastName("");
+    setUserName("");
+    setEmail("");
+    setAge("");
+    setHeight("");
     setGender("");
+    setCountry("");
+    setWeight("");
     setFitnessGoal("");
     setDietType("");
     setPrimaryWorkout("");
     setPassword("");
     setConfirmPassword("");
+    setAboutMe("");
+    setHealthTips("");
+    setFutureGoals("");
   }
 
   //on save profile button click
@@ -199,7 +246,8 @@ export default function EditProfile() {
       confirmPassword && age && gender && height && country && fitnessGoal &&
       weight && dietType && primaryWorkout && aboutMe && healthTips && futureGoals
       && (password === confirmPassword)) {
-      axios.put("api/users/1", { user_name: userName, first_name: firstName, last_name: lastName, email: email, password: password, profile_img_url: profileImageUrl, age: age, gender: gender, height: height, weight: weight, country: country, fitness_goal: fitnessGoal, diet_type: dietType, primary_workout: primaryWorkout, about_me: aboutMe, tips: healthTips, future_goals: futureGoals });
+      axios.put(`api/users/${id}`, { user_name: userName, first_name: firstName, last_name: lastName, email: email, password: password, profile_img_url: profileImageUrl, age: age, gender: gender, height: height, weight: weight, country: country, fitness_goal: fitnessGoal, diet_type: dietType, primary_workout: primaryWorkout, about_me: aboutMe, tips: healthTips, future_goals: futureGoals })
+        .then(navigate("/My_Profile"));
     }
   }
 
@@ -220,6 +268,7 @@ export default function EditProfile() {
           // width: '100%',
         }}
           className="text_field"
+          value={profileImageUrl}
           onChange={(e) => setProfileImageUrl(e.target.value)}
           label="Profile Image Url" 
           variant="outlined" 
@@ -248,6 +297,7 @@ export default function EditProfile() {
           mr: '1%'
           }}
           className="text_field"
+          value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           label="First Name"
           variant="outlined"
@@ -266,6 +316,7 @@ export default function EditProfile() {
           ml: '1%'
           }}
           className="text_field"
+          value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           label="Last Name"
           variant="outlined"
@@ -293,6 +344,7 @@ export default function EditProfile() {
             ),
           }}
           className="text_field"
+          value={userName}
           onChange={(e) => setUserName(e.target.value)}
           placeholder="Username *"
           label="Username"
@@ -312,6 +364,7 @@ export default function EditProfile() {
           ml: '1%'
           }}
           className="text_field"
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
           label="Email"
           variant="outlined"
@@ -444,6 +497,7 @@ export default function EditProfile() {
             mr: '1%',
           }}
           className="text_field"
+          value={age}
           onChange={(e) => setAge(e.target.value)}
           label="Age"
           variant="outlined"
@@ -498,6 +552,7 @@ export default function EditProfile() {
             endAdornment: <InputAdornment position="end">inches</InputAdornment>,
           }}
           className="text_field"
+          value={height}
           onChange={(e) => setHeight(e.target.value)}
           label="Height"
           variant="outlined"
@@ -518,6 +573,7 @@ export default function EditProfile() {
             mr: '1%',
           }}
           className="text_field"
+          value={country}
           onChange={(e) => setCountry(e.target.value)}
           label="Country"
           variant="outlined"
@@ -573,6 +629,7 @@ export default function EditProfile() {
             endAdornment: <InputAdornment position="end">lbs</InputAdornment>,
           }}
           className="text_field"
+          value={weight}
           onChange={(e) => setWeight(e.target.value)}
           label="Weight"
           variant="outlined"
@@ -673,6 +730,7 @@ export default function EditProfile() {
           mb: '20px',
         }}
           className="text_field"
+          value={aboutMe}
           onChange={(e) => setAboutMe(e.target.value)}
           label="About Me"
           variant="outlined"
@@ -692,6 +750,7 @@ export default function EditProfile() {
           mb: '20px',
         }}
           className="text_field"
+          value={healthTips}
           onChange={(e) => setHealthTips(e.target.value)}
           label="Health Tips"
           variant="outlined"
@@ -711,6 +770,7 @@ export default function EditProfile() {
           mb: '20px',
         }} 
           className="text_field"
+          value={futureGoals}
           onChange={(e) => setFutureGoals(e.target.value)}
           label="Future Goals"
           variant="outlined"

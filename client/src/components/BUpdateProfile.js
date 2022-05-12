@@ -28,12 +28,10 @@ export default function BUpdateProfile () {
     <ThemeProvider theme={theme}>
       <div className="update_profile_button">
       <Button
-      onClick={() => {
-      alert('clicked');
-      }}
-      variant="contained">
+        href='update_profile'
+        variant="contained">
         UPDATE PROFILE
-    </Button>
+      </Button>
     </div>
   </ThemeProvider>
   )
