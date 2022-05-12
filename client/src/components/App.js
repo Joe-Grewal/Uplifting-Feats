@@ -2,6 +2,7 @@ import React from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import "../styles/App.scss";
 import Nav from "./Nav";
+import Filter from "./Filter";
 import My_Profile_logged_in from "../pages/My_Profile_logged_in";
 import My_Profile_NOT_logged_in from "../pages/My_Profile_NOT_logged_in";
 import EditProfile from "./EditProfile";
