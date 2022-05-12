@@ -15,25 +15,39 @@ export default function Bio() {
   const [weight, setWeight] = useState(0);
   const [bmi, setBmi] = useState(0);
 
-  const options = {
-    method: "GET",
-    url: "https://fitness-calculator.p.rapidapi.com/bmi",
-    params: { age: "25", weight: "65", height: "180" },
-    headers: {
-      "X-RapidAPI-Host": "fitness-calculator.p.rapidapi.com",
-      "X-RapidAPI-Key": "39af0b6b19mshcb25c6004b475d1p1c84b4jsn4141178f10aa",
-    },
-  };
-
-  axios
-    .request(options)
-    .then(function (response) {
-      console.log(response.data);
-      setBmi(response.data.health);
-    })
-    .catch(function (error) {
-      console.error(error);
-    });
+  // currently not updating values in database(edit form to include bmi as read only)
+  useEffect(() => {
+    if (age && weight && height) {
+      const options = {
+        method: "GET",
+        url: "https://fitness-calculator.p.rapidapi.com/bmi",
+        params: { age, weight: weight * 0.454, height: height * 2.54 },
+        headers: {
+          "X-RapidAPI-Host": "fitness-calculator.p.rapidapi.com",
+          "X-RapidAPI-Key":
+            "39af0b6b19mshcb25c6004b475d1p1c84b4jsn4141178f10aa",
+        },
+      };
+      console.log("age", age);
+      console.log("height", height);
+      console.log("weight", weight);
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+          console.log(response.data[0]);
+          const result = response.data;
+          console.log("result", result);
+          console.log("result bmi", result.bmi);
+          console.log(Object.values(result.data)[0]);
+          //setHeight(Object.values(result.data)[0]); // set this for bmi when database updated
+          setBmi(Object.values(result.data)[0]);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+  }, [age, weight, height]);
 
   const getBio = async () => {
     try {
@@ -49,6 +63,7 @@ export default function Bio() {
       setPrimaryWorkout(response.data.user.primary_workout);
       setWeight(response.data.user.weight);
       setProfileImg(response.data.user.profile_img_url);
+      setBmi(response.data.user.bmi);
     } catch (error) {
       console.log(error);
     }
@@ -56,7 +71,6 @@ export default function Bio() {
 
   useEffect(() => {
     getBio();
-    setBmi();
   }, []);
 
   return (
