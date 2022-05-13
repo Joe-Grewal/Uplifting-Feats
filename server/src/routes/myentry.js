@@ -1,3 +1,4 @@
+const { json } = require("express");
 const express = require("express");
 const router = express.Router();
 
@@ -11,6 +12,7 @@ module.exports = (db) => {
     db.query(query, queryParams)
       .then((data) => {
         const user = data.rows[0];
+        user.my_diet = user.my_diet.split(",");
         res.json({ user });
       })
       .catch((err) => {
