@@ -7,8 +7,8 @@ import RestaurantMenuRoundedIcon from '@mui/icons-material/RestaurantMenuRounded
 import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
 import SaveRoundedIcon from '@mui/icons-material/SaveRounded';
 import axios from "axios";
-import BResetAll from './BResetAll';
-import BSaveProfile from './BSaveProfile';
+import BResetAll from '../components/BResetAll';
+import BSaveProfile from '../components/BSaveProfile';
 import "../styles/CreateEntryForm.scss"
 import "../styles/EditProfile.scss"
 
@@ -127,7 +127,7 @@ export default function CreateEntryForm() {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <AutoStoriesIcon />
+                <AutoStoriesIcon id="book"/>
               </InputAdornment>
             ),
           }}
@@ -198,7 +198,7 @@ export default function CreateEntryForm() {
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <RestaurantMenuRoundedIcon />
+                <RestaurantMenuRoundedIcon id="resto"/>
               </InputAdornment>
             ),
           }}
@@ -207,11 +207,11 @@ export default function CreateEntryForm() {
         <IconButton 
           disabled={inputFields.length === 1} 
           onClick={() => handleRemoveFields(i)}>
-          <RemoveRoundedIcon />
+          <RemoveRoundedIcon id="minus"/>
         </IconButton>
         <IconButton
           onClick={handleAddFields}>
-          <AddRoundedIcon />
+          <AddRoundedIcon id="add"/>
         </IconButton>
           </div>
         )) }

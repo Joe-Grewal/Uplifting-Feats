@@ -29,7 +29,7 @@ export default function BSaveProfile (props) {
       <Button id="save_profile_button"
       onClick={props.onClick}
       variant="contained">
-        SAVE PROFILE
+        SAVE CHANGES
     </Button>
   </ThemeProvider>
   )

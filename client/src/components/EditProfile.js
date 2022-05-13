@@ -257,7 +257,7 @@ export default function EditProfile() {
     <div className="form">
     <div className="outer_form_container">
 
-    <Container size="sm" id="move">
+    <Container size="sm">
       <form noValidate autoComplete="off" className="form_fields" id="edit-profile-form">
         <TextField
         sx={{
