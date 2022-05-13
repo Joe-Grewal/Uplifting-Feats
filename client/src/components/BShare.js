@@ -8,9 +8,9 @@ export default function BShare () {
   const theme = createTheme ({
     typography: {
       fontFamily: [
-        "Hoss Round"
+        'Quicksand', 'sans-serif',
       ].join(','),
-      fontSize:25,
+      fontSize: 25,
       fontWeightMedium:700,
     },
     palette: {

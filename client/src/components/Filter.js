@@ -45,7 +45,6 @@ export default function Filters2 () {
           onChange={(e) => setAge(e.target.value)}
           labelId="age-select-label"
           id="age-select"
-          label="Age*"
           value={age}
           variant="outlined"
           color="secondary"
@@ -92,7 +91,6 @@ export default function Filters2 () {
           onChange={(e) => setGender(e.target.value)}
           labelId="gender-select-label"
           id="gender-select"
-          label="Gender*"
           value={gender}     
           variant="outlined"
           color="secondary"
@@ -126,7 +124,6 @@ export default function Filters2 () {
             endAdornment: <InputAdornment position="end">inches</InputAdornment>,
           }}
           onChange={(e) => setHeight(e.target.value)}
-          label="height"
         />
       </div>
 
@@ -154,7 +151,6 @@ export default function Filters2 () {
           onChange={(e) => setDietType(e.target.value)}
           id="diet-type-select"
           labelId="Diet-Type"
-          label="Diet Type"
           value={dietType}
           variant="outlined"
           color="secondary"
@@ -192,7 +188,6 @@ export default function Filters2 () {
           onChange={(e) => setPrimaryWorkout(e.target.value)}
           id="primary-workout-select"
           labelId="Primary-Workout"
-          label="Primary Workout"
           value={primaryWorkout}
           variant="outlined"
           color="secondary"
@@ -231,7 +226,6 @@ export default function Filters2 () {
           id="fitness-goal-select"
           labelId="Fitness-Goal-Select"
           fullWidth
-          label="Fitness Goal"
           value={fitnessGoal}
           variant="outlined"
           color="secondary"

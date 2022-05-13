@@ -26,8 +26,8 @@
 }
 
 .logo_link {
-  font-family: "Hoss Round";
-  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
   font-size: 1.33em;
   padding: 10px;
   color: #E32EB0;
@@ -35,8 +35,8 @@
 }
 
 .right_links {
-  font-family: "Hoss Round";
-  font-weight: regular;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
   font-size: 1.125em;
   padding: 10px;
   color: #6A18A8;
@@ -67,8 +67,8 @@
 }
 
 .name {
-  font-family: "Hoss Round";
-  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
   font-size: 1.33em;
   display: inline;
   padding-right: 10px;
@@ -86,8 +86,8 @@
 }
 
 .profilestats {
-  font-family: "Hoss Round";
-  font-weight: regular;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
   font-size: 1em;
   margin: 0;
   text-align: center;
@@ -96,20 +96,21 @@
 }
 
 .stick {
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.25em;
-  font-weight: 600;
+  font-weight: 700;
   color: #E32EB0;
 }
 
 p {
-  font-family: "Hoss Round";
-  font-weight: regular;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
   font-size: 1em;
 }
 
 span {
-  font-family: "Hoss Round";
-  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
   font-size: 1em;
 }
 
@@ -156,8 +157,8 @@ span {
 }
 
 h3 {
-  font-family: "Hoss Round";
-  font-weight: bold;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
   font-size: 1.25em;
   text-align: center;
   color: #6A18A8;
@@ -293,14 +294,14 @@ h3 {
 
   .number_of_likes { 
     // margin: -10%;
-    font-family: "Hoss Round";
-    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
     grid-area: 1 / 2 / 2 / 3; 
   }
 
   .likes_pink {
-    font-family: "Hoss Round";
-    font-weight: bold;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
     color: #E32EB0;
   }
 
