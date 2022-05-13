@@ -8,6 +8,7 @@ import My_Profile_NOT_logged_in from "../pages/My_Profile_NOT_logged_in";
 import ProfileForm from "../pages/ProfileForm";
 import Login from "./Login";
 import Search from "../pages/Search";
+import EntryForm from "../pages/EntryForm"
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       {/* <EditProfile /> */}
       {/* <Search /> */}
       {/* <Profile_Form/> */}
+      {/* <EntryForm/> */}
 
       <Router>
         <Routes>
