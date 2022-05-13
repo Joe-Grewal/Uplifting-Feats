@@ -15,15 +15,16 @@ export default function App() {
       <Nav />
       {/* <My_Profile_logged_in/> */}
       {/* <My_Profile_NOT_logged_in/> */}
+      {/* <EditProfile /> */}
       <Search />
-      {/* <Router>
+      <Router>
         <Routes>
         <Route path="/" element={<My_Profile_NOT_logged_in/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/My_Profile" element={<My_Profile_logged_in/>}/>
           <Route path="/update_profile" element={<EditProfile/>}/>
         </Routes>
-      </Router> */}
+      </Router>
     </>
   );
 }

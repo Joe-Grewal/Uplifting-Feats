@@ -8,9 +8,9 @@ export default function BLike () {
   const theme = createTheme ({
     typography: {
       fontFamily: [
-        "Hoss Round"
+        'Quicksand', 'sans-serif',
       ].join(','),
-      fontSize:25,
+      fontSize: 16,
       fontWeightMedium:700,
     },
     palette: {

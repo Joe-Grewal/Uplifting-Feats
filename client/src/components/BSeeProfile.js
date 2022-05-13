@@ -6,7 +6,7 @@ export default function BSeeProfile () {
   const theme = createTheme ({
     typography: {
       fontFamily: [
-        "Hoss Round"
+        'Quicksand', 'sans-serif',
       ].join(','),
       fontSize: 22,
       fontWeightMedium:700,

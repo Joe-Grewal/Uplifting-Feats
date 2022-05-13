@@ -10,6 +10,7 @@ import SaveRoundedIcon from '@mui/icons-material/SaveRounded';
 import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
 import {useNavigate} from "react-router-dom";
 import axios from 'axios';
+import BResetAll from './BResetAll';
 import "../styles/EditProfile.scss"
 
 export default function EditProfile() {
@@ -258,7 +259,6 @@ export default function EditProfile() {
     <Container size="sm" id="move">
       <form noValidate autoComplete="off" className="form_fields" id="edit-profile-form">
         <TextField
-       
         sx={{
           "& .MuiInputLabel-root": {color: '#6A18A8'},
           "& .MuiOutlinedInput-root": {
@@ -481,7 +481,6 @@ export default function EditProfile() {
                 </IconButton>
               </InputAdornment>
             }
-            label="Password"
           />
         </FormControl>
         </div>
@@ -785,6 +784,8 @@ export default function EditProfile() {
         
       </form>
     </Container>
+
+    </div>
       <div id="buttons_icons">
         <Button
           onClick={handleReset}
@@ -804,9 +805,8 @@ export default function EditProfile() {
         >
           Save Profile
         </Button>
+        <BResetAll/>
       </div>
-
-    </div>
     </div>
   )
 }

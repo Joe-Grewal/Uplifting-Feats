@@ -6,9 +6,9 @@ export default function BBackToProfile () {
   const theme = createTheme ({
     typography: {
       fontFamily: [
-        "Hoss Round"
+        'Quicksand', 'sans-serif',
       ].join(','),
-      fontSize: 22,
+      fontSize: 16,
       fontWeightMedium:700,
     },
     palette: {

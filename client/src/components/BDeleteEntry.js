@@ -6,7 +6,7 @@ export default function BDeleteEntry () {
   const theme = createTheme ({
     typography: {
       fontFamily: [
-        "Hoss Round"
+        'Quicksand', 'sans-serif',
       ].join(','),
       fontSize: 16,
       fontWeightMedium:700,
