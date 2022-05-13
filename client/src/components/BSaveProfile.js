@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 
-export default function BSaveProfile () {
+export default function BSaveProfile (props) {
   const theme = createTheme ({
     typography: {
       fontFamily: [
@@ -27,9 +27,7 @@ export default function BSaveProfile () {
   return (
     <ThemeProvider theme={theme}>
       <Button id="save_profile_button"
-      onClick={() => {
-      alert('clicked');
-      }}
+      onClick={props.onClick}
       variant="contained">
         SAVE PROFILE
     </Button>
