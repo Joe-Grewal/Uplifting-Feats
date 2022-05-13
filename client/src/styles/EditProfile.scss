@@ -77,3 +77,18 @@
 #primary-workout-select {
   color: #6A18A8
 }
+
+.reset_and_save_buttons_container {
+  display: flex;
+  padding: 40px;
+  justify-content: center;
+
+}
+
+.reset_button {
+  margin-right: 10px; 
+}
+
+.save_button {
+  margin-left: 10px; 
+}

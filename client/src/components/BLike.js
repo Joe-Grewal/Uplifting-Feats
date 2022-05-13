@@ -10,7 +10,7 @@ export default function BLike () {
       fontFamily: [
         'Quicksand', 'sans-serif',
       ].join(','),
-      fontSize: 16,
+      fontSize: 25,
       fontWeightMedium:700,
     },
     palette: {

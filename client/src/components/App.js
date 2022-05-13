@@ -5,7 +5,7 @@ import Nav from "./Nav";
 import Filter from "./Filter";
 import My_Profile_logged_in from "../pages/My_Profile_logged_in";
 import My_Profile_NOT_logged_in from "../pages/My_Profile_NOT_logged_in";
-import EditProfile from "./EditProfile";
+import ProfileForm from "../pages/ProfileForm";
 import Login from "./Login";
 import Search from "../pages/Search";
 
@@ -16,13 +16,15 @@ export default function App() {
       {/* <My_Profile_logged_in/> */}
       {/* <My_Profile_NOT_logged_in/> */}
       {/* <EditProfile /> */}
-      <Search />
+      {/* <Search /> */}
+      {/* <Profile_Form/> */}
+
       <Router>
         <Routes>
-        <Route path="/" element={<My_Profile_NOT_logged_in/>}/>
+          <Route path="/" element={<My_Profile_NOT_logged_in/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/My_Profile" element={<My_Profile_logged_in/>}/>
-          <Route path="/update_profile" element={<EditProfile/>}/>
+          <Route path="/update_profile" element={<ProfileForm/>}/>
         </Routes>
       </Router>
     </>
