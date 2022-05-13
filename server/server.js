@@ -39,6 +39,7 @@ const sharesRoutes = require("./src/routes/shares.js");
 const filterRoutes = require("./src/routes/filter.js");
 const myprofileRoutes = require("./src/routes/myprofile.js");
 const myEntriesRoutes = require("./src/routes/myentry.js");
+const updateBmiRoutes = require("./src/routes/bmi.js");
 //const samplehomeRoutes = require("./src/routes/samplehome.js");
 
 app.use("/api/login", loginRoutes(db));
@@ -49,6 +50,7 @@ app.use("/api/shares", sharesRoutes(db));
 app.use("/api/filter", filterRoutes(db));
 app.use("/api/myprofile", myprofileRoutes(db));
 app.use("/api/myentry", myEntriesRoutes(db));
+app.use("/api/updatebmi", updateBmiRoutes(db));
 
 app.post("api/logout", (req, res) => {
   req.session = null;
