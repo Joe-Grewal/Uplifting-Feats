@@ -34,14 +34,13 @@ export default function Bio() {
       axios
         .request(options)
         .then(function (response) {
-          console.log(response.data);
-          console.log(response.data[0]);
-          const result = response.data;
-          console.log("result", result);
-          console.log("result bmi", result.bmi);
-          console.log(Object.values(result.data)[0]);
-          //setHeight(Object.values(result.data)[0]); // set this for bmi when database updated
-          setBmi(Object.values(result.data)[0]);
+          const bmi = response.data.data.bmi;
+          const userDetails = JSON.parse(localStorage.getItem("user_details"));
+          console.log(userDetails.user.id);
+          axios.put(`/api/updatebmi/${userDetails.user.id}`, {
+            bmi: bmi,
+          });
+          setBmi(bmi);
         })
         .catch(function (error) {
           console.error(error);
