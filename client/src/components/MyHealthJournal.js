@@ -10,7 +10,7 @@ import BDeleteEntry from "./BDeleteEntry";
 export default function MyHealthJournal() {
   const [entryname, setEntryname] = useState("");
   const [story, setStory] = useState("");
-  const [mydiet, setmyDiet] = useState("");
+  const [mydiet, setmyDiet] = useState([]);
   const [myworkout, setmyWorkout] = useState("");
 
   const getEntries = async () => {
@@ -50,9 +50,18 @@ export default function MyHealthJournal() {
         <p> {myworkout}</p>
       </div>
 
-      <div className="my_diet_diary">
+      {/* <div className="my_diet_diary">
         <h3>Diet Diary:</h3>
         <p> {mydiet}</p>
+      </div> */}
+      {/* map through mydiet and display each item in a list */}
+      <div className="my_diet_diary">
+        <h3>Diet Diary:</h3>
+        <ul>
+          {mydiet.map((item) => (
+            <li>{item}</li>
+          ))}
+        </ul>
       </div>
 
       <div className="bottom_w_buttons">
