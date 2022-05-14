@@ -1,6 +1,5 @@
 import React from "react";
-import BEditEntry from './BEditEntry'
-import BDeleteEntry from './BDeleteEntry'
+import BViewAllEntries from "./BViewAllEntries";
 
 export default function EntryCards () {
 
@@ -19,11 +18,11 @@ export default function EntryCards () {
           </div> 
       
           <div className="entry_card_edit_entry_button">
-            <BEditEntry/>
+            {/* <BEditEntry/> */}
           </div>
 
-          <div className="entry_card_delete_entry_button">
-            <BDeleteEntry/>
+          <div className="entry_card_view_entry_button">
+            <BViewAllEntries/>
           </div>
 
           <div className="entry_preview">

@@ -9,6 +9,10 @@ import ProfileForm from "../pages/ProfileForm";
 import Login from "./Login";
 import Search from "../pages/Search";
 import EntryForm from "../pages/EntryForm"
+import ProfileCards from "./ProfileCards"
+import EntryCards from "./EntryCards"
+import JournalEntries_logged_in from "../pages/JournalEntries_logged_in"
+import JournalEntries_NOT_logged_in from "../pages/JournalEntries_NOT_logged_in"
 
 export default function App() {
   return (
@@ -20,6 +24,9 @@ export default function App() {
       {/* <Search /> */}
       {/* <Profile_Form/> */}
       {/* <EntryForm/> */}
+      {/* <JournalEntries_logged_in />
+       <JournalEntries_NOT_logged_in /> */}
+      
 
       <Router>
         <Routes>
