@@ -185,6 +185,11 @@ h3 {
   justify-content: space-between
 }
 
+.health_journal_title {
+  margin: auto;
+  padding-right: 20px;
+}
+
 /*buttons*/
 // .next {
 //   background-color: #5B70E0;
@@ -568,15 +573,13 @@ h3 {
 
   .profile_card_copy { 
     align-self: center;
-    padding-bottom: 10px;
+    // padding-bottom: 10px;
     grid-area: 1 / 2 / 2 / 3; 
   }
 
   .see_profile_button {
-    display: flex;
-    justify-content: center;
-    align-self: center;
-    padding-bottom: 10px;
+    margin: auto;
+    // padding-bottom: 10px;
     grid-area: 1 / 3 / 2 / 4; 
   }
 
@@ -584,54 +587,100 @@ h3 {
     width: 70%;
     margin: auto;
     align-self: center;
-    padding-bottom: 20px;
+    // padding-bottom: 20px;
     grid-area: 1 / 4 / 2 / 5; 
   }
   .shares { 
     width: 70%;
     margin: auto;
     align-self: center;
-    padding-bottom: 20px;
     padding-right: 20px;
     grid-area: 1 / 5 / 2 / 6; 
   }
 
   /* ENTRYCARD component -------------------*/
 
+  .entry_card_spacing_container {
+    margin-top: 40px;
+  }
+
 .outer_entry_card_container {
+  display: grid;
+  grid-template-columns: 2fr repeat(2, 1fr);
+  grid-template-rows: repeat(2, .125fr) 1fr;
+  grid-column-gap: 0px;
   border-radius: 20px;
   margin: auto;
-  display: grid;
   width: 70%;
-  height: 250px;
-  grid-template-columns: 1fr;
-  grid-template-rows: .25fr 1fr;
-  grid-row-gap: 20px;
   background-color: #E1D0EE;
 }
 
-.view_all_button_container { 
-  margin: 20px;
-  display: flex;
-  justify-content: flex-end;
-  grid-area: 1 / 1 / 3 / 2; 
+.entry_card_date { 
+  margin-top: 20px;
+  margin-left: 40px;
+  grid-area: 1 / 1 / 2 / 2; 
 }
 
-.view_all_button {
-  color: white;
-  border: none;
-  height: 40px;
-  width: 175px;
-  background-color: #B145CC;
-  border-radius: 20px;
+.entry_card_entry_name { 
+  margin-left: 40px;
+  grid-area: 2 / 1 / 3 / 2;
 }
+
+.entry_name {
+  text-align: left;
+}
+
+.entry_card_edit_entry_button { 
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 20px;
+  grid-area: 1 / 2 / 3 / 3;
+}
+
+
+.entry_card_delete_entry_button { 
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-right: 10px;
+  grid-area: 1 / 3 / 3 / 4;
+}
+
+.entry_card_view_entry_button { 
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-top: 20px;
+  margin-right: 10px;
+  grid-area: 1 / 3 / 3 / 4;
+}
+
+.button_spacing_container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+// .view_all_button {
+//   color: white;
+//   border: none;
+//   // height: 40px;
+//   // width: 175px;
+//   background-color: #B145CC;
+//   border-radius: 20px;
+// }
 
   .entry_preview { 
+  grid-area: 3 / 1 / 4 / 4;
   border-radius: 20px;
-  margin: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
   background-color: #DAF4F5;
   padding: 0 20px 10px;
-  grid-area: 2 / 1 / 3 / 2; 
   overflow: scroll;
 }
 

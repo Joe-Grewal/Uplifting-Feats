@@ -33,14 +33,14 @@ export default function MyHealthJournal() {
     <div className="outer_container2">
       <div className="my_health_journal_w_buttons">
         <BPrevious />
-        <h3>My Health Journal</h3>
+        <div className="health_journal_title"><h3>My Health Journal</h3></div>
         <BNext />
       </div>
 
       <div className="entry">
-        <h3 className="entry_name">Entry Name: {entryname}</h3>
+        <h3 className="entry_name">{entryname}</h3>
         <span>
-          <strong>Entry Date:</strong>
+          <strong>Date:</strong>
         </span>
         <p>{story}</p>
       </div>

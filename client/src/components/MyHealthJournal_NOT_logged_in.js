@@ -12,11 +12,11 @@ export default function MyHealthJournal () {
   return (
     <div className="outer_container2">
       <div className="my_health_journal_w_buttons">
-       <BPrevious/><h3>My Health Journal</h3><BNext/>
+       <BPrevious/><div className="health_journal_title"><h3>My Health Journal</h3></div><BNext/>
       </div>
 
       <div className="entry">
-        <h3 className="entry_name">Entry Name:</h3><span><strong>Entry Date:</strong></span>
+        <h3 className="entry_name"></h3><span><strong>Entry Date:</strong></span>
         <p></p>
       </div>
       
