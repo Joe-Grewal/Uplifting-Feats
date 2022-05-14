@@ -78,6 +78,7 @@
 .fitnessgoal {
   align-self: center;
   text-align: center;
+  text-transform: uppercase;
   color: white;
   background-color: #E32EB0;
   border-radius: 20px;
@@ -104,8 +105,9 @@
 
 p {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 1em;
+  line-height: 1.5em;
 }
 
 span {
@@ -133,7 +135,7 @@ span {
   height: 598px;
   padding: 0 20px 10px;
   background-color: #E1D0EE;
-  overflow: scroll;
+  overflow: auto;
 
 }
 
@@ -143,7 +145,7 @@ span {
   height: 289px;
   padding: 0 20px 10px;
   background-color: #B4F1FA;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .future_goals {
@@ -152,7 +154,7 @@ span {
   height: 289px;
   padding: 0 20px 10px;
   background-color: #FFF1B4;
-  overflow: scroll;
+  overflow: auto;
 
 }
 
@@ -221,7 +223,7 @@ h3 {
   padding: 0 20px 10px;
   background-color: #FFE1E0;
   grid-area: 2 / 1 / 3 / 3; 
-  overflow: scroll;
+  overflow: auto;
 }
 
 .my_workout_routine { 
@@ -231,7 +233,7 @@ h3 {
   padding: 0 20px 10px;
   grid-area: 3 / 1 / 4 / 2; 
   background-color: #DAF4F5;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .my_diet_diary { 
@@ -241,7 +243,21 @@ h3 {
   padding: 0 20px 10px;
   grid-area: 3 / 2 / 4 / 3; 
   background-color: #FFD5F3;
-  overflow: scroll;
+  overflow: auto;
+}
+
+.food_list_begins {
+  list-style: none;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.food_calories::before {
+  content : "\2022"; /* Adds the bullet */
+  padding-right: 20px; /* creates the space between bullet, list item */
+  color: #E32EB0 /* changes the bullet color*/
 }
 
 /* ENTRIES BUTTONS ALL, EDIT, ADD, DELETE -------------------*/
@@ -681,7 +697,7 @@ h3 {
   margin-right: 20px;
   background-color: #DAF4F5;
   padding: 0 20px 10px;
-  overflow: scroll;
+  overflow: auto;
 }
 
   /* LIKE BUTTON LARGE  component -------------------*/
