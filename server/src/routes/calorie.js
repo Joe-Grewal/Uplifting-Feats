@@ -8,9 +8,12 @@ module.exports = (db) => {
     db.query(query)
       .then((data) => {
         const entries = data.rows;
+        console.log("*****data.rows:", entries)
         const food = entries[0].my_diet;
+        const foodArray = food.split(",");
+        console.log("food:", foodArray, foodArray.join().replace(",", ""))
         const options = {
-          url: `https://api.calorieninjas.com/v1/nutrition?query=${food}`,
+          url: `https://api.calorieninjas.com/v1/nutrition?query=${foodArray.join(" ")}`,
           headers: {
             "X-Api-Key": "emcbtE5nJAUNMLWKmOJjbw==Uz86IV8q0dI0wNEf",
             contentType: "application/json",

@@ -1,23 +1,17 @@
 import React from "react";
 import '../styles/App.scss';
 import {useState} from 'react';
-import { Button, Container, TextField, FormControl, InputLabel, MenuItem, Select, IconButton, OutlinedInput, InputAdornment } from '@mui/material';
+import { Container, TextField, FormControl, InputLabel, MenuItem, Select, IconButton, OutlinedInput, InputAdornment } from '@mui/material';
 
 export default function Filters2 () {
 
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
-
   //form input values below
-  const [profileImageUrl, setProfileImageUrl] = useState("");
-  const [age, setAge] = useState("");
+  const [ageRange, setAgeRange] = useState("");
   const [gender, setGender] = useState("");
   const [height, setHeight] = useState("");
-  const [fitnessGoal, setFitnessGoal] = useState("");
-  const [weight, setWeight] = useState("");
   const [dietType, setDietType] = useState("");
   const [primaryWorkout, setPrimaryWorkout] = useState("");
+  const [fitnessGoal, setFitnessGoal] = useState("");
  
 
 
@@ -42,13 +36,14 @@ export default function Filters2 () {
         <Select
           className="dropdown_menu"
           fullWidth
-          onChange={(e) => setAge(e.target.value)}
+          onChange={(e) => setAgeRange(e.target.value)}
           labelId="age-select-label"
           id="age-select"
-          value={age}
+          value={ageRange}
           variant="outlined"
           color="secondary"
         >
+        <MenuItem value={[15, 20]}>15 - 20</MenuItem>
         <MenuItem value={"20-25"}>20 - 25</MenuItem>
         <MenuItem value={"25-30"}>25 - 30</MenuItem>
         <MenuItem value={"30-35"}>30 - 35</MenuItem>
@@ -123,6 +118,7 @@ export default function Filters2 () {
           InputProps={{
             endAdornment: <InputAdornment position="end">inches</InputAdornment>,
           }}
+          value={height}
           onChange={(e) => setHeight(e.target.value)}
         />
       </div>
