@@ -11,7 +11,7 @@ import BSaveProfile from './BSaveProfile';
 import "../styles/CreateEntryForm.scss"
 import "../styles/EditProfile.scss"
 
-export default function CreateEntryForm() {
+export default function EditCreateForm() {
 
   const navigate = useNavigate();
 
@@ -30,6 +30,7 @@ export default function CreateEntryForm() {
           response.data.entry.my_diet.split(",").forEach(el => {
            results.push({ my_diet: el });
           }); 
+          results.pop();
           return results;
         }
         console.log("diet_objects:", dietObjectsArray())

@@ -23,8 +23,7 @@ module.exports = (db) => {
       minimumAge: req.body['minimum_age'],
       maximumAge: req.body['maximum_age'],
       gender: req.body['gender'],
-      minimumHeight: req.body['minimum_height'],
-      maximumHeight: req.body['maximum_height'],
+      height: req.body['height'],
       dietType: req.body['diet_type'],
       primaryWorkout: req.body['primary_workout'],
       fitnessGoal: req.body['fitness_goal']
@@ -61,21 +60,12 @@ module.exports = (db) => {
       }
     }
 
-    if (options.minimumHeight) {
-      queryParams.push(options.minimumHeight);
+    if (options.height) {
+      queryParams.push(options.height);
       if (queryParams.length > 1) {
-        queryString += `AND height >= $${queryParams.length} `;
+        queryString += `AND height = $${queryParams.length} `;
       } else {
-        queryString += `WHERE height >= $${queryParams.length} `;
-      }
-    }
-
-    if (options.maximumHeight) {
-      queryParams.push(options.maximumHeight);
-      if (queryParams.length > 1) {
-        queryString += `AND height <= $${queryParams.length} `;
-      } else {
-        queryString += `WHERE height <= $${queryParams.length} `;
+        queryString += `WHERE height = $${queryParams.length} `;
       }
     }
 

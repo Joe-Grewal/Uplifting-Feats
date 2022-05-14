@@ -13,7 +13,7 @@ import ProfileCards from "./ProfileCards";
 import EntryCards from "./EntryCards";
 import JournalEntries_logged_in from "../pages/JournalEntries_logged_in";
 import JournalEntries_NOT_logged_in from "../pages/JournalEntries_NOT_logged_in";
-import EditEntryForm from "./EditEntryForm";
+import EditEntryForm from "../pages/EditEntryForm";
 
 export default function App() {
   return (
@@ -37,6 +37,7 @@ export default function App() {
           <Route path="/update_profile" element={<ProfileForm/>}/>
           <Route path="/create_entry" element={<EntryForm/>}/>
           <Route path="/edit_entry" element={<EditEntryForm/>}/>
+          <Route path="/home" element={<Search/>}/>
         </Routes>
       </Router>
     </>
