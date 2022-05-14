@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 
-export default function BAddEntry () {
+export default function BAddEntry (props) {
   const theme = createTheme ({
     typography: {
       fontFamily: [
@@ -31,9 +31,8 @@ export default function BAddEntry () {
     <ThemeProvider theme={theme}>
       <div className="add_entry_button">
       <Button
-      onClick={() => {
-      alert('clicked');
-      }}
+      onClick={props.onClick}
+      href='create_entry'
       variant="contained">
         ADD ENTRY
     </Button>

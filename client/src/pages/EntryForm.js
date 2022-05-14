@@ -1,11 +1,10 @@
 import { useState } from "react";
-import { Container, TextField, InputAdornment, IconButton, Button } from "@mui/material";
+import { Container, TextField, InputAdornment, IconButton } from "@mui/material";
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 import RestaurantMenuRoundedIcon from '@mui/icons-material/RestaurantMenuRounded';
-import RestartAltRoundedIcon from '@mui/icons-material/RestartAltRounded';
-import SaveRoundedIcon from '@mui/icons-material/SaveRounded';
+import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import BResetAll from '../components/BResetAll';
 import BSaveProfile from '../components/BSaveProfile';
@@ -13,6 +12,8 @@ import "../styles/CreateEntryForm.scss"
 import "../styles/EditProfile.scss"
 
 export default function CreateEntryForm() {
+  const navigate = useNavigate();
+
   //form input values below
   const [entryName, setEntryName] = useState("");
   const [myStory, setMyStory] = useState("");
@@ -82,7 +83,8 @@ export default function CreateEntryForm() {
 
     if (entryName && myStory && myWorkoutRoutine && !inputFieldsError) {
       axios.post("api/entries", {entry_name: entryName, my_story: myStory, my_workout: myWorkoutRoutine, 
-        my_diet: values(), user_id: "userID from server/cookie?"})
+        my_diet: values()})
+        .then(navigate("/My_Profile"))
     }
   };
 

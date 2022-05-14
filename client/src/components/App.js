@@ -8,11 +8,12 @@ import My_Profile_NOT_logged_in from "../pages/My_Profile_NOT_logged_in";
 import ProfileForm from "../pages/ProfileForm";
 import Login from "./Login";
 import Search from "../pages/Search";
-import EntryForm from "../pages/EntryForm"
-import ProfileCards from "./ProfileCards"
-import EntryCards from "./EntryCards"
-import JournalEntries_logged_in from "../pages/JournalEntries_logged_in"
-import JournalEntries_NOT_logged_in from "../pages/JournalEntries_NOT_logged_in"
+import EntryForm from "../pages/EntryForm";
+import ProfileCards from "./ProfileCards";
+import EntryCards from "./EntryCards";
+import JournalEntries_logged_in from "../pages/JournalEntries_logged_in";
+import JournalEntries_NOT_logged_in from "../pages/JournalEntries_NOT_logged_in";
+import EditEntryForm from "./EditEntryForm";
 
 export default function App() {
   return (
@@ -34,6 +35,8 @@ export default function App() {
           <Route path="/login" element={<Login/>}/>
           <Route path="/My_Profile" element={<My_Profile_logged_in/>}/>
           <Route path="/update_profile" element={<ProfileForm/>}/>
+          <Route path="/create_entry" element={<EntryForm/>}/>
+          <Route path="/edit_entry" element={<EditEntryForm/>}/>
         </Routes>
       </Router>
     </>

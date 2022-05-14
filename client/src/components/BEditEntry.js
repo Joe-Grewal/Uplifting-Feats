@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 
-export default function BEditEntry () {
+export default function BEditEntry (props) {
   const theme = createTheme ({
     typography: {
       fontFamily: [
@@ -31,9 +31,8 @@ export default function BEditEntry () {
     <ThemeProvider theme={theme}>
       <div className="edit_entry_button">
       <Button
-      onClick={() => {
-      alert('clicked');
-      }}
+      onClick={props.onClick}
+      href='edit_entry'
       variant="contained">
         EDIT ENTRY
     </Button>
