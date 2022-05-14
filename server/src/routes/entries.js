@@ -16,39 +16,41 @@ module.exports = (db) => {
         res.status(500).json({ error: err.message });
       });
   });
-  // //get a single entry
-  // router.get("/:id", (req, res) => {
-  //   const id = req.params.id;
-  //   let query = `SELECT * FROM entries WHERE id = $1;`;
-  //   queryParams = [id];
-  //   console.log("query:", query, "queryParams:", queryParams);
-  //   db.query(query, queryParams)
-  //     .then((data) => {
-  //       const entry = data.rows[0];
-  //       res.json({ entry });
-  //     })
-  //     .catch((err) => {
-  //       res.status(500).json({ error: err.message });
-  //     });
-  // });
-  //get all entries by a single user
+  // //get a single entry (searches from within all entries in db)
   router.get("/:id", (req, res) => {
-    req.session.user_id = req.params.id;
-    let query = `SELECT * FROM entries WHERE user_id = $1;`;
-    queryParams = [req.session.user_id];
+    const id = req.params.id;
+    let query = `SELECT * FROM entries WHERE id = $1;`;
+    queryParams = [id];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
       .then((data) => {
-        const likes = data.rows;
-        res.json({ likes });
+        const entry = data.rows[0];
+        res.json({ entry });
       })
       .catch((err) => {
         res.status(500).json({ error: err.message });
       });
   });
+  //get all entries by a single user
+  // router.get("/:id", (req, res) => {
+  //   req.session.user_id = req.params.id;
+  //   let query = `SELECT * FROM entries WHERE user_id = $1;`;
+  //   queryParams = [req.session.user_id];
+  //   console.log("query:", query, "queryParams:", queryParams);
+  //   db.query(query, queryParams)
+  //     .then((data) => {
+  //       const likes = data.rows;
+  //       res.json({ likes });
+  //     })
+  //     .catch((err) => {
+  //       res.status(500).json({ error: err.message });
+  //     });
+  // });
   //create an entry
   router.post("/", (req, res) => {
-    req.session.user_id = req.params.id;
+    // req.session.user_id = req.params.id;
+    const cookieId = req.session.user_id;
+    console.log("cookie:", cookieId)
     console.log("***req.body***:", req.body);
     let query = `INSERT INTO entries (entry_name, my_story, my_workout, my_diet, user_id)
                  VALUES ($1, $2, $3, $4, $5)
@@ -58,7 +60,7 @@ module.exports = (db) => {
       req.body["my_story"],
       req.body["my_workout"],
       req.body["my_diet"],
-      req.session.user_id
+      cookieId
     ];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)

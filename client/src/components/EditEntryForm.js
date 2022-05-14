@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, TextField, InputAdornment, IconButton } from "@mui/material";
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 import RestaurantMenuRoundedIcon from '@mui/icons-material/RestaurantMenuRounded';
+import {useNavigate} from "react-router-dom";
 import axios from "axios";
 import BResetAll from './BResetAll';
 import BSaveProfile from './BSaveProfile';
@@ -11,6 +12,35 @@ import "../styles/CreateEntryForm.scss"
 import "../styles/EditProfile.scss"
 
 export default function CreateEntryForm() {
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const getEntryFormInfo = async () => {
+      try {
+        const id = 2;
+        let response = await axios.get(`/api/entries/${id}`);
+        // console.log(response);
+        setEntryName(response.data.entry.entry_name);
+        setMyStory(response.data.entry.my_story);
+        setMyWorkoutRoutine(response.data.entry.my_workout);
+
+        const dietObjectsArray = () => {
+          const results = [];
+          response.data.entry.my_diet.split(",").forEach(el => {
+           results.push({ my_diet: el });
+          }); 
+          return results;
+        }
+        console.log("diet_objects:", dietObjectsArray())
+        setInputFields(dietObjectsArray());
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getEntryFormInfo()
+  }, [])
+
   //form input values below
   const [entryName, setEntryName] = useState("");
   const [myStory, setMyStory] = useState("");
@@ -77,10 +107,11 @@ export default function CreateEntryForm() {
       return string;
     }
     console.log(values())
-
+    const id = 2; //temporary value here used to hardcode the params in the url/query values
     if (entryName && myStory && myWorkoutRoutine && !inputFieldsError) {
-      axios.post("api/entries", {entry_name: entryName, my_story: myStory, my_workout: myWorkoutRoutine, 
-        my_diet: values(), user_id: "userID from server/cookie?"})
+      axios.put(`api/entries/${id}`, {id, entry_name: entryName, my_story: myStory, my_workout: myWorkoutRoutine, 
+        my_diet: values()})
+        .then(navigate("/My_Profile"));
     }
   };
 
@@ -115,6 +146,7 @@ export default function CreateEntryForm() {
           mb: '20px'
         }}
           className="text_field"
+          value={entryName}
           onChange={(e) => setEntryName(e.target.value)}
           label="Entry Name" 
           variant="outlined" 
@@ -140,6 +172,7 @@ export default function CreateEntryForm() {
           mb: '20px',
         }}
           className="text_field"
+          value={myStory}
           onChange={(e) => setMyStory(e.target.value)}
           label="My Story"
           variant="outlined"
@@ -160,6 +193,7 @@ export default function CreateEntryForm() {
           },
           mb: '20px',
         }}
+          value={myWorkoutRoutine}
           className="text_field"
           onChange={(e) => setMyWorkoutRoutine(e.target.value)}
           label="My Workout Routine"
