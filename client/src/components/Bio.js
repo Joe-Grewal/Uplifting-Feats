@@ -28,15 +28,15 @@ export default function Bio() {
             "39af0b6b19mshcb25c6004b475d1p1c84b4jsn4141178f10aa",
         },
       };
-      console.log("age", age);
-      console.log("height", height);
-      console.log("weight", weight);
+      // console.log("age", age);
+      // console.log("height", height);
+      // console.log("weight", weight);
       axios
         .request(options)
         .then(function (response) {
           const bmi = response.data.data.bmi;
           const userDetails = JSON.parse(localStorage.getItem("user_details"));
-          console.log(userDetails.user.id);
+          //console.log(userDetails.user.id);
           axios.put(`/api/updatebmi/${userDetails.user.id}`, {
             bmi: bmi,
           });

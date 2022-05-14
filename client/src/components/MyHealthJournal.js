@@ -19,14 +19,27 @@ export default function MyHealthJournal() {
       console.log(response);
       setStory(response.data.user.my_story);
       setEntryname(response.data.user.entry_name);
-      setmyDiet(response.data.user.my_diet);
+      //setmyDiet(response.data.user.my_diet);
       setmyWorkout(response.data.user.my_workout);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const getCalories = async () => {
+    const userDetails = JSON.parse(localStorage.getItem("user_details"));
+    let response = await axios.get(`/api/calorie/${userDetails.user.id}`);
+
+    console.log(response);
+    setmyDiet(response.data);
+  };
+
   useEffect(() => {
     getEntries();
+  }, []);
+
+  useEffect(() => {
+    getCalories();
   }, []);
 
   return (
