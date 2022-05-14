@@ -70,9 +70,9 @@ export default function MyHealthJournal() {
       {/* map through mydiet and display each item in a list */}
       <div className="my_diet_diary">
         <h3>Diet Diary:</h3>
-        <ul>
+        <ul className="food_list_begins">
           {mydiet.map((item) => (
-            <li>{item}</li>
+            <li className="food_calories">{item}</li>
           ))}
         </ul>
       </div>

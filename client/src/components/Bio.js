@@ -83,14 +83,14 @@ export default function Bio() {
           </span>
         </div>
         <p className="profilestats">
-          <strong>Age:</strong> {age} <span className="stick">|</span>{" "}
-          <strong>Gender:</strong> {gender} <span className="stick">|</span>{" "}
-          <strong>Height:</strong> {height} <span className="stick">|</span>{" "}
+          <strong>Age:</strong> {age} <span className="stick"> | </span>{" "}
+          <strong>Gender:</strong> {gender} <span className="stick"> | </span>{" "}
+          <strong>Height:</strong> {height} <span className="stick"> | </span>{" "}
           <strong>Country:</strong> {country} <br></br> <strong>Diet:</strong>{" "}
-          {diet} <span className="stick">|</span>{" "}
+          {diet} <span className="stick"> | </span>{" "}
           <strong>Primary Workout:</strong> {primaryWorkout}{" "}
-          <span className="stick">|</span> <strong>Weight:</strong> {weight}
-          lbs. <span className="stick">|</span> <strong>BMI:</strong> {bmi}{" "}
+          <span className="stick"> | </span> <strong>Weight:</strong> {weight}
+          lbs. <span className="stick"> | </span> <strong>BMI:</strong> {bmi}{" "}
         </p>
       </section>
     </div>
