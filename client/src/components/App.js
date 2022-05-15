@@ -38,6 +38,7 @@ export default function App() {
           <Route path="/create_entry" element={<EntryForm/>}/>
           <Route path="/edit_entry" element={<EditEntryForm/>}/>
           <Route path="/home" element={<Search/>}/>
+          <Route path="/users/:id" element={<My_Profile_NOT_logged_in/>}/>
         </Routes>
       </Router>
     </>
