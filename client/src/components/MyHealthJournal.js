@@ -80,9 +80,19 @@ export default function MyHealthJournal() {
       <div className="my_diet_diary">
         <h3>Diet Diary:</h3>
         <ul className="food_list_begins">
-          {mydiet.map((item, i) => (
-            <li className="food_calories" key={i}>{item}</li>
-          ))}
+          {mydiet.map((item, i) => {
+            console.log("dietLength:", mydiet.length)
+            if (i < mydiet.length - 1 ) {
+              let itemList = item.split(", ");
+              console.log("itemList:", itemList)
+              let calList = itemList[1].replace("calories:", "");
+              console.log("look:", itemList);
+             return <li className="food_calories" key={i}>{item.split(", ")[0]}{calList}</li> //calList is for calories and {item.split(", ")[0]} is for foods
+            } 
+            return <li className="food_calories">{item.split(", ")[0]}</li> //this is for the total calories count
+          })} 
+            {/* // <li className="food_calories" key={i}>{item.split(", ")[0]}{item.split(",")[1]}</li> */}
+          
         </ul>
       </div>
 
