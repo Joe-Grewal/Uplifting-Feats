@@ -32,15 +32,15 @@ module.exports = (db) => {
         res.status(500).json({ error: err.message });
       });
   });
-   //get total number of likes for a given profile/user
-   router.get("/:id/count", (req, res) => {
+  //get total number of likes for a given profile/user
+  router.get("/count/:id", (req, res) => {
     req.session.user_id = req.params.id;
-    let query = `SELECT COUNT(*) FROM likes WHERE liked_profile = $1;`;
+    let query = `SELECT liked_profile FROM likes WHERE liked_profile = $1;`;
     queryParams = [req.session.user_id];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
       .then((data) => {
-        const likes = data.rows;
+        const likes = data.rows[0].liked_profile;
         res.json({ likes });
       })
       .catch((err) => {
@@ -54,10 +54,7 @@ module.exports = (db) => {
     let query = `INSERT INTO likes (user_who_likes, liked_profile)
                  VALUES ($1, $2)
                  RETURNING *;`;
-    const queryParams = [
-      req.session.user_id,
-      req.body["liked_profile"],
-    ];
+    const queryParams = [req.session.user_id, req.body["liked_profile"]];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
       .then((data) => {
@@ -72,11 +69,8 @@ module.exports = (db) => {
   router.delete("/:id", (req, res) => {
     req.session.user_id = req.params.id;
     console.log("***req.body***:", req.body);
-    let query = `DELETE FROM likes WHERE user_who_likes = $1 AND liked_profile = $2;`
-    const queryParams = [
-      req.session.user_id, 
-      req.body["liked_profile"]
-    ];
+    let query = `DELETE FROM likes WHERE user_who_likes = $1 AND liked_profile = $2;`;
+    const queryParams = [req.session.user_id, req.body["liked_profile"]];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
       .then((data) => {
