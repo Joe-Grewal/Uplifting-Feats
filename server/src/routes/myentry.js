@@ -13,6 +13,7 @@ module.exports = (db) => {
       .then((data) => {
         const user = data.rows[0];
         user.my_diet = user.my_diet.split(",");
+        console.log("user.my_diet:", user.my_diet);
         res.json({ user });
       })
       .catch((err) => {
