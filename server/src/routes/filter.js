@@ -18,20 +18,19 @@ module.exports = (db) => {
   });
   //filter results
   router.post("/", (req, res) => {
-    req.session.user_id = req.params.id;
     const options = {
       minimumAge: req.body['minimum_age'],
       maximumAge: req.body['maximum_age'],
       gender: req.body['gender'],
       height: req.body['height'],
-      dietType: req.body['diet_type'],
-      primaryWorkout: req.body['primary_workout'],
-      fitnessGoal: req.body['fitness_goal']
+      dietType: req.body['dietType'],
+      primaryWorkout: req.body['primaryWorkout'],
+      fitnessGoal: req.body['fitnessGoal']
     };
     console.log('options', options);
     const queryParams = [];
 
-    let queryString = `SELECT * FROM users`;
+    let queryString = `SELECT * FROM users `;
 
     if (options.minimumAge) {
       queryParams.push(options.minimumAge);

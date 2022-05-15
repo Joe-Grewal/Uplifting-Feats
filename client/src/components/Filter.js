@@ -1,21 +1,34 @@
 import React from "react";
+import axios from "axios";
 import '../styles/App.scss';
-import {useState} from 'react';
-import { Container, TextField, FormControl, InputLabel, MenuItem, Select, IconButton, OutlinedInput, InputAdornment } from '@mui/material';
+import {useState, useEffect} from 'react';
+import { Container, TextField, FormControl, InputLabel, MenuItem, Select, IconButton, OutlinedInput, InputAdornment, useStepContext } from '@mui/material';
+import ProfileCards from "./ProfileCards";
 
 export default function Filters2 () {
 
+  const [filteredUsers, setFilteredUsers] = useState([]);
+
   //form input values below
-  const [ageRange, setAgeRange] = useState("");
+  const [ageRange, setAgeRange] = useState([]);
   const [gender, setGender] = useState("");
   const [height, setHeight] = useState("");
   const [dietType, setDietType] = useState("");
   const [primaryWorkout, setPrimaryWorkout] = useState("");
   const [fitnessGoal, setFitnessGoal] = useState("");
  
-
+  useEffect(() => {
+    if (ageRange || gender || height || dietType || primaryWorkout || fitnessGoal) {
+      axios.post("/api/filter", {minimum_age: ageRange[0], maximum_age: ageRange[1], gender, height, dietType, primaryWorkout, fitnessGoal})
+        .then((res) => { 
+          console.log("***post response:", res.data.users);
+          setFilteredUsers(res.data.users);
+        });
+    }
+  }, [ageRange, gender, height, dietType, primaryWorkout, fitnessGoal]);
 
   return (
+    <div>
     <div className="search_filters_container">
       
       {/* AGE -----------------------*/}
@@ -36,30 +49,27 @@ export default function Filters2 () {
         <Select
           className="dropdown_menu"
           fullWidth
-          onChange={(e) => setAgeRange(e.target.value)}
+          onChange={(e) => setAgeRange([e.target.value[0], e.target.value[1]])}
           labelId="age-select-label"
           id="age-select"
-          value={ageRange}
+          value={ageRange} //look into fixing this for the display of the form value "age"
           variant="outlined"
           color="secondary"
         >
+        <MenuItem value={""}>-</MenuItem>
         <MenuItem value={[15, 20]}>15 - 20</MenuItem>
-        <MenuItem value={"20-25"}>20 - 25</MenuItem>
-        <MenuItem value={"25-30"}>25 - 30</MenuItem>
-        <MenuItem value={"30-35"}>30 - 35</MenuItem>
-        <MenuItem value={"35-40"}>35 - 40</MenuItem>
-        <MenuItem value={"40-45"}>40 - 45</MenuItem>
-        <MenuItem value={"45-50"}>45 - 50</MenuItem>
-        <MenuItem value={"50-55"}>50 - 55</MenuItem>
-        <MenuItem value={"55-60"}>55 - 60</MenuItem>
-        <MenuItem value={"60-65"}>60 - 65</MenuItem>
-        <MenuItem value={"65-70"}>65 - 70</MenuItem>
-        <MenuItem value={"70-75"}>70 - 75</MenuItem>
-        <MenuItem value={"75-80"}>75 - 80</MenuItem>
-        <MenuItem value={"80-85"}>80 - 85</MenuItem>
-        <MenuItem value={"85-90"}>85 - 90</MenuItem>
-        <MenuItem value={"90-95"}>90 - 95</MenuItem>
-        <MenuItem value={"95-100"}>95 - 100</MenuItem>
+        <MenuItem value={[20, 25]}>20 - 25</MenuItem>
+        <MenuItem value={[25, 30]}>25 - 30</MenuItem>
+        <MenuItem value={[30, 35]}>30 - 35</MenuItem>
+        <MenuItem value={[35, 40]}>35 - 40</MenuItem>
+        <MenuItem value={[40, 45]}>40 - 45</MenuItem>
+        <MenuItem value={[45, 50]}>45 - 50</MenuItem>
+        <MenuItem value={[50, 55]}>50 - 55</MenuItem>
+        <MenuItem value={[55, 60]}>55 - 60</MenuItem>
+        <MenuItem value={[60, 65]}>60 - 65</MenuItem>
+        <MenuItem value={[65, 70]}>65 - 70</MenuItem>
+        <MenuItem value={[70, 75]}>70 - 75</MenuItem>
+        <MenuItem value={[75, 80]}>75 - 80</MenuItem>
         </Select>
         </FormControl>
       </div>
@@ -90,6 +100,7 @@ export default function Filters2 () {
           variant="outlined"
           color="secondary"
         >
+        <MenuItem value={""}>-</MenuItem>
         <MenuItem value={"male"}>Male</MenuItem>
         <MenuItem value={"female"}>Female</MenuItem>
         <MenuItem value={"other"}>Other</MenuItem>
@@ -151,6 +162,7 @@ export default function Filters2 () {
           variant="outlined"
           color="secondary"
         >
+        <MenuItem value={""}>-</MenuItem>
         <MenuItem value={"vegetarian"}>Vegetarian</MenuItem>
         <MenuItem value={"keto"}>Keto</MenuItem>
         <MenuItem value={"carnivore"}>Carnivore</MenuItem>
@@ -188,6 +200,7 @@ export default function Filters2 () {
           variant="outlined"
           color="secondary"
         >
+        <MenuItem value={""}>-</MenuItem>
         <MenuItem value={"cardio"}>Cardio</MenuItem>
         <MenuItem value={"hiit"}>HIIT</MenuItem>
         <MenuItem value={"strength training"}>Strength Training</MenuItem>
@@ -226,6 +239,7 @@ export default function Filters2 () {
           variant="outlined"
           color="secondary"
         >
+        <MenuItem value={""}>-</MenuItem>
         <MenuItem value={"weight loss"}>Weight Loss</MenuItem>
         <MenuItem value={"weight gain"}>Weight Gain</MenuItem>
         <MenuItem value={"maintain"}>Maintain</MenuItem>
@@ -236,7 +250,15 @@ export default function Filters2 () {
         </FormControl>
       </div>
      
-    
+  </div>
+
+  <div className="search_page_results_copy_container">
+      <h3 className="search_results_text">Search Results:</h3>
+      </div>
+  {filteredUsers && filteredUsers.map(el => {
+      return <ProfileCards key={el.id} firstName={el.first_name} lastName={el.last_name} profilePic={el.profile_img_url}/>
+    })}
+
   </div>
     
   )
