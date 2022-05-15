@@ -35,7 +35,7 @@ module.exports = (db) => {
   //get total number of likes for a given profile/user
   router.get("/count/:id", (req, res) => {
     req.session.user_id = req.params.id;
-    let query = `SELECT liked_profile FROM likes WHERE liked_profile = $1;`;
+    let query = `SELECT liked_profile FROM likes WHERE id = $1;`;
     queryParams = [req.session.user_id];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
