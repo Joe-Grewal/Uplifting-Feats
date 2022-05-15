@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 
-export default function BSeeProfile () {
+export default function BSeeProfile (props) {
   const theme = createTheme ({
     typography: {
       fontFamily: [
@@ -30,9 +30,7 @@ export default function BSeeProfile () {
   return (
     <ThemeProvider theme={theme}>
       <Button id="see_profile_button"
-      onClick={() => {
-      alert('clicked');
-      }}
+      onClick={props.onClick}
       variant="contained">
         SEE PROFILE
     </Button>
