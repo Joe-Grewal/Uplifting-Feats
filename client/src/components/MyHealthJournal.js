@@ -12,6 +12,7 @@ export default function MyHealthJournal() {
   const [story, setStory] = useState("");
   const [mydiet, setmyDiet] = useState([]);
   const [myworkout, setmyWorkout] = useState("");
+  const [postedAt, setPostedAt] = useState("");
 
   const getEntries = async () => {
     try {
@@ -21,6 +22,7 @@ export default function MyHealthJournal() {
       setEntryname(response.data.user.entry_name);
       //setmyDiet(response.data.user.my_diet);
       setmyWorkout(response.data.user.my_workout);
+      setPostedAt(response.data.user.posted_at);
     } catch (error) {
       console.log(error);
     }
@@ -42,6 +44,11 @@ export default function MyHealthJournal() {
     getCalories();
   }, []);
 
+  const date = new Date(postedAt);
+  console.log("Date: "+date.getDate()+
+          "/"+(date.getMonth()+1)+
+          "/"+date.getFullYear());
+
   return (
     <div className="outer_container2">
       <div className="my_health_journal_w_buttons">
@@ -53,7 +60,9 @@ export default function MyHealthJournal() {
       <div className="entry">
         <h3 className="entry_name">{entryname}</h3>
         <span>
-          <strong>Date:</strong>
+          <strong>{"Date: "+date.getDate()+
+          "/"+(date.getMonth()+1)+
+          "/"+date.getFullYear()}</strong>
         </span>
         <p>{story}</p>
       </div>
@@ -71,8 +80,8 @@ export default function MyHealthJournal() {
       <div className="my_diet_diary">
         <h3>Diet Diary:</h3>
         <ul className="food_list_begins">
-          {mydiet.map((item) => (
-            <li className="food_calories">{item}</li>
+          {mydiet.map((item, i) => (
+            <li className="food_calories" key={i}>{item}</li>
           ))}
         </ul>
       </div>
