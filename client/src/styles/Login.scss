@@ -16,6 +16,15 @@
 //   color: #E32EB0
 // }
 
+// .background_image_container {
+//   background-image: url("../images/background_img_fade.svg");
+//   background-repeat: repeat;
+//   background-size: 25%;
+ 
+//   height: 100vh;
+
+// }
+
 
 .outer_login_container {
   width: 70%;
@@ -23,7 +32,7 @@
   padding-top: 80px;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  grid-template-rows: .25fr 1.5fr .5fr;
+  grid-template-rows: .25fr 2fr .5fr;
   grid-column-gap: 40px;
   grid-row-gap: 20px;
 }
@@ -39,9 +48,33 @@
 }
 
 .login_picture {
+  width: 100%;
+  height: 100%;
   grid-area: 2 / 1 / 3 / 2; 
   border: solid 4px #6A18A8;
   border-radius: 20px;
+  background-image: url("../images/slider01.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: slide 12s infinite;
+  transition: 1s
+}
+@keyframes slide {
+  20% {
+      background-image: url("../images/slider02.jpg");
+  }
+  40% {
+      background-image: url("../images/slider03.jpg");
+  }
+  60% {
+      background-image: url("../images/slider04.jpg");
+  }
+  80% {
+      background-image: url("../images/slider05.jpg");
+  }
+  100% {
+      background-image: url("../images/slider01.jpg");
+  }
 }
 
 .login_marketing_message {
