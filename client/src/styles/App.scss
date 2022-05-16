@@ -247,6 +247,8 @@ h3 {
 }
 
 .food_list_begins {
+  padding: 0;
+  margin: 0;
   list-style: none;
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
@@ -254,9 +256,33 @@ h3 {
   line-height: 1.5em;
 }
 
+.cals {
+  font-weight: 400;
+  list-style: none;
+  padding-left: 10px;
+  text-align: right;
+  color: #6A18A8;
+
+}
+
+hr {
+  border: solid .01em;
+  color: #E32EB0;
+  opacity: 0.2;
+}
+
+.total_calories {
+  list-style: none;
+  padding-top: 5px;
+  text-align: left;
+  font-weight: 400;
+  color: #6A18A8
+}
+
+
 .food_calories::before {
   content : "\2022"; /* Adds the bullet */
-  padding-right: 20px; /* creates the space between bullet, list item */
+  padding-right: 10px; /* creates the space between bullet, list item */
   color: #E32EB0 /* changes the bullet color*/
 }
 
