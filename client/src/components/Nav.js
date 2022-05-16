@@ -1,6 +1,15 @@
 import React from "react";
 
 export default function Nav() {
+  // const [currentUser, setCurrentUser] = useState(
+  //   JSON.parse(localStorage.getItem("user_details"))
+  // );
+
+  //   handleLogout = () => {
+  //     setCurrentUser({});
+  //     localStorage.clear();
+  //   };
+
   return (
     <header className="nav_container">
       <nav className="navigation">
@@ -18,6 +27,9 @@ export default function Nav() {
           </a>
           <a className="right_links" href="/login">
             Login
+          </a>
+          <a className="right_links" href="/logout">
+            Logout
           </a>
         </div>
       </nav>
