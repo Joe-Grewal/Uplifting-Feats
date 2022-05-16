@@ -16,14 +16,14 @@
 //   color: #E32EB0
 // }
 
-// .background_image_container {
-//   background-image: url("../images/background_img_fade.svg");
-//   background-repeat: repeat;
-//   background-size: 25%;
- 
-//   height: 100vh;
+.background_image_container {
+  background-image: url("../images/background_img_fade3.svg");
+  background-repeat: repeat;
+  background-size: 20%;
+  height: 100vh;
+  overflow-x: scroll;
 
-// }
+}
 
 
 .outer_login_container {
@@ -33,8 +33,8 @@
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: .25fr 2fr .5fr;
-  grid-column-gap: 40px;
-  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
 }
 
 .login_heading { 
@@ -48,8 +48,10 @@
 }
 
 .login_picture {
-  width: 100%;
+  width: 90%;
   height: 100%;
+  margin: auto;
+  // padding-bottom: 40px;
   grid-area: 2 / 1 / 3 / 2; 
   border: solid 4px #6A18A8;
   border-radius: 20px;
@@ -78,8 +80,23 @@
 }
 
 .login_marketing_message {
-  padding: 0 20px 20px;
+  margin: auto;
+  width: 90%;
   grid-area: 3 / 1 / 4 / 2;
+}
+
+.sub_head_login {
+  text-align: left;
+  color: #E32EB0;
+  font-weight: 600;
+}
+
+.login_sub_message {
+  // margin-left: 10px;
+  // margin-right: 10px;
+  text-align: left;
+  font-weight: 400;
+  line-height: 1.5em;
 }
 
 .login_fields_submit_button {

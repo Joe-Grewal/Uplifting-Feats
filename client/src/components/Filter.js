@@ -253,7 +253,7 @@ export default function Filters2 () {
   </div>
 
   <div className="search_page_results_copy_container">
-      <h3 className="search_results_text">Search Results:</h3>
+      <h2 className="search_results_text">Search Results:</h2>
       </div>
     {filteredUsers && filteredUsers.map(el => {
       return <ProfileCards key={el.id} userId={el.id} firstName={el.first_name} lastName={el.last_name} profilePic={el.profile_img_url}/>

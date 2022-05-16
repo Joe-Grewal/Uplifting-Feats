@@ -82,6 +82,7 @@ export default function Bio() {
             <strong>{fitGoal}</strong>
           </span>
         </div>
+        
         <p className="profilestats">
           <strong>Age:</strong> {age} <span className="stick"> | </span>{" "}
           <strong>Gender:</strong> {gender} <span className="stick"> | </span>{" "}
