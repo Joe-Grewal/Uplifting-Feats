@@ -86,9 +86,11 @@ export default function MyHealthJournal (props) {
               console.log("itemList:", itemList)
               let calList = itemList[1].replace("calories:", "");
               console.log("look:", itemList);
-             return <li className="food_calories" key={i}>{item.split(", ")[0]}{calList}</li> //calList is for calories and {item.split(", ")[0]} is for foods
+              return <li className="food_calories" key={i}>{item.split(", ")[0]}<span className="cals"> {calList}</span></li> //calList is for calories and {item.split(", ")[0]} is for foods
+             
             } 
-            return <li className="food_calories">{item.split(", ")[0]}</li> //this is for the total calories count
+            
+            return <li className="total_calories"><hr/>{item.split(", ")[0]}<hr/></li> //this is for the total calories count
           })} 
             {/* // <li className="food_calories" key={i}>{item.split(", ")[0]}{item.split(",")[1]}</li> */}
           
