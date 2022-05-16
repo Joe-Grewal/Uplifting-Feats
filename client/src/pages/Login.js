@@ -97,6 +97,8 @@ export default function Login3() {
 
   return (
     <>
+    <div className="background_image_container">
+
       <div className="outer_login_container">
         
         <div className="login_heading">
@@ -218,6 +220,8 @@ export default function Login3() {
           <strong>Register</strong><span className="stick"> | </span><strong></strong>Forgot Password</p>
         </div>
 
+      </div>
+      {/* </img> */}
       </div>
     </>
   );
