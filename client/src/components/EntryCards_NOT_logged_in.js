@@ -1,5 +1,5 @@
 import React from "react";
-import BViewAllEntries from "./BViewAllEntries";
+import BView from "./BView";
 
 export default function EntryCards () {
 
@@ -22,7 +22,7 @@ export default function EntryCards () {
           </div>
 
           <div className="entry_card_view_entry_button">
-            <BViewAllEntries/>
+            <BView/>
           </div>
 
           <div className="entry_preview">
