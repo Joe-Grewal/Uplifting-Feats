@@ -2,18 +2,21 @@ import React from 'react';
 import { Button, createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 
-export default function BEditProfile () {
+export default function BView () {
   const theme = createTheme ({
     typography: {
       fontFamily: [
         'Quicksand', 'sans-serif',
       ].join(','),
-      fontSize: 22,
+      fontSize: 16,
       fontWeightMedium:700,
     },
     palette: {
       primary: {
-        main: '#6A18A8'
+        main: '#B145CC'
+      },
+      action: {
+        hover: (106, 24, 168, 1)
       }
     },
     shape: {
@@ -26,12 +29,14 @@ export default function BEditProfile () {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className="update_profile_button">
+      <div className="view_all_entries_button">
       <Button
-        href='update_profile'
-        variant="contained">
-        EDIT PROFILE
-      </Button>
+      onClick={() => {
+      alert('clicked');
+      }}
+      variant="contained">
+        VIEW
+    </Button>
     </div>
   </ThemeProvider>
   )
