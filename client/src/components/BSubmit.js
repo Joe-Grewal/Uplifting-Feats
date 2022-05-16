@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 
-export default function BSubmit () {
+export default function BSubmit (props) {
   const theme = createTheme ({
     typography: {
       fontFamily: [
@@ -27,10 +27,9 @@ export default function BSubmit () {
   return (
     <ThemeProvider theme={theme}>
       <Button id="submit_button"
-      onClick={() => {
-      alert('clicked');
-      }}
-      variant="contained">
+      onClick = {props.onClick}
+      type="submit"
+  variant="contained">
         SUBMIT
     </Button>
   </ThemeProvider>

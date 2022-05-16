@@ -6,7 +6,7 @@ import Filter from "./Filter";
 import My_Profile_logged_in from "../pages/My_Profile_logged_in";
 import My_Profile_NOT_logged_in from "../pages/My_Profile_NOT_logged_in";
 import ProfileForm from "../pages/ProfileForm";
-import Login from "./Login";
+import Login from "../pages/Login";
 import Search from "../pages/Search";
 import EntryForm from "../pages/EntryForm";
 import ProfileCards from "./ProfileCards";
