@@ -10,7 +10,7 @@ import BShare from "../components/BShare";
 export default function My_Profile_logged_in () {
 
   const { id } = useParams();
-  const { selectedUser, setSelectedUser } = useState("");
+  const [selectedUser, setSelectedUser] = useState(id);
 
   const getUser = async () => {
     try {
@@ -29,7 +29,7 @@ export default function My_Profile_logged_in () {
     <>
       <Bio />
       <BioDivs />
-      <MyHealthJournal_NOT_logged_in />
+      <MyHealthJournal_NOT_logged_in userId={selectedUser}/>
       <div className="profile_bottom_w_buttons"><BLike/><BShare/></div>
     </>
   );
