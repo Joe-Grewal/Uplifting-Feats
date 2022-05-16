@@ -8,6 +8,7 @@ import BBackToProfile from "../components/BBackToProfile";
 export default function Search () {
   return (
     <>
+    <div className="background_image_container">
 
     {/* if logged in / my journal entries */}
       <div className="search_page_top_copy_container">
@@ -28,7 +29,7 @@ export default function Search () {
       <div className="button_spacing_container">
         <BBackToProfile />
       </div>
-
+      </div>
     </>
   );
 }

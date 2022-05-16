@@ -252,6 +252,7 @@ export default function EditProfile() {
   }
 
   return (
+    <div className="background_image_container">
     <div className="form">
     <div className="outer_form_container">
 
@@ -818,6 +819,7 @@ export default function EditProfile() {
           Save Profile
         </Button> */}
 
+    </div>
     </div>
   )
 }
