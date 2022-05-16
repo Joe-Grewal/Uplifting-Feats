@@ -10,10 +10,12 @@ import Share_small from "../components/Share_small";
 export default function My_Profile_logged_in () {
   return (
     <>
+    <div className="background_image_container">
       <Bio />
       <BioDivs />
       <MyHealthJournal />
       <div className="profile_bottom_w_buttons"><Like_small/><BEditProfile/><Share_small/></div>
+      </div>
     </>
   );
 }

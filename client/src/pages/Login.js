@@ -113,7 +113,11 @@ export default function Login3() {
       <div className="background_image_container">
         <div className="outer_login_container">
           <div className="login_heading">
-            <h1>Welcome to Uplifting Feats</h1>
+            <h1>Welcome to Uplifting Feats!</h1>
+          </div>
+
+          <div className="login_picture">
+            <img />
           </div>
 
           <div className="login_picture">
@@ -121,14 +125,13 @@ export default function Login3() {
           </div>
 
           <div className="login_marketing_message">
-            <p>
-              Have you struggled to achieve your health goals? You are not
-              alone. This is a non-judgemental space where you can seek out
-              inspriation and insights from those who are similar to you in
-              terms of their current health status, future health goals, diet
-              and preferred workout regime. Perhaps you'll even inspire others
-              on their own journey.
-            </p>
+            <h3 className="sub_head_login">
+              Have you struggled to achieve your health goals?
+            </h3>
+            <h4 className="login_sub_message">
+              Join the club! Here at Uplifting Feats, let other humans just like
+              you, be your guide to success.
+            </h4>
           </div>
 
           <div className="login_fields_submit_button">

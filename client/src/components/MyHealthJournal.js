@@ -53,22 +53,22 @@ export default function MyHealthJournal() {
     <div className="outer_container2">
       <div className="my_health_journal_w_buttons">
         <BPrevious />
-        <div className="health_journal_title"><h3>My Health Journal</h3></div>
+        <div className="health_journal_title"><h2>My Health Journal</h2></div>
         <BNext />
       </div>
 
       <div className="entry">
         <h3 className="entry_name">{entryname}</h3>
-        <span>
-          <strong>{"Date: "+date.getDate()+
+        <span className="date">
+          {"Date: "+date.getDate()+
           "/"+(date.getMonth()+1)+
-          "/"+date.getFullYear()}</strong>
+          "/"+date.getFullYear()}
         </span>
         <p>{story}</p>
       </div>
 
       <div className="my_workout_routine">
-        <h3>My Workout Routine:</h3>
+        <h2 className="heading_light_weight">Workout Routine</h2>
         <p> {myworkout}</p>
       </div>
 
@@ -78,7 +78,7 @@ export default function MyHealthJournal() {
       </div> */}
       {/* map through mydiet and display each item in a list */}
       <div className="my_diet_diary">
-        <h3>Diet Diary:</h3>
+        <h2 className="heading_light_weight">Diet Diary</h2>
         <ul className="food_list_begins">
           {mydiet.map((item, i) => {
             console.log("dietLength:", mydiet.length)
