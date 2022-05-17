@@ -9,6 +9,7 @@ import BEditEntry from "./BEditEntry";
 import BDeleteEntry from "./BDeleteEntry";
 
 export default function MyHealthJournal(props) {
+  const [entryId, setEntryId] = useState("");
   const [entryname, setEntryname] = useState("");
   const [story, setStory] = useState("");
   const [mydiet, setmyDiet] = useState([]);
@@ -27,6 +28,8 @@ export default function MyHealthJournal(props) {
     try {
       let response = await axios.get("/api/myentry");
       console.log(response);
+      setEntryId(response.data.user.id);
+      console.log("entryId:", response.data.user.id);
       setStory(response.data.user.my_story);
       setEntryname(response.data.user.entry_name);
       //setmyDiet(response.data.user.my_diet);
@@ -38,8 +41,9 @@ export default function MyHealthJournal(props) {
   };
 
   const getCalories = async () => {
-    const userDetails = JSON.parse(localStorage.getItem("user_details"));
-    let response = await axios.get(`/api/calorie/${userDetails.user.id}`);
+    // const userDetails = JSON.parse(localStorage.getItem("user_details"));
+    console.log("calorieId:", entryId);
+    let response = await axios.get(`/api/calorie/${entryId}`);
 
     console.log(response);
     setmyDiet(response.data);
@@ -51,7 +55,7 @@ export default function MyHealthJournal(props) {
 
   useEffect(() => {
     getCalories();
-  }, []);
+  }, [entryId]);
 
   const date = new Date(postedAt);
   console.log("Date: "+date.getDate()+
