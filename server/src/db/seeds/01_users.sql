@@ -126,6 +126,26 @@ INSERT INTO users (user_name, first_name, last_name, email, password, profile_im
   'Keep caffeine and coffee to a minimum. Caffeine strips energy from you and enhances cortisol production. Essentially it is one more stressor to add to the stress of training. Make sure to get plenty of omega-3 fats, herbs and spices, fruits and vegetables, and fermented foods. Don''t forget to also take a break when you feel like your body needs it. Don''t indulge yourself with that break though. Keep grinding.',
   'I want to be able to clean and press 135 pounds ten times because it will help push my strength to the next level. I want to gain ten pounds of lean muscle mass.',
   24.23
+  ),
+  (
+    'Manshu', 
+  'Manshu', 
+  'Hyas', 
+  'hymansh@ind.co', 
+  'password', 
+  'https://github.com/Joe-Grewal/Uplifting-Feats/blob/main/client/src/images/Man_35_strength.jpg?raw=true',
+  24, 
+  'male', 
+  75, 
+  198, 
+  'New Zealand', 
+  'weight gain', 
+  'other', 
+  'strength training', 
+  'I was really skinny and underweight during half of my life. There were literally no clothes available in my size, hence, I was not able to wear my favourite clothes or the clothes of my liking. It was only when an acquaintance approached me about my weight, that I realized I seriously needed to do something about my health. That was the day I started my fitness journey and I haven''t looked back ever since. I believe that when you have unwavering dedication, you can never really fail. I keep trying and striving for success.', 
+  ' Steer clear of processed and packaged food and make sure that you are well-hydrated. Try to meet your daily protein requirements. I workout for 6 days a week and it mostly constitutes of intense weight training sessions. Don''t forget to listen to your body. Slow down if you needed to but don''t lose the ball.',
+  '10 years from now, I want to be a fitter and better version of myself.',
+  24.77
   )
 
 
