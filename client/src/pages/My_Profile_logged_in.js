@@ -3,7 +3,7 @@ import {React, useState, useEffect} from "react";
 import Bio from "../components//Bio";
 import BioDivs from "../components/BioDivs";
 import MyHealthJournal from "../components//MyHealthJournal";
-import BUpdateProfile from "../components/BUpdateProfile";
+import BEditProfile from "../components/BUpdateProfile";
 import Like_small from "../components/Like_small";
 import Share_small from "../components/Share_small";
 
@@ -23,10 +23,12 @@ export default function My_Profile_logged_in () {
 
   return (
     <>
+    <div className="background_image_container">
       <Bio />
       <BioDivs />
       <MyHealthJournal userId={loggedInUser}/>
-      <div className="profile_bottom_w_buttons"><Like_small/><BUpdateProfile/><Share_small/></div>
+      <div className="profile_bottom_w_buttons"><Like_small/><BEditProfile/><Share_small/></div>
+      </div>
     </>
   );
 }

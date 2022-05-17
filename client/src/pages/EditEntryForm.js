@@ -139,6 +139,7 @@ export default function EditCreateForm() {
   }
 
   return (
+    <div className="background_image_container">
     <div className="form">
     <div className="outer_form_container">
       <Container size="sm" id="move2">
@@ -289,6 +290,7 @@ export default function EditCreateForm() {
           Save Entry
         </Button>
       </div> */}
+    </div>
     </div>
   );
 }

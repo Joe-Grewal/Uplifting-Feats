@@ -34,6 +34,8 @@ export default function Search () {
 
   return (
     <>
+    <div className="background_image_container">
+    
       <div className="search_page_top_copy_container">
         <h3>Journal Entries</h3>
         <p>Here is a listing of all the stories from your chosen health enthusiast. Happy reading!</p>
@@ -43,6 +45,7 @@ export default function Search () {
       
       <div className="button_spacing_container">
         <BBackToProfile userId={selectedUser} onClick={handleSubmit}/>
+      </div>
       </div>
     </>
   );

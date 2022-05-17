@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "../styles/App.scss";
 import Nav from "./Nav";
 import Filter from "./Filter";
@@ -14,11 +14,15 @@ import EntryCards from "./EntryCards";
 import JournalEntries_logged_in from "../pages/JournalEntries_logged_in";
 import JournalEntries_NOT_logged_in from "../pages/JournalEntries_NOT_logged_in";
 import EditEntryForm from "../pages/EditEntryForm";
+import Logout from "../pages/Logout";
 
 export default function App() {
+  //currentUser = localStorage.getItem("user_details");
+
   return (
     <>
       <Nav />
+      {/* <button>Logout</button> */}
       {/* <My_Profile_logged_in/> */}
       {/* <My_Profile_NOT_logged_in/> */}
       {/* <EditProfile /> */}
@@ -27,7 +31,6 @@ export default function App() {
       {/* <EntryForm/> */}
       {/* <JournalEntries_logged_in />
        <JournalEntries_NOT_logged_in /> */}
-      
 
       <Router>
         <Routes>
@@ -40,9 +43,9 @@ export default function App() {
           <Route path="/home" element={<Search/>}/>
           <Route path="/users/:id" element={<My_Profile_NOT_logged_in/>}/>
           <Route path="/users/:id/view_entries" element={<JournalEntries_NOT_logged_in/>}/>
+          <Route path="/logout" element={<Logout />} />
         </Routes>
       </Router>
     </>
   );
 }
-

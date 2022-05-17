@@ -106,6 +106,7 @@ export default function CreateEntryForm() {
   }
 
   return (
+    <div className="background_image_container">
     <div className="form">
     <div className="outer_form_container">
       <Container size="sm" id="move2">
@@ -253,6 +254,7 @@ export default function CreateEntryForm() {
           Save Entry
         </Button>
       </div> */}
+    </div>
     </div>
   );
 }
