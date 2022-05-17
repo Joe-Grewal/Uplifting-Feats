@@ -37,7 +37,7 @@ export default function Search () {
     <div className="background_image_container">
       <div className="search_page_top_copy_container">
         <h3>Your Journal Entries</h3>
-        <p>Search through and edit or delete past entries</p>
+        <p>Search through and "view", "edit" or "delete" past entries.</p>
       </div>
       <EntryCards userId={selectedUser}/>
       <div className="button_spacing_container">

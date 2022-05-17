@@ -49,8 +49,8 @@ export default function Search () {
       <div className="background_image_container">
       
         <div className="search_page_top_copy_container">
-          <h3>Journal Entries</h3>
-          <p>Here is a listing of all the stories from your chosen health enthusiast. Happy reading!</p>
+          <h2>Journal Entries</h2>
+          <p className="body_copy_padding">Here is a listing of all the stories from your chosen health enthusiast. Click "view" to checkout the entire entry inlcuding the user's story, diet diary and workout. Happy reading!</p>
         </div>
   
         <EntryCards_NOT_logged_in userId={selectedUser}/>
@@ -66,8 +66,8 @@ export default function Search () {
     <>
     <div className="background_image_container">
       <div className="search_page_top_copy_container">
-        <h3>Your Journal Entries</h3>
-        <p>Search through and edit or delete past entries</p>
+        <h2>Your Journal Entries</h2>
+        <p className="body_copy_padding">Search through and "view", "edit" or "delete" past entries.</p>
       </div>
       <EntryCards userId={selectedUser}/>
       <div className="button_spacing_container">
