@@ -22,9 +22,7 @@ export default function BPrevious () {
     shape: {
       borderRadius: 20
     },
-    shadows: {
-      0: "none"
-    }
+   
   });
 
   return (

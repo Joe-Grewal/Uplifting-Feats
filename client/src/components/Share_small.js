@@ -26,7 +26,8 @@ export default function Share_small() {
         quote="Uplifting Feats"
         hashtag="#UpliftingFeats"
       >
-        <EmailIcon size={32} round />
+        <EmailIcon id="email" size={32} round
+        iconFillColor={'white'}/>
       </EmailShareButton>
 
       <TwitterShareButton
