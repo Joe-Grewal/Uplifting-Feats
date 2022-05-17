@@ -5,6 +5,7 @@ import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 import RestaurantMenuRoundedIcon from '@mui/icons-material/RestaurantMenuRounded';
 import {useNavigate} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import BResetAll from '../components/BResetAll';
 import BSaveProfile from '../components/BSaveProfile';
@@ -18,10 +19,27 @@ export default function EditCreateForm() {
   const [loggedInUser, setLoggedInUser] = useState(JSON.parse(loggedInUserId).user.id);
   console.log("***loggedInUser1:", loggedInUser);
 
+  const { id } = useParams();
+  const [selectedEntry, setSelectedEntry] = useState(id);
+  // const [selectedUser, setSelectedUser] = useState("");
+
+  // const getUser = async () => {
+  //   try {
+  //     let response = await axios.get(`/api/users/${loggedInUser}`);
+  //     console.log("getUser response:", response);
+  //     setSelectedUser(response.data.user.id);
+  //     console.log("***selectedUser:", selectedUser);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  // getUser();
+
   useEffect(() => {
     const getEntryFormInfo = async () => {
       try {
-        let response = await axios.get(`/api/entries/${loggedInUser}`);
+        let response = await axios.get(`/api/entries/${selectedEntry}`);
         // console.log(response);
         setEntryName(response.data.entry.entry_name);
         setMyStory(response.data.entry.my_story);
@@ -115,7 +133,7 @@ export default function EditCreateForm() {
     console.log("values:", values())
     // const id = 2; //temporary value here used to hardcode the params in the url/query values
     if (entryName && myStory && myWorkoutRoutine && !inputFieldsError) {
-      axios.put(`api/entries/${loggedInUser}`, {id: loggedInUser, entry_name: entryName, my_story: myStory, my_workout: myWorkoutRoutine, 
+      axios.put(`/api/entries/${selectedEntry}`, {id: selectedEntry, entry_name: entryName, my_story: myStory, my_workout: myWorkoutRoutine, 
         my_diet: values()})
         .then(navigate("/My_Profile"));
     }

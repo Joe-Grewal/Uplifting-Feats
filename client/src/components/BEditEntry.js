@@ -27,12 +27,14 @@ export default function BEditEntry (props) {
     }
   });
 
+  const link = `/entries/${props.entryId}/edit_entry`
+
   return (
     <ThemeProvider theme={theme}>
       <div className="edit_entry_button">
       <Button
       onClick={props.onClick}
-      href='/edit_entry'
+      href={link}
       variant="contained">
         EDIT ENTRY
     </Button>

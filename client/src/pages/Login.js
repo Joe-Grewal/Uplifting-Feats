@@ -20,7 +20,7 @@ import { useNavigate } from "react-router-dom";
 import "../styles/Login.scss";
 
 export default function Login3() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -88,6 +88,7 @@ export default function Login3() {
   };
 
   if (user) {
+    window.location.reload(); //<---cause a page refresh so navbar can immediately change from showing login to logout
     navigate("/My_Profile");
     // return (
     //   <section className="welcome">
