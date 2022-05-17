@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 
-export default function BBackToProfile () {
+export default function BBackToProfile (props) {
   const theme = createTheme ({
     typography: {
       fontFamily: [
@@ -27,9 +27,7 @@ export default function BBackToProfile () {
   return (
     <ThemeProvider theme={theme}>
       <Button id="back_to_profile_button"
-      onClick={() => {
-      alert('clicked');
-      }}
+      onClick={props.onClick}
       variant="contained">
         BACK TO PROFILE
     </Button>

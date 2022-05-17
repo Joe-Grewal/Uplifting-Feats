@@ -32,7 +32,7 @@ export default function BEditEntry (props) {
       <div className="edit_entry_button">
       <Button
       onClick={props.onClick}
-      href='edit_entry'
+      href='/edit_entry'
       variant="contained">
         EDIT ENTRY
     </Button>

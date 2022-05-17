@@ -3,6 +3,7 @@ import BPrevious from "./BPrevious";
 import BNext from "./BNext";
 import BViewAllEntries from "./BViewAllEntries";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import BAddEntry from "./BAddEntry";
 import BEditEntry from "./BEditEntry";
 import BDeleteEntry from "./BDeleteEntry";
@@ -16,6 +17,14 @@ export default function MyHealthJournal (props) {
   const [myworkout, setmyWorkout] = useState("");
   const [postedAt, setPostedAt] = useState("");
   const [userId, setUserId] = useState(props.userId);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("props:", props)
+    navigate(`/users/${props.userId}/view_entries`);
+  }
 
   const getEntries = async () => {
     try {
@@ -98,7 +107,7 @@ export default function MyHealthJournal (props) {
       </div>
 
     <div className="bottom_w_buttons">
-      <BViewAllEntries/>
+      <BViewAllEntries userId={userId} onClick={handleSubmit}/>
     </div>
   </div>
     

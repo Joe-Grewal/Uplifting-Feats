@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 
-export default function BViewAllEntries (props) {
+export default function BViewEntry () {
   const theme = createTheme ({
     typography: {
       fontFamily: [
@@ -31,9 +31,11 @@ export default function BViewAllEntries (props) {
     <ThemeProvider theme={theme}>
       <div className="view_all_entries_button">
       <Button
-      onClick={props.onClick}
+      onClick={() => {
+      alert('clicked');
+      }}
       variant="contained">
-        VIEW ALL ENTRIES
+        VIEW
     </Button>
     </div>
   </ThemeProvider>

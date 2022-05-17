@@ -41,6 +41,7 @@ const myprofileRoutes = require("./src/routes/myprofile.js");
 const myEntriesRoutes = require("./src/routes/myentry.js");
 const updateBmiRoutes = require("./src/routes/bmi.js");
 const calorieRoutes = require("./src/routes/calorie.js");
+const allmyentriesRoutes = require("./src/routes/allmyentries.js");
 //const samplehomeRoutes = require("./src/routes/samplehome.js");
 
 app.use("/api/login", loginRoutes(db));
@@ -53,6 +54,7 @@ app.use("/api/myprofile", myprofileRoutes(db));
 app.use("/api/myentry", myEntriesRoutes(db));
 app.use("/api/updatebmi", updateBmiRoutes(db));
 app.use("/api/calorie", calorieRoutes(db));
+app.use("/api", allmyentriesRoutes(db));
 
 app.post("api/logout", (req, res) => {
   req.session = null;

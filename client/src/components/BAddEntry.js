@@ -32,7 +32,7 @@ export default function BAddEntry (props) {
       <div className="add_entry_button">
       <Button
       onClick={props.onClick}
-      href='create_entry'
+      href='/create_entry'
       variant="contained">
         ADD ENTRY
     </Button>
