@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 
-export default function BPrevious () {
+export default function BPrevious (props) {
   const theme = createTheme ({
     typography: {
       fontFamily: [
@@ -28,9 +28,7 @@ export default function BPrevious () {
   return (
     <ThemeProvider theme={theme}>
       <Button id="previous_button"
-      onClick={() => {
-      alert('clicked');
-      }}
+      onClick={props.onClick}
       variant="contained">
         {"< PREVIOUS"}
     </Button>

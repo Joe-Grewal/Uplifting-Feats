@@ -14,7 +14,14 @@ export default function Nav() {
 
   useEffect(() => {
     setLoggedInUser(localStorage.getItem("user_details"));
+    console.log("MyprofileLINK:", loggedInUser)
   }, [loggedInUser]);
+
+  let myProfileLink = "";
+  if (localStorage.getItem("user_details")) {
+    console.log("LOOK HERE:", JSON.parse(localStorage.getItem("user_details")).user.id);
+    myProfileLink = `/users/${JSON.parse(localStorage.getItem("user_details")).user.id}`
+  }
 
   if (loggedInUser) {
     return (
@@ -29,7 +36,7 @@ export default function Nav() {
             <a className="right_links" href="/home">
               Search
             </a>
-            <a className="right_links" href="/My_Profile">
+            <a className="right_links" href={myProfileLink}>
               My Profile
             </a>
             <a className="right_links" href="/logout">

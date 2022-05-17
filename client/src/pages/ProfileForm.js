@@ -247,7 +247,7 @@ export default function EditProfile() {
       weight && dietType && primaryWorkout && aboutMe && healthTips && futureGoals
       && (password === confirmPassword)) {
       axios.put(`api/users/${id}`, { user_name: userName, first_name: firstName, last_name: lastName, email: email, password: password, profile_img_url: profileImageUrl, age: age, gender: gender, height: height, weight: weight, country: country, fitness_goal: fitnessGoal, diet_type: dietType, primary_workout: primaryWorkout, about_me: aboutMe, tips: healthTips, future_goals: futureGoals })
-        .then(navigate("/My_Profile"));
+        .then(navigate(`/users/${id}`));
     }
   }
 

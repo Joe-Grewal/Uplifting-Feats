@@ -1,8 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import { Button, createTheme } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 
-export default function BNext (props) {
+export default function BDeleteEntry (props) {
+
+  const navigate = useNavigate();
+
+  const handleDelete = () => {
+    console.log("I've been clicked", props.entryId, props.userId)
+    axios.delete(`/api/entries/${props.entryId}`);
+  };
+
   const theme = createTheme ({
     typography: {
       fontFamily: [
@@ -13,7 +23,7 @@ export default function BNext (props) {
     },
     palette: {
       primary: {
-        main: '#5870E0'
+        main: '#B145CC'
       },
       action: {
         hover: (106, 24, 168, 1)
@@ -22,19 +32,23 @@ export default function BNext (props) {
     shape: {
       borderRadius: 20
     },
-    shadow: {
-      1: "0px 15px 60px rgba(0, 0, 0, 0.25)"
-    }
-
+    // shadows: {
+    //   0: "none"
+    // }
   });
+
+  const link = `/users/${props.userId}/`;
 
   return (
     <ThemeProvider theme={theme}>
-      <Button id="next_button"
-      onClick={props.onClick}
+      <div className="delete_entry_button">
+      <Button
+      href={link}
+      onClick={() => handleDelete()}
       variant="contained">
-        {"NEXT >"}
+        DELETE ENTRY
     </Button>
+      </div>
   </ThemeProvider>
   )
 }
