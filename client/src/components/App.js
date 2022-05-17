@@ -31,7 +31,7 @@ export default function App() {
 
       <Router>
         <Routes>
-          <Route path="/" element={<My_Profile_NOT_logged_in/>}/>
+          <Route path="/" element={<Login/>}/>
           <Route path="/login" element={<Login/>}/>
           <Route path="/My_Profile" element={<My_Profile_logged_in/>}/>
           <Route path="/update_profile" element={<ProfileForm/>}/>
@@ -39,6 +39,7 @@ export default function App() {
           <Route path="/edit_entry" element={<EditEntryForm/>}/>
           <Route path="/home" element={<Search/>}/>
           <Route path="/users/:id" element={<My_Profile_NOT_logged_in/>}/>
+          <Route path="/users/:id/view_entries" element={<JournalEntries_NOT_logged_in/>}/>
         </Routes>
       </Router>
     </>

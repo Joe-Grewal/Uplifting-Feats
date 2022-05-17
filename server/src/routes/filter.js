@@ -25,7 +25,8 @@ module.exports = (db) => {
       height: req.body['height'],
       dietType: req.body['dietType'],
       primaryWorkout: req.body['primaryWorkout'],
-      fitnessGoal: req.body['fitnessGoal']
+      fitnessGoal: req.body['fitnessGoal'],
+      cookieId: req.session.user_id
     };
     console.log('options', options);
     const queryParams = [];
@@ -92,6 +93,15 @@ module.exports = (db) => {
         queryString += `AND fitness_goal LIKE $${queryParams.length} `;
       } else {
         queryString += `WHERE fitness_goal LIKE $${queryParams.length} `;
+      }
+    }
+
+    if (options.cookieId) {
+      queryParams.push(options.cookieId);
+      if (queryParams.length > 1) {
+        queryString += `AND id != $${queryParams.length} `;
+      } else {
+        queryString += `WHERE id != $${queryParams.length} `;
       }
     }
 

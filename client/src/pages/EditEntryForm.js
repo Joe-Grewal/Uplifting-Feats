@@ -14,12 +14,14 @@ import "../styles/EditProfile.scss"
 export default function EditCreateForm() {
 
   const navigate = useNavigate();
+  const loggedInUserId = localStorage.getItem("user_details");
+  const [loggedInUser, setLoggedInUser] = useState(JSON.parse(loggedInUserId).user.id);
+  console.log("***loggedInUser1:", loggedInUser);
 
   useEffect(() => {
     const getEntryFormInfo = async () => {
       try {
-        const id = 2;
-        let response = await axios.get(`/api/entries/${id}`);
+        let response = await axios.get(`/api/entries/${loggedInUser}`);
         // console.log(response);
         setEntryName(response.data.entry.entry_name);
         setMyStory(response.data.entry.my_story);
@@ -111,9 +113,9 @@ export default function EditCreateForm() {
       return string;
     }
     console.log("values:", values())
-    const id = 2; //temporary value here used to hardcode the params in the url/query values
+    // const id = 2; //temporary value here used to hardcode the params in the url/query values
     if (entryName && myStory && myWorkoutRoutine && !inputFieldsError) {
-      axios.put(`api/entries/${id}`, {id, entry_name: entryName, my_story: myStory, my_workout: myWorkoutRoutine, 
+      axios.put(`api/entries/${loggedInUser}`, {id: loggedInUser, entry_name: entryName, my_story: myStory, my_workout: myWorkoutRoutine, 
         my_diet: values()})
         .then(navigate("/My_Profile"));
     }
