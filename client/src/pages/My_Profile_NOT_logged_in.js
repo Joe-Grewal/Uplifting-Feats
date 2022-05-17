@@ -43,10 +43,12 @@ export default function My_Profile_logged_in () {
   if (loggedInUser !== selectedUser) {
     return (
       <>
+      <div className="background_image_container">
         <Bio />
         <BioDivs />
         <MyHealthJournal_NOT_logged_in userId={selectedUser}/>
-        <div className="profile_bottom_w_buttons"><BLike/><BShare/></div>
+        <div className="profile_bottom_w_buttons"><Like_small/><div className="spacer"></div>/><Share_small/></div>
+        </div>
       </>
     );
   }
