@@ -29,7 +29,7 @@ VALUES(
   ),
   (
   'High fiber and iron',
-  'I want to feel stronger on my feet and so that it is why I am eating more fiber and iron. Creating a routine to take care of myself is not being selfish—it is self-care, and I need it. I have regained my confidence and discovered a new passion for fitness. However, the upsides do not come all at once. I found that you have to take the time to celebrate the little wins and changes. The goal is progress, not perfection.',
+  'I want to feel stronger on my feet and so that it is why I am eating more fiber and iron. Creating a routine to take care of myself is not being selfish it is self-care, and I need it. I have regained my confidence and discovered a new passion for fitness. However, the upsides do not come all at once. I found that you have to take the time to celebrate the little wins and changes. The goal is progress, not perfection.',
   'I began going to the gym late at night. I would be at the gym at 8:00 p.m., so I could end my day off with a workout and still be home in time to help get my three children ready for bed. Also, prioritizing the beginning of my day to my workouts reduces the likelihood that I will find an excuse not to go to the gym.',
   'chicken burger,milk,fruits,beef,corn,',
   2
@@ -40,4 +40,85 @@ VALUES(
   'Every day with 40 minutes of lifting per day. Abdominals got a special focus this week with 5x2 minute intervals of planking each day. The rest of my workout was 3 different weight baring exercises, 4 sets x 10 reps for each. 1 minute rest between sets. I focused on a different body part each day.', 
   'grapes,potato salad,raspberry,salmon,pear,almonds,peanuts,',
   3
+  ),
+  (
+  'At my lowest',
+  'Anyone who understands even a bit about fitness will know how difficult it is to gain muscles naturally. During the last 4 years, there came a point when I lost everything which I had built for years.
+  I had met with a terrible accident which left me with broken bones. I had lost all sense of reality and when I gained consciousness, I had already lost 15 kilos. Hence, I had become really self-conscious. It was perhaps the lowest point of my life because it felt like the point of no return.',
+  'There is no sudden leap when it comes to weight gain, you have to be patient and trust the journey. It takes a lot of effort and time to see visible results. Even when you''re underweight, be mindful of excess sugar and fat. An occasional slice of pie with ice cream is OK. But most treats should be healthy and provide nutrients in addition to calories. ',
+  'whole-grain bread,fruit smoothie,cheese,avocado,dried fruits',
+  8
+  ),
+  (
+  'I Got Addicted',
+  'I feel really amazing when I workout and take care of my body, so much so, that if I miss it for even a day I feel incomplete. It will be safe to say that I have become addicted to working out. Hence, there is no question of getting demotivated. I have realised that if you stay disciplined and consistent you will reach your goal, without any doubt.',
+  ' I do strenuous strength training, giving more focus to legs and core workouts. I knew that I was giving almost 9 hours to my office. Hence, I decided that I would not let my exhaustion and lethargy take over my dedication to working out.',
+  'milk,peanut butter,beans,boiled chicken,mixed nuts', 
+  8
+  ),
+  (
+  'Motivated Lifestyle',
+  'Little victories like being able to lift more, improved stamina and body weight keep me really motivated. I make sure that I don’t compare my journey with anyone else because it is more about being a better version of yourself and feeling good about it.',
+  '  In order to gain weight, you need to have time to workout, sleep well and eat as well. You need to remember that fitness is a complete lifestyle change and not just a phase. Push-Pull-Leg split for 6 days a week. 3 days of heavy lifting followed by 3 days of technical corrections and cardiovascular endurance.',
+  'scrambled eggs,almonds,walnuts,ghee,chicken paneer', 
+  4
+  ),
+  (
+  'Tools of Motivation',
+  'Whenever I need some motivation, I look at all my progress photos. Every day I do a self-assessment to make sure I''m staying on track. With that said, my parents are probably my biggest motivation. They already experience the loss of their loved ones. I can''t bear to imagine if I was gone too because of my health. I always carry that mindset on my shoulders daily and throughout my fitness journey.',
+  ' Don''t lift with your ego. Lifting weights can build muscle. Cardio can burn fat. Figuring out how to incorporate both of them into your workouts will set you up for success.',
+  'whey protein,banana,broccoli,ground beef,almonds', 
+  4
+  ),
+  (
+  'Carbs and Protein',
+  'I learned that everyone reacts differently to carbohydrates. For me, they are the main nutrient to be restricted in order to cut effectively. I learned that you won''t get bigger by simply eating more. You must eat smart. And not overdoing protein, as what won''t be used, will be stored.',
+  'I would vary main lifts weekly. One week I would train a muscle group for hypertrophy and the other for max weight. Then, I''d switch it the following week.',
+  'tuna,rice,yogurt,beans', 
+  4
+  ),
+  (
+  'Mental Focus',
+  'If I could offer anyone who is trying to lose weight some advice, I would tell them that instead of just diving into another trendy weight-loss program, spend some time nurturing your mental health and focus on a mentality change. I learned losing weight wasn''t enough until I changed all the behaviors and negative thinking about myself that got me there. I never believed in myself and thought I could never lose weight. Once I changed my mentality, that''s when the magic happened.',
+  'Besides Pilates, I also love to exercise outside. Hiking and kayaking are my favorite because not only are they great workouts, but anytime I can be in nature and exercise, I experience such mental clarity.',
+  'steak,tuna,eggs,cheese,lettuce wrap burger', 
+  5
+  ),
+  (
+  'My Keto Relationship',
+  'The first month of my 90 Day Journey I was doing “Lazy Keto“. So high fat, low carb, moderate protein. I wasn''t calculating my macros or calories, but I was very conscious of my carb levels being low and my fat levels being high in comparison to each other. I allowed myself to eat cheese (which I normally don''t eat) so it made going keto super fun and exciting!.',
+  'I made a keto pizza. The base is a mixture of egg + almond flour + mozzarella cheese that I mixed together and put on the pan like a pancake. Then I just added marinara, cheese, and chicken sausage on top!.',
+  'greek yogurt,avocado,soy milk,almond milk,arugula,lettuce', 
+  5
+  ),
+  (
+  'My Emotion Gets Me',
+  'I had long been an emotional eater, and in order for me to be truly successful on a diet I needed to change the way I thought about food. I had to stop thinking of food as something that brought me pleasure, but rather as fuel for my body. I made a conscious effort to do more of the things that I love. I can''t stress enough how important this mental mindset has been to my weight loss success.',
+  'Exercise doesn''t have to be a chore. It can be an enjoyable experience that you can share with your kid(s).Try bringing your kids to the park so that all of you can get some form of exercise in. Get a jogging stroller.Plop your kid right in front of you as you workout and cuddle them between sets.',
+  'fish,apples,coconut oil,eggs,cauliflower', 
+  2
+  ),
+  (
+  'Home-cooked',
+  'These days, I cook at home and we rarely eat out. I''ve learned how to cook a variety of healthy and delicious meals. I''ve also incorporated intermittent fasting. On most days, my eating window is 12 pm to 8 pm, and at least one day a week I do one meal a day (OMAD). In addition to my diet, I work out five to six days a week. I have energy to do things with my children and I''ve found exercising-both cardio and strength training to be enjoyable and a great way to reduce stress.
+',
+  'Exercise doesn''t have to be a chore. It can be an enjoyable experience that you can share with your kid(s).Try bringing your kids to the park so that all of you can get some form of exercise in. Get a jogging stroller.Plop your kid right in front of you as you workout and cuddle them between sets.',
+  'peas,berries,corn,plain yogurt,raisins,potato', 
+  2
+  ),
+  (
+  'First Day High',
+  'I woke up for my first hiit class, but after squeezing into my XL workout clothes, I considered bailing. I didn''t. I was intimidated, but I was more determined.
+  My first day was intense. I could barely make it through the 3-minute warm up and struggled through the majority of the remaining 47 minutes. Luckily, the trainers were extremely supportive. Though they were strict about form and were quick to correct me, they never made me feel like I was too out of shape to participate. After attending a few classes, I got hooked.',
+  'I would do HIIT workouts Monday, Wednesdays, and Fridays. Then, I would supplement with spin classes on Tuesdays and Thursdays. On the weekend, I would alternate between hot yoga and running.',
+  'carrots,hard boiled eggs,eggplant lasagna', 
+  3
+  ),
+  (
+  'In Energy Mood',
+  'I''ve heard of zero carb zen before. I felt it IMMENSELY the first 5-6 days, then took a dip when my body finally switched over then it came back again. Its a feeling like no other. Your brain is just ON POINT and you are just at peace with your life and more. I credit this to giving my brain enough fat as well as blood sugar stability and eating enough minerals and nutrients.',
+  'Select a weight that allows you to complete the prescribed reps while leaving about 2 solid reps in the tank. To increase intensity, go to your limit on the last set.',
+  'beef,lamb,salmon,lard,heavy cream', 
+  1
   )
+  
