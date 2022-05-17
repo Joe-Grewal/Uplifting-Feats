@@ -2,7 +2,7 @@ import {React, useState, useEffect} from "react";
 import axios from "axios";
 import BEditEntry from './BEditEntry'
 import BDeleteEntry from './BDeleteEntry'
-
+import BViewEntry from './BViewEntry'
 export default function EntryCards (props) {
 
   const [entries, setEntries] = useState([]);
@@ -44,25 +44,31 @@ export default function EntryCards (props) {
     <div className="entry_card_spacing_container">
       {entries.map((entry, i) => 
       <div key={entry.id}>
-        <div className="outer_entry_card_container">
+        <div className="outer_entry_card_container_me">
 
-          <div className="entry_card_date">
+          <div className="entry_card_date_me">
             <span><strong>{date(entry.posted_at)}</strong></span>
           </div>
       
-          <div className="entry_card_entry_name">
+          <div className="entry_card_entry_name_me">
             <h3 className="entry_name">{entry.entry_name}</h3>
           </div> 
+
+          <div className="entry_card_view_entry_button_me">
+            <BViewEntry 
+            // entryId={entry.id} userId={entry.user_id}
+            />
+          </div>
       
-          <div className="entry_card_edit_entry_button">
+          <div className="entry_card_edit_entry_button_me">
             <BEditEntry entryId={entry.id} userId={entry.user_id}/>
           </div>
 
-          <div className="entry_card_delete_entry_button">
+          <div className="entry_card_delete_entry_button_me">
             <BDeleteEntry entryId={entry.id} userId={entry.user_id}/>
           </div>
 
-          <div className="entry_preview">
+          <div className="entry_preview_me">
             <p>{entry.my_story.slice(0, 120) + "..."}</p>
           </div>
           </div>
