@@ -695,7 +695,7 @@ hr {
   .tiny_profile_image { 
     width: 80%;
     border-radius: 15px;
-    border: solid 3px #E32EB0;
+    border: solid 2px #6A18A8;
   }
 
   .profile_card_copy { 
@@ -711,7 +711,7 @@ hr {
   }
 
   .likes { 
-    width: 70%;
+    width: 60%;
     margin: auto;
     align-self: center;
     // padding-bottom: 20px;
@@ -814,22 +814,20 @@ hr {
   /* LIKE BUTTON LARGE  component -------------------*/
 
   .large_like_button {
-    display: inline-flex;
-    flex-direction: row;
-    margin-top: -20px;
+    
   }
 
-  .like_button {
-    margin-left: 20px;
-  }
+  // .like_button {
+  //   margin-left: 20px;
+  // }
 
   .large_like_text {
-    font-size: 1.25em;
-    margin-top: 50px;
+    font-size: 1em;
+    margin-top: 40px;
   }
 
   .like_image_large {
-    width: 14%;
+    width: 10%;
     margin-left: 20px;
   }
 
@@ -853,6 +851,10 @@ hr {
   .share_image_large {
     width: 20%;
     margin-left: 20px;
+  }
+
+  .spacer {
+    margin: 20px;
   }
 
     /* UPDATE PROFILE Button Component and BOTTOM BUTTON SERIES w/ SMALL SHARE AND LIKES BUTTONS -------------------*/
