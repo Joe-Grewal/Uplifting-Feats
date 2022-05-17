@@ -15,8 +15,8 @@ export default function My_Profile_logged_in () {
   useEffect(() => {
     const loggedInUser = localStorage.getItem("user_details");
     console.log("localstorage", JSON.parse(loggedInUser),"id:", JSON.parse(loggedInUser).user.id);
-    if (loggedInUser) {
-      const foundUser = JSON.parse(loggedInUser);
+    const foundUser = JSON.parse(loggedInUser);
+    if (foundUser) {
       setLoggedInUser(foundUser.user.id);
     }
   }, []);

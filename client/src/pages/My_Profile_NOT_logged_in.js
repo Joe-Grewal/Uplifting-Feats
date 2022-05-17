@@ -53,8 +53,8 @@ export default function My_Profile_logged_in () {
   return (
     <>
     <div className="background_image_container">
-      <Bio />
-      <BioDivs />
+      <Bio userId={loggedInUser}/>
+      <BioDivs userId={loggedInUser}/>
       <MyHealthJournal userId={loggedInUser}/>
       <div className="profile_bottom_w_buttons"><Like_small/><BUpdateProfile/><Share_small/></div>
       </div>

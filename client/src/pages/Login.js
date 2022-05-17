@@ -89,7 +89,7 @@ export default function Login3() {
 
   if (user) {
     window.location.reload(); //<---cause a page refresh so navbar can immediately change from showing login to logout
-    navigate("/My_Profile");
+    navigate(`/users/${user.user.id}`); //changed this from myprofile
     // return (
     //   <section className="welcome">
     //     <br />

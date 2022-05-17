@@ -135,7 +135,7 @@ export default function EditCreateForm() {
     if (entryName && myStory && myWorkoutRoutine && !inputFieldsError) {
       axios.put(`/api/entries/${selectedEntry}`, {id: selectedEntry, entry_name: entryName, my_story: myStory, my_workout: myWorkoutRoutine, 
         my_diet: values()})
-        .then(navigate("/My_Profile"));
+        .then(navigate(`/users/${loggedInUser}`)); //change this to user_id or my profile
     }
   };
 
@@ -261,15 +261,17 @@ export default function EditCreateForm() {
           }}
           error={inputFieldsError}
         />
+        <IconButton
+          onClick={handleAddFields}>
+          <AddRoundedIcon id="add"/>
+        </IconButton>
+        {i > 0 && 
         <IconButton 
           disabled={inputFields.length === 1} 
           onClick={() => handleRemoveFields(i)}>
           <RemoveRoundedIcon id="minus"/>
         </IconButton>
-        <IconButton
-          onClick={handleAddFields}>
-          <AddRoundedIcon id="add"/>
-        </IconButton>
+        }
           </div>
         )) }
       </form>

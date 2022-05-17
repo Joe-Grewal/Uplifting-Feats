@@ -28,7 +28,7 @@ export default function BEditProfile () {
     <ThemeProvider theme={theme}>
       <div className="update_profile_button">
       <Button
-        href='update_profile'
+        href='/update_profile'
         variant="contained">
         EDIT PROFILE
       </Button>

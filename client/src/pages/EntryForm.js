@@ -84,7 +84,7 @@ export default function CreateEntryForm() {
     if (entryName && myStory && myWorkoutRoutine && !inputFieldsError) {
       axios.post("api/entries", {entry_name: entryName, my_story: myStory, my_workout: myWorkoutRoutine, 
         my_diet: values()})
-        .then(navigate("/My_Profile"))
+        .then(navigate("/users/2")) //<---- change this to user value or my profile
     }
   };
 
@@ -207,15 +207,17 @@ export default function CreateEntryForm() {
           }}
           error={inputFieldsError}
         />
+        <IconButton
+          onClick={handleAddFields}>
+          <AddRoundedIcon id="add"/>
+        </IconButton>
+        {i > 0 && 
         <IconButton 
           disabled={inputFields.length === 1} 
           onClick={() => handleRemoveFields(i)}>
           <RemoveRoundedIcon id="minus"/>
         </IconButton>
-        <IconButton
-          onClick={handleAddFields}>
-          <AddRoundedIcon id="add"/>
-        </IconButton>
+        }
           </div>
         )) }
       </form>
