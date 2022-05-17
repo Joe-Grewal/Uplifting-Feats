@@ -18,9 +18,9 @@ export default function BLike () {
         main: '#6A18A8'
       }
     },
-    shadows: {
-      0: "none"
-    }
+    // shadows: {
+    //   0: "none"
+    // }
   });
 
   return (

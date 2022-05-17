@@ -34,20 +34,23 @@ export default function BShare() {
 
   return (
     <>
+    <div className="facebook">
       <FacebookShareButton
         url={shareUrl}
         quote="Uplifting Feats"
         hashtag="#UpliftingFeats"
+        
       >
-        <FacebookIcon size={32} round />
+        <FacebookIcon size={32} round iconFillColor={'#E32EB0'}/>
       </FacebookShareButton>
+      </div>
 
       <EmailShareButton
         url={shareUrl}
         quote="Uplifting Feats"
         hashtag="#UpliftingFeats"
       >
-        <EmailIcon size={32} round />
+        <EmailIcon id="email" size={32} round />
       </EmailShareButton>
 
       <TwitterShareButton

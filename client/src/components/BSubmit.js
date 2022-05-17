@@ -19,9 +19,9 @@ export default function BSubmit (props) {
     shape: {
       borderRadius: 20
     },
-    shadows: {
-      0: "none"
-    }
+    // shadows: {
+    //   0: "none"
+    // }
   });
 
   return (

@@ -22,9 +22,9 @@ export default function BAddEntry (props) {
     shape: {
       borderRadius: 20
     },
-    shadows: {
-      0: "none"
-    }
+    // shadows: {
+    //   0: "none"
+    // }
   });
 
   return (
