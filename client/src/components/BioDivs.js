@@ -25,18 +25,18 @@ export default function BioDivs() {
   return (
     <div className="outer_container">
       <div className="about_me">
-        <h2>About Me:</h2>
+        <h2>About Me</h2>
         <p>{aboutme}</p>
       </div>
 
       <div className="health_tips">
-        <h2>Health Tips:</h2>
+        <h2>Health Tips</h2>
         <p>{tips}</p>
       </div>
 
       <div className="future_goals">
         {/* <section className="future_goals"> */}
-        <h2>Future Goals:</h2>
+        <h2>Future Goals</h2>
         <p>{goals}</p>
       </div>
     </div>
