@@ -6,7 +6,7 @@ module.exports = (db) => {
   //get all entries by a single user
   router.get("/:id/allmyentries", (req, res) => {
     // req.session.user_id = req.params.id;
-    let query = `SELECT * FROM entries WHERE user_id = $1;`;
+    let query = `SELECT * FROM entries WHERE user_id = $1 ORDER by id;`;
     queryParams = [req.params.id];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
