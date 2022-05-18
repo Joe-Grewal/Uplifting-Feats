@@ -4,7 +4,7 @@ const request = require("request");
 
 module.exports = (db) => {
   router.get("/:id", (req, res) => {
-    let query = `SELECT my_diet FROM entries WHERE user_id = ${req.params.id};`;
+    let query = `SELECT my_diet FROM entries WHERE id = ${req.params.id};`;
     db.query(query)
       .then((data) => {
         const entries = data.rows;

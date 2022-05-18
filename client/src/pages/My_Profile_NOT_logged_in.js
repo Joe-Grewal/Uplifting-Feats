@@ -48,7 +48,7 @@ export default function My_Profile_logged_in () {
         <Bio />
         <BioDivs />
         <MyHealthJournal_NOT_logged_in userId={selectedUser}/>
-        <div className="profile_bottom_w_buttons"><Like_small/><div className="spacer"></div><Share_small/></div>
+        <div className="profile_bottom_w_buttons"><Like_small userId={selectedUser}/><div className="spacer"></div><Share_small/></div>
         </div>
       </>
     );
@@ -59,7 +59,7 @@ export default function My_Profile_logged_in () {
       <Bio userId={loggedInUser}/>
       <BioDivs userId={loggedInUser}/>
       <MyHealthJournal userId={loggedInUser}/>
-      <div className="profile_bottom_w_buttons"><Like_small/><BUpdateProfile/><Share_small/></div>
+      <div className="profile_bottom_w_buttons"><Like_small userId={loggedInUser}/><BUpdateProfile/><Share_small/></div>
       </div>
     </>
   );
