@@ -120,5 +120,48 @@ VALUES(
   'Select a weight that allows you to complete the prescribed reps while leaving about 2 solid reps in the tank. To increase intensity, go to your limit on the last set.',
   'beef,lamb,salmon,lard,heavy cream', 
   1
+  ),
+  (
+  'Man Flow Yoga',
+  'Yoga is one of the best investments you can make in your health and personal care if you are ready to take that step. The resources are beyond imagination, you get a whole library of yoga, strength, balancing, and flexibility workouts.  I feel my core strengthening and I have more body awareness when doing the routines throughout the day.',
+  'Straighten your legs, move your shoulders back so they are no longer over your wrists, and bring your butt up high. Your body makes the shape of a "V." Let your head hang heavy. Bend one knee and then the other, peddling out the legs. You can keep your knees slightly bent if you can''t straighten your legs. Stay in the pose for five breaths.',
+  'tofu,oatmeal,feta,zucchini,brown rice,eggplant,nutritional yeast',
+  6
+  ),
+  (
+  'Sans Spritual',
+  'I enjoy the physical aspect of yoga, but not the spiritual side. Man Flow Yoga provides this. I enjoy the workouts and they don''t talk about phoenixes, rising out of lotuses, aligning your chakras for digestion. I recommend it to anyone who wants the benefits of yoga without the woo.',
+  'Bend your knees as much as is necessary to bring your palms flat to the mat. Step your right foot to the back of your mat, keeping the left knee bent over the left ankle. Keep the right knee down on the mat. You can come up with your fingertips or use blocks under your hands if needed. Take several breaths in this runner''s lunge.',
+  'qunioa,kale,lentils,nut butter,almond milk,sweet potato,cauliflower rice',
+  6
+  ),
+  (
+  'Baking Like A Vegetarian',
+  'I used to be a bakery trainer for a major supermarket chain, before I became a teacher. So I can bake anything, from Croissants to Danish to Cakes, and I also have a sweet tooth. So that was sort of hard. I asked myself "how do you make a dessert without all that added sugar, without all the added fat or the eggs, or the dairy"? Especially because the cornerstone of most pastry is eggs, as well as butter, and dairy. So it was tough to make that change. Probably the hardest thing to give up was the cheese. The meat wasn''t too hard, but you know, the cheese, which we used to put on everything. And then we had to figure out ways to get away from that taste addiction.',
+  'For eggs and dairy, I don''t think of it as substituting eggs and dairy because they serve as a certain component. Whether its eggs for a binder or for a lift in a product or for adding fat. So, I look at things I can use instead, for fat, for binders, and for leavening. So for instance instead of fat, a lot of it now comes from using nuts.',
+  'black beans, white beans, non-dairy milk, flaxseed, oats, soy milk',
+  6
+  ),
+  (
+  'Crossfitting',
+  'Joining CrossFit helped me turn my life around because now I exercise six times a week, completely changed the way I eat, and have more energy throughout the day. I never thought I would accomplish what I have so far, but the support from the coaches and members helped push me to keep going. Although I am still working on my fitness journey, I would have never been able to get this far without taking the first step and going to my first class.',
+  'Do 10 each of kettlebell swings at a moderate weight, followed by 10 dumbbell thrusters (hold a light dumbbell in front of your chest with both hands; squat with dumbbell in place, then stand straight while raising the dumbbell overhead.) Then do 9 of each, then 8, and so on, down to 1 of each.',
+  'beef,lamb,chicken,potatoes,yams,turnips,virgin olive oil,avocado oil',
+  7
+  ),
+  (
+  'Gaining at Crossfit',
+  'I have gained 7 lbs of muscle in less than a year, and feel better than I ever have.  Not only am I stronger and more confident, I have gained a family of friends and a strong support system. Thanks to all of the coaches for pushing me to do things I never thought possible!. Do crossfit. You will not regret it.',
+  'Do 3 rounds of the following as rapidly as possible: 12 front squats with a barbell, 10 pull-ups and 8 push presses. Finish up with a quarter-mile run. Start to squat with a barbell, but hold the down position for two minutes (or as long as you can). Next, do 3 rounds of 10 burpees, 15 sit-ups and 20 air squats.',
+  'eggs,olive oil,lettuce,sweet potatoes,bacon,baby carrots',
+  7
+  ),
+  (
+  'My Journey in Paleo',
+  'I wanted and needed to lose weight and did research on the Paleo diet. I have been on what seems like every diet known to man with limited success. I now consider it a lifestyle not necessarily a diet. People ask me all the time how I lost so much weight and I proudly say the Paleo diet. Yes there are sacrifices but with these results it is more than worth it.',
+  'Avoid all processed foods and ingredients, including sugar, bread, certain vegetable
+  oils, trans fats and artificial sweeteners. Try to choose grass-fed, pasture-raised and organic if you can afford it. If not, just make sure to always go for the least-processed option.',
+  'macadamia nuts,walnuts,hazelnuts,sunflower seeds,turmeric,rosemary,broccoli,kale,peppers,onions,carrots,tomatoes',
+  7
   )
   
