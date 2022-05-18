@@ -14,7 +14,6 @@ import EntryCards from "./EntryCards";
 import JournalEntries_logged_in from "../pages/JournalEntries_logged_in";
 import JournalEntries_NOT_logged_in from "../pages/JournalEntries_NOT_logged_in";
 import EditEntryForm from "../pages/EditEntryForm";
-import Logout from "../pages/Logout";
 
 export default function App() {
   //currentUser = localStorage.getItem("user_details");
@@ -34,17 +33,19 @@ export default function App() {
 
       <Router>
         <Routes>
-          <Route path="/" element={<Login/>}/>
-          <Route path="/login" element={<Login/>}/>
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
           {/* <Route path="/My_Profile" element={<My_Profile_logged_in/>}/> */}
-          <Route path="/update_profile" element={<ProfileForm/>}/>
-          <Route path="/create_entry" element={<EntryForm/>}/>
-          <Route path="/entries/:id/edit_entry" element={<EditEntryForm/>}/>
-          <Route path="/home" element={<Search/>}/>
-          <Route path="/users/:id" element={<My_Profile_NOT_logged_in/>}/>
-          <Route path="/users/:id/view_entries" element={<JournalEntries_NOT_logged_in/>}/>
+          <Route path="/update_profile" element={<ProfileForm />} />
+          <Route path="/create_entry" element={<EntryForm />} />
+          <Route path="/entries/:id/edit_entry" element={<EditEntryForm />} />
+          <Route path="/home" element={<Search />} />
+          <Route path="/users/:id" element={<My_Profile_NOT_logged_in />} />
+          <Route
+            path="/users/:id/view_entries"
+            element={<JournalEntries_NOT_logged_in />}
+          />
           {/* <Route path="/users/:id/view_my_entries" element={<JournalEntries_logged_in />}/> */}
-          <Route path="/logout" element={<Logout />} />
         </Routes>
       </Router>
     </>
