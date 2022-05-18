@@ -53,40 +53,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 30px;
+  padding-bottom: 0px;
 }
 
 
 .picturebox {
   position: relative;
   box-shadow:#6A18A8;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
   z-index: 11;
 }
 
 .profile_picture_frame {
-  // border: solid 4px #6A18A8;
   border-radius: 20px;
-  
 }
-
-// .squares_container {
-//   position: relative;
-//   z-index: 10;
-
-// }
 
 .pink_box {
   border-radius: 20px;
   position: absolute;
-  /* top: 25%;
-  left: 25%; */
-  /* margin: 20px; */
   width: 329px;
   height: 386px;
-  
   background-color: #d796ca;
   z-index:9;
   box-shadow:inset 0 0 20px 0 rgba(203, 79, 179, 1);
@@ -124,9 +109,6 @@
 .green_box {
   border-radius: 20px;
   position: absolute;
-  /* top: 25%;
-  left: 25%; */
-  /* margin: 40px 0px 10px; */
   width: 329px;
   height: 386px;
   background-color: #84DEC2;
@@ -165,8 +147,6 @@
 .blue_box {
   border-radius: 20px;
   position: absolute;
-  /* top: 25%;
-  left: 25%; */
   width: 329px;
   height: 386px;
   background-color: #A8B3E6;
@@ -206,8 +186,6 @@
 .turquoise_box {
   border-radius: 20px;
   position: absolute;
-  /* top: 25%;
-  left: 25%; */
   width: 329px;
   height: 386px;
   background-color: #A1DFE2;
@@ -246,23 +224,25 @@
 
 .name_and_goal {
   display: flex;
-  margin: -10px;
+  margin-top: -10px;
   margin-bottom: -20px;
-  // padding: -20px;
   flex-direction: row;
   justify-content: center;
 }
 
 .name {
+  position: relative;
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
   font-size: 2em;
   display: inline;
   padding-right: 10px;
   text-align: center;
+  z-index: 20;
 }
 
 .fitnessgoal {
+  position: relative;
   align-self: center;
   text-align: center;
   text-transform: uppercase;
@@ -270,6 +250,7 @@
   background-color:#6A18A8;
   border-radius:5px;
   padding: 10px;
+  z-index: 21;
 }
 
 .profilestats {
@@ -891,6 +872,7 @@ overflow: auto;
 
   .profile_bottom_w_buttons {
     display: flex;
+    flex-grow: 0;
     margin:auto;
     padding: 40px;
     justify-content: center;
@@ -920,10 +902,10 @@ overflow: auto;
     grid-area: 1 / 1 / 2 / 2; 
   }
 
-  .small_like_image_clicked {
-    width: 70%;
-    grid-area: 1 / 1 / 2 / 2; 
-  }
+//   .small_like_image_clicked {
+//     width: 70%;
+//     grid-area: 1 / 1 / 2 / 2; 
+//   }
 
   .number_of_likes { 
     // margin: -10%;
@@ -943,3 +925,37 @@ overflow: auto;
     grid-area: 1 / 1 / 2 / 2; 
   }
 
+
+  /* LIKE_CLICKABLE -------------------*/
+
+  .click_button_container {
+    display: flex;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    flex-grow: 0;
+  }
+
+  .small_like_image_container {
+    flex-grow: 0;
+    grid-area: 1 / 1 / 2 / 2; 
+    
+  }
+
+  .stupid_button {
+    flex-grow: 0;
+    border: none;
+    width: 110%;
+  }
+  .number_of_clicks {
+    flex-grow: 0;
+    grid-area: 1 / 2 / 2 / 3; 
+  }
+  .num_of_likes {
+    flex-grow: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+  }
