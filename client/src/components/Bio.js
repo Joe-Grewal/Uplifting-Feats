@@ -73,8 +73,20 @@ export default function Bio() {
   }, []);
 
   return (
-    <div className="picturebox">
-      <img src={profileImg} alt="profile" className="profile_picture_frame" />
+    <>
+    <div class="pic_container">
+        <div className="picturebox">
+          <img src={profileImg} alt="profile" className="profile_picture_frame" />
+        </div>
+
+        {/* <div class="squares_container"> */}
+          <div class="pink_box"></div>
+          <div class="green_box"></div>
+          <div class="blue_box"></div>
+          <div class="turquoise_box"></div>
+        {/* </div> */}
+    </div>
+
       <section>
         <div className="name_and_goal">
           <p className="name">{name}</p>
@@ -94,6 +106,6 @@ export default function Bio() {
           lbs. <span className="stick"> | </span> <strong>BMI:</strong> {bmi}{" "}
         </p>
       </section>
-    </div>
+      </>
   );
 }

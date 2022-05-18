@@ -136,7 +136,16 @@ export default function MyHealthJournal (props) {
 
       <div className="my_diet_diary">
         <h2 className="heading_light_weight">Diet Diary:</h2>
-        <ul className="food_list_begins">
+        <table className="food_cals_table" CELLSPACING='0'>
+          <colgroup>
+          <col className="food_column"></col>
+          <col className="calories_column"></col>
+          </colgroup>
+
+            <tr>
+              <th className="table_header">Food Items</th>
+              <th className="table_header">Calories</th>
+            </tr>
           {mydiet.map((item, i) => {
             console.log("dietLength:", mydiet.length)
             if (i < mydiet.length - 1 ) {
@@ -144,16 +153,18 @@ export default function MyHealthJournal (props) {
               console.log("itemList:", itemList)
               let calList = itemList[1].replace("calories:", "");
               console.log("look:", itemList);
-              return <li className="food_calories" key={i}>{item.split(", ")[0]}<span className="cals"> {calList}</span></li> //calList is for calories and {item.split(", ")[0]} is for foods
-             
-            } 
-            
-            return <li className="total_calories"><hr/>{item.split(", ")[0].substring(0, 21)}<hr/></li> //this is for the total calories count
-          })} 
-            {/* // <li className="food_calories" key={i}>{item.split(", ")[0]}{item.split(",")[1]}</li> */}
-          
-        </ul>
-      </div>
+              return   <tr>
+              <td className="foods" key={i}>{item.split(", ")[0]}</td>
+              <td className="calories"> {calList}</td>
+            </tr>
+          }             
+          return  <tr className="total_cals_row">
+                    <td colspan='2' className="total_calories">{(item.split(", ")[0].substring(0, 21))}</td>
+                  </tr>  
+        })} 
+
+ </table>
+</div>
 
     <div className="bottom_w_buttons">
       <BViewAllEntries userId={userId} onClick={handleSubmit}/>

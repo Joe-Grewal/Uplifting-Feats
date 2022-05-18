@@ -3,8 +3,12 @@ import Share from "../images/share.svg";
 import {
   FacebookShareButton,
   FacebookIcon,
-  EmailShareButton,
-  EmailIcon,
+  // EmailShareButton,
+  // EmailIcon,
+  // WhatsappShareButton,
+  // WhatsappIcon,
+  PinterestShareButton,
+  PinterestIcon,
   TwitterShareButton,
   TwitterIcon,
 } from "react-share";
@@ -21,22 +25,23 @@ export default function Share_small() {
         <FacebookIcon size={32} round />
       </FacebookShareButton>
 
-      <EmailShareButton
-        url={shareUrl}
-        quote="Uplifting Feats"
-        hashtag="#UpliftingFeats"
-      >
-        <EmailIcon id="email" size={32} round
-        iconFillColor={'white'}/>
-      </EmailShareButton>
-
       <TwitterShareButton
         url={shareUrl}
         quote="Uplifting Feats"
         hashtag="#UpliftingFeats"
       >
-        <TwitterIcon size={32} round />
+        <TwitterIcon id="email" size={32} round />
       </TwitterShareButton>
+
+      <PinterestShareButton
+        url={shareUrl}
+        quote="Uplifting Feats"
+        hashtag="#UpliftingFeats"
+      >
+        <PinterestIcon size={32} round
+        iconFillColor={'white'}/>
+      </PinterestShareButton>
+
     </>
 
     //   <div className="like_small_container">
