@@ -9,6 +9,7 @@
   height: 70px;
   background-color: #F2EDF5;
   z-index: 100;
+  box-shadow: 0px 1px 10px #7f53a0
 }
 .navigation{
   display: flex;
@@ -436,44 +437,42 @@ h3 {
   box-shadow: inset 0 0 20px 0 rgba(248, 186, 231, 1)
 }
 
-.food_list_begins {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+.food_cals_table {
+  width: 100%;
+  margin: auto;
   font-family: 'Quicksand', sans-serif;
   font-weight: 400;
   font-size: 1em;
   line-height: 1.5em;
+  padding-bottom: 10px;
+
 }
 
-.cals {
-  font-weight: 400;
-  list-style: none;
+.table_header {
+  color:#6A18A8;
+  background-color:#fdebfb;
+  text-align: left;
+}
+
+th {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+tr, th, td {
   padding-left: 10px;
-  text-align: right;
-  color: #6A18A8;
 }
-
-hr {
-  border: solid .01em;
-  color: #E32EB0;
-  opacity: 0.2;
+.total_cals_row {
+  // background-color:#fdebfb;
 }
 
 .total_calories {
-  list-style: none;
-  padding-top: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   text-align: left;
-  font-weight: 400;
-  color: #6A18A8
+  color:#6A18A8;
 }
 
-
-.food_calories::before {
-  content : "\2022"; /* Adds the bullet */
-  padding-right: 10px; /* creates the space between bullet, list item */
-  color: #E32EB0 /* changes the bullet color*/
-}
 
 /* ENTRIES BUTTONS ALL, EDIT, ADD, DELETE -------------------*/
 .view_all_entries_button {
@@ -698,6 +697,7 @@ hr {
   margin: auto;
   width: 70%;
   background-color: #E1D0EE;
+  box-shadow: inset 0 0 20px 0 rgba(205, 157, 242,1)
 }
 
 .entry_card_date { 
@@ -756,6 +756,7 @@ hr {
   margin-left: 20px;
   margin-right: 20px;
   background-color: #DAF4F5;
+  box-shadow: inset 0 0 20px 0 rgba(182, 243, 245, 1);
   padding: 0 20px 10px;
   overflow: auto;
 }
@@ -772,6 +773,7 @@ hr {
   margin: auto;
   width: 70%;
   background-color: #E1D0EE;
+  box-shadow: inset 0 0 20px 0 rgba(205, 157, 242,1)
 }
 
 .entry_card_date_me { 
@@ -830,6 +832,7 @@ margin-bottom: 20px;
 margin-left: 20px;
 margin-right: 20px;
 background-color: #DAF4F5;
+box-shadow: inset 0 0 20px 0 rgba(182, 243, 245, 1);
 padding: 0 20px 10px;
 overflow: auto;
 }
