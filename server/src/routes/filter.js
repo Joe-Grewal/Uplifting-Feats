@@ -18,6 +18,7 @@ module.exports = (db) => {
   });
   //filter results
   router.post("/", (req, res) => {
+    // const cookieId = req.session.user_id
     const options = {
       minimumAge: req.body['minimum_age'],
       maximumAge: req.body['maximum_age'],
@@ -26,7 +27,7 @@ module.exports = (db) => {
       dietType: req.body['dietType'],
       primaryWorkout: req.body['primaryWorkout'],
       fitnessGoal: req.body['fitnessGoal'],
-      cookieId: req.session.user_id
+      cookieId: req.body['cookieId']
     };
     console.log('options', options);
     const queryParams = [];

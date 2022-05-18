@@ -9,6 +9,18 @@ export default function Filters2 () {
 
   const [filteredUsers, setFilteredUsers] = useState([]);
 
+  const [loggedInUser, setLoggedInUser] = useState("");
+  console.log("loggedInUser:", loggedInUser);
+
+  useEffect(() => {
+    const loggedInUser = localStorage.getItem("user_details");
+    console.log("localstorage", JSON.parse(loggedInUser),"id:", JSON.parse(loggedInUser).user.id);
+    if (loggedInUser) {
+      const foundUser = JSON.parse(loggedInUser);
+      setLoggedInUser(foundUser.user.id);
+    }
+  }, []);
+
   //form input values below
   const [ageRange, setAgeRange] = useState([]);
   const [gender, setGender] = useState("");
@@ -19,7 +31,7 @@ export default function Filters2 () {
  
   useEffect(() => {
     if (ageRange || gender || height || dietType || primaryWorkout || fitnessGoal) {
-      axios.post("/api/filter", {minimum_age: ageRange[0], maximum_age: ageRange[1], gender, height, dietType, primaryWorkout, fitnessGoal})
+      axios.post("/api/filter", {minimum_age: ageRange[0], maximum_age: ageRange[1], gender, height, dietType, primaryWorkout, fitnessGoal, cookieId: loggedInUser})
         .then((res) => { 
           console.log("***post response:", res.data.users);
           setFilteredUsers(res.data.users);
@@ -259,7 +271,9 @@ export default function Filters2 () {
       <h2 className="search_results_text">Search Results:</h2>
       </div>
     {filteredUsers && filteredUsers.map(el => {
+      if (el.id !== loggedInUser) {
       return <ProfileCards key={el.id} userId={el.id} firstName={el.first_name} lastName={el.last_name} profilePic={el.profile_img_url}/>
+      }
     })}
 
   </div>
