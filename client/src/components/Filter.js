@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import '../styles/App.scss';
 import {useState, useEffect} from 'react';
-import { Container, TextField, FormControl, InputLabel, MenuItem, Select, IconButton, OutlinedInput, InputAdornment, useStepContext } from '@mui/material';
+import { TextField, FormControl, MenuItem, Select, InputAdornment } from '@mui/material';
 import ProfileCards from "./ProfileCards";
 
 export default function Filters2 () {
@@ -49,7 +49,10 @@ export default function Filters2 () {
         <Select
           className="dropdown_menu"
           fullWidth
-          onChange={(e) => setAgeRange([e.target.value[0], e.target.value[1]])}
+          onChange={(e) => {
+            console.log((e.target.value).split(", "));
+            setAgeRange((e.target.value).split(","))}
+          }
           labelId="age-select-label"
           id="age-select"
           value={ageRange} //look into fixing this for the display of the form value "age"
@@ -57,19 +60,19 @@ export default function Filters2 () {
           color="secondary"
         >
         <MenuItem value={""}>-</MenuItem>
-        <MenuItem value={[15, 20]}>15 - 20</MenuItem>
-        <MenuItem value={[20, 25]}>20 - 25</MenuItem>
-        <MenuItem value={[25, 30]}>25 - 30</MenuItem>
-        <MenuItem value={[30, 35]}>30 - 35</MenuItem>
-        <MenuItem value={[35, 40]}>35 - 40</MenuItem>
-        <MenuItem value={[40, 45]}>40 - 45</MenuItem>
-        <MenuItem value={[45, 50]}>45 - 50</MenuItem>
-        <MenuItem value={[50, 55]}>50 - 55</MenuItem>
-        <MenuItem value={[55, 60]}>55 - 60</MenuItem>
-        <MenuItem value={[60, 65]}>60 - 65</MenuItem>
-        <MenuItem value={[65, 70]}>65 - 70</MenuItem>
-        <MenuItem value={[70, 75]}>70 - 75</MenuItem>
-        <MenuItem value={[75, 80]}>75 - 80</MenuItem>
+        <MenuItem value={"15, 20"}>15 - 20</MenuItem>
+        <MenuItem value={"20, 25"}>20 - 25</MenuItem>
+        <MenuItem value={"25, 30"}>25 - 30</MenuItem>
+        <MenuItem value={"30, 35"}>30 - 35</MenuItem>
+        <MenuItem value={"35, 40"}>35 - 40</MenuItem>
+        <MenuItem value={"40, 45"}>40 - 45</MenuItem>
+        <MenuItem value={"45, 50"}>45 - 50</MenuItem>
+        <MenuItem value={"50, 55"}>50 - 55</MenuItem>
+        <MenuItem value={"55, 60"}>55 - 60</MenuItem>
+        <MenuItem value={"60, 65"}>60 - 65</MenuItem>
+        <MenuItem value={"65, 70"}>65 - 70</MenuItem>
+        <MenuItem value={"70, 75"}>70 - 75</MenuItem>
+        <MenuItem value={"75, 80"}>75 - 80</MenuItem>
         </Select>
         </FormControl>
       </div>
