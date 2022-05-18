@@ -3,7 +3,9 @@ import axios from "axios";
 // import Profile from "../images/Abby.jpg";
 
 export default function Bio() {
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [age, setAge] = useState(0);
   const [profileImg, setProfileImg] = useState(""); //this doesn't return the image
   const [fitGoal, setFitGoal] = useState("");
@@ -52,7 +54,9 @@ export default function Bio() {
     try {
       let response = await axios.get("/api/myprofile");
       console.log("***response:", response);
-      setName(response.data.user.user_name);
+      // setName(response.data.user.user_name);
+      setFirstName(response.data.user.first_name);
+      setLastName(response.data.user.last_name);
       setAge(response.data.user.age);
       setFitGoal(response.data.user.fitness_goal);
       setGender(response.data.user.gender);
@@ -74,27 +78,33 @@ export default function Bio() {
 
   return (
     <>
-    <div class="pic_container">
+      <div class="pic_container">
         <div className="picturebox">
-          <img src={profileImg} alt="profile" className="profile_picture_frame" />
+          <img
+            src={profileImg}
+            alt="profile"
+            className="profile_picture_frame"
+          />
         </div>
 
         {/* <div class="squares_container"> */}
-          <div class="pink_box"></div>
-          <div class="green_box"></div>
-          <div class="blue_box"></div>
-          <div class="turquoise_box"></div>
+        <div class="pink_box"></div>
+        <div class="green_box"></div>
+        <div class="blue_box"></div>
+        <div class="turquoise_box"></div>
         {/* </div> */}
-    </div>
+      </div>
 
       <section>
         <div className="name_and_goal">
-          <p className="name">{name}</p>
+          <p className="name">
+            {firstName} {lastName}
+          </p>
           <span className="fitnessgoal">
             <strong>{fitGoal}</strong>
           </span>
         </div>
-        
+
         <p className="profilestats">
           <strong>Age:</strong> {age} <span className="stick"> | </span>{" "}
           <strong>Gender:</strong> {gender} <span className="stick"> | </span>{" "}
@@ -106,6 +116,6 @@ export default function Bio() {
           lbs. <span className="stick"> | </span> <strong>BMI:</strong> {bmi}{" "}
         </p>
       </section>
-      </>
+    </>
   );
 }
