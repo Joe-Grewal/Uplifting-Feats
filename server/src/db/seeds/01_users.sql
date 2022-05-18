@@ -1,6 +1,6 @@
 INSERT INTO users (user_name, first_name, last_name, email, password, profile_img_url, age, gender, height, weight, country, fitness_goal, diet_type, primary_workout, about_me, tips, future_goals, bmi)
   VALUES
-  ('Joe Grewal', 'Joe', 'Grewal', 'grewaljoe20@gmail.com', 'password', 
+  ('Joe_Grewal', 'Joe', 'Grewal', 'grewaljoe20@gmail.com', 'password', 
   'https://github.com/Joe-Grewal/Uplifting-Feats/blob/main/client/src/images/Man_25_weightgain.jpg?raw=true',
   28, 'male', 71, 200, 'Canada', 'weight gain', 'carnivore', 'strength training', 
   'Welcome! I originally started my fitness journey back during the early days of high school. I was very skinny at the time and was looking to put on some muscle to get stronger. I would quickly eat my packed lunch everyday and then use the school gym to lift weights for around 40min. I didn''t really know what I was doing at that time or have any sort of plan, but through consistency I started seeing results. Midway through high school I stopped being as consistent and eventually dropped my daily workouts after a period of time where the gym was closed for renovations. I didn’’t start working out on a consistent basis again until a few years after I finished high school. When I did eventually return to a daily workout routine, I changed my workouts from full body workouts to splits where I would target individual muscles on different days of the week.', 
@@ -8,7 +8,7 @@ INSERT INTO users (user_name, first_name, last_name, email, password, profile_im
   'To fix slight muscle imbalance between individual arms and put on 5-10 pounds of muscle mass while also burning off at least 10 pounds of fat. And adjusting my diet to include more healthy choices and less bad ones.',
   27.92
   ),
-  ('Abby Ef',
+  ('abbyEF',
   'Abby',
   'EF',
    'abby_faigao@yahoo.com',
@@ -28,7 +28,7 @@ INSERT INTO users (user_name, first_name, last_name, email, password, profile_im
   24.82
 ),
 (
-  'Shaun Robinson', 
+  'Shaun', 
   'Shaun', 
   'Robinson', 
   'connecshaun@gmail.com', 
@@ -48,7 +48,7 @@ INSERT INTO users (user_name, first_name, last_name, email, password, profile_im
   22.34
   ), 
   (
-  'El Jord', 
+  'El_Jord', 
   'Ellie', 
   'Jordan', 
   'el_jord@gmail.com', 
@@ -68,7 +68,7 @@ INSERT INTO users (user_name, first_name, last_name, email, password, profile_im
   21
   ),
   (
-  'Toni Kay', 
+  'ToniKay', 
   'Toni', 
   'Kay', 
   'tkay@gmail.com', 
@@ -88,7 +88,7 @@ INSERT INTO users (user_name, first_name, last_name, email, password, profile_im
   19.5
   ),
   (
-  'Nate Dens', 
+  'Nate', 
   'Nate', 
   'Denison', 
   'thedenison@rmx.com', 
@@ -108,7 +108,7 @@ INSERT INTO users (user_name, first_name, last_name, email, password, profile_im
   21.72
   ),
   (
-  'Deb Thorton', 
+  'DebThort', 
   'Debbie', 
   'Thorton', 
   'thornydeb@golang.ca', 
@@ -128,7 +128,7 @@ INSERT INTO users (user_name, first_name, last_name, email, password, profile_im
   24.23
   ),
   (
-  'Manshu Hyas', 
+  'Mansh_Hyas', 
   'Manshu', 
   'Hyas', 
   'hymansh@ind.co', 

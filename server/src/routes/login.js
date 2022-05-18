@@ -16,7 +16,8 @@ module.exports = (db) => {
           res.json({ user });
         } else {
           res.status(401).json({ error: "Incorrect username or password" });
-          res.send("No user found. Try again");
+          //res.send("No user found. Try again");
+          res.end();
         }
         console.log("req.session.user_id:", req.session.user_id);
       })
