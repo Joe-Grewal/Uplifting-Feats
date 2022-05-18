@@ -32,7 +32,7 @@ export default function ProfileCards (props) {
       </div>
       
       <div className="likes">
-        <Like_small/>
+        <Like_small userId={props.userId}/>
       </div>
 
       <div className="shares">

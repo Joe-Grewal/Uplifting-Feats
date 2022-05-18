@@ -8,6 +8,7 @@ import BLike from "../components/BLike";
 import BShare from "../components/BShare";
 import MyHealthJournal from "../components/MyHealthJournal";
 import Like_small from "../components/Like_small";
+import Like_small2 from "../components/Like_small2";
 // import Like_small_clicked from "../components/Like_small_clicked";
 import Share_small from "../components/Share_small";
 import BUpdateProfile from "../components/BUpdateProfile";
@@ -48,7 +49,7 @@ export default function My_Profile_logged_in () {
         <Bio />
         <BioDivs />
         <MyHealthJournal_NOT_logged_in userId={selectedUser}/>
-        <div className="profile_bottom_w_buttons"><Like_small userId={selectedUser}/><div className="spacer"></div><Share_small/></div>
+        <div className="profile_bottom_w_buttons"><Like_small2 userId={loggedInUser} selectedUser={selectedUser}/><div className="spacer"></div><Share_small/></div>
         </div>
       </>
     );

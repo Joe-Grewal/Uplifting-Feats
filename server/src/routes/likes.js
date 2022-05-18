@@ -1,4 +1,5 @@
 const express = require("express");
+const { postgresMd5PasswordHash } = require("pg/lib/utils");
 const router = express.Router();
 
 module.exports = (db) => {
@@ -20,8 +21,8 @@ module.exports = (db) => {
   //get all likes by a single user
   router.get("/:id", (req, res) => {
     req.session.user_id = req.params.id;
-    let query = `SELECT * FROM likes WHERE user_who_likes = $1;`;
-    queryParams = [req.session.user_id];
+    let query = `SELECT liked_profile FROM likes WHERE user_who_likes = $1;`;
+    queryParams = [req.params.id];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
       .then((data) => {
@@ -35,12 +36,12 @@ module.exports = (db) => {
   //get total number of likes for a given profile/user
   router.get("/count/:id", (req, res) => {
     req.session.user_id = req.params.id;
-    let query = `SELECT liked_profile FROM likes WHERE id = $1;`;
-    queryParams = [req.session.user_id];
+    let query = `SELECT COUNT(*) FROM likes WHERE liked_profile = $1;`;
+    queryParams = [req.params.id];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
       .then((data) => {
-        const likes = data.rows[0].liked_profile;
+        const likes = data.rows[0];
         res.json({ likes });
       })
       .catch((err) => {
@@ -49,12 +50,12 @@ module.exports = (db) => {
   });
   //create a like
   router.post("/", (req, res) => {
-    req.session.user_id = req.params.id;
+    // req.session.user_id = req.params.id;
     console.log("***req.body***:", req.body);
     let query = `INSERT INTO likes (user_who_likes, liked_profile)
                  VALUES ($1, $2)
                  RETURNING *;`;
-    const queryParams = [req.session.user_id, req.body["liked_profile"]];
+    const queryParams = [req.session.user_id, req.body["selectedUser"]];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
       .then((data) => {
@@ -67,10 +68,9 @@ module.exports = (db) => {
   });
   //delete a like
   router.delete("/:id", (req, res) => {
-    req.session.user_id = req.params.id;
     console.log("***req.body***:", req.body);
     let query = `DELETE FROM likes WHERE user_who_likes = $1 AND liked_profile = $2;`;
-    const queryParams = [req.session.user_id, req.body["liked_profile"]];
+    const queryParams = [req.session.user_id, req.params.id];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
       .then((data) => {
