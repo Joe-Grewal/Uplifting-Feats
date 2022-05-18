@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from "react";
+import { React, useState, useEffect } from "react";
 
 export default function Nav() {
   // const [currentUser, setCurrentUser] = useState(
@@ -9,19 +9,29 @@ export default function Nav() {
   //     setCurrentUser({});
   //     localStorage.clear();
   //   };
-  
+
   const [loggedInUser, setLoggedInUser] = useState("");
 
   useEffect(() => {
     setLoggedInUser(localStorage.getItem("user_details"));
-    console.log("MyprofileLINK:", loggedInUser)
+    console.log("MyprofileLINK:", loggedInUser);
   }, [loggedInUser]);
 
   let myProfileLink = "";
   if (localStorage.getItem("user_details")) {
-    console.log("LOOK HERE:", JSON.parse(localStorage.getItem("user_details")).user.id);
-    myProfileLink = `/users/${JSON.parse(localStorage.getItem("user_details")).user.id}`
+    console.log(
+      "LOOK HERE:",
+      JSON.parse(localStorage.getItem("user_details")).user.id
+    );
+    myProfileLink = `/users/${
+      JSON.parse(localStorage.getItem("user_details")).user.id
+    }`;
   }
+
+  const handleLogout = () => {
+    setLoggedInUser({});
+    localStorage.clear();
+  };
 
   if (loggedInUser) {
     return (
@@ -39,7 +49,7 @@ export default function Nav() {
             <a className="right_links" href={myProfileLink}>
               My Profile
             </a>
-            <a className="right_links" href="/logout">
+            <a className="right_links" href="/login" onClick={handleLogout}>
               Logout
             </a>
           </div>
