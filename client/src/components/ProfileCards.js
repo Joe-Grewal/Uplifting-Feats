@@ -24,7 +24,7 @@ export default function ProfileCards (props) {
       </div>
 
       <div className="profile_card_copy">
-        <h3 className="profile_name">{props.firstName} {props.lastName}</h3>
+        <h2 className="profile_name">{props.firstName} {props.lastName}</h2>
       </div>
 
       <div className="see_profile_button">
