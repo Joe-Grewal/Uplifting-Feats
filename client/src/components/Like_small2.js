@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import Like_clicked from "../images/like_clicked.svg";
 import Like from "../images/like.svg";
+
 import axios from "axios";
 
 export default function Like_small(props) {
@@ -63,7 +65,7 @@ export default function Like_small(props) {
     <div className="click_button_container">
 
       <div className="small_like_image_container">
-        <button className="stupid_button" onClick={handleLike}><img src={Like} alt="like" />
+        <button className="stupid_button" onClick={handleLike}><img src={(!isLiked) ? Like : Like_clicked} alt="like" />
       { props.selectedUser && 
         <form action="/api/likes" method="POST">
           <input type="hidden" name="selectedUser" value={props.selectedUser}></input>
