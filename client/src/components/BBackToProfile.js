@@ -8,7 +8,7 @@ export default function BBackToProfile (props) {
       fontFamily: [
         'Quicksand', 'sans-serif',
       ].join(','),
-      fontSize: 16,
+      fontSize: 22,
       fontWeightMedium:700,
     },
     palette: {

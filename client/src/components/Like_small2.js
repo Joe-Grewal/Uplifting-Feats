@@ -60,16 +60,18 @@ export default function Like_small(props) {
   };
 
   return (
-    <div className="like_small_container">
-      <div className="small_like_image">
+    <div className="click_button_container">
+
+      <div className="small_like_image_container">
+        <button className="stupid_button" onClick={handleLike}><img src={Like} alt="like" />
       { props.selectedUser && 
         <form action="/api/likes" method="POST">
           <input type="hidden" name="selectedUser" value={props.selectedUser}></input>
-          <button onClick={handleLike}><img src={Like} alt="like" /></button>
         </form> }
+        </button>
       </div>
 
-      <div className="number_of_likes">
+      <div className="number_of_clicks">
         <p className="num_of_likes">
           {likes}
           <span className="likes_pink"> LIKES</span>

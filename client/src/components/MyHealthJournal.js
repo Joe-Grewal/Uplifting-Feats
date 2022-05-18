@@ -119,7 +119,9 @@ export default function MyHealthJournal(props) {
     <div className="outer_container2">
       <div className="my_health_journal_w_buttons">
         { entryIndex > 0 && <BPrevious onClick={handlePrevious}/> }
-        <div className="health_journal_title"><h2>My Health Journal</h2></div>
+            <div className="health_journal_title">
+              <h2>My Health Journal</h2>
+            </div>
         { entryIndex < entries.length - 1 && <BNext onClick={handleNext}/> }
       </div>
 

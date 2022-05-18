@@ -87,12 +87,10 @@ export default function Bio() {
           />
         </div>
 
-        {/* <div class="squares_container"> */}
         <div class="pink_box"></div>
         <div class="green_box"></div>
         <div class="blue_box"></div>
         <div class="turquoise_box"></div>
-        {/* </div> */}
       </div>
 
       <section>
