@@ -369,12 +369,17 @@ h3 {
   margin: 0px 20px;
   padding-top: 15px;
   align-items: center;
+  position: relative;
   justify-content: space-between
 }
 
 .health_journal_title {
-  margin: auto;
-  padding-right: 20px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 
 .entry_name {
