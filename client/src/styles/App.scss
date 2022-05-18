@@ -45,18 +45,203 @@
 }
 
 /* BIO component -------------------*/
-.picturebox {
-  padding-top: 100px;
+
+.pic_container {
+  position: relative;
+  padding-top: 130px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 15px;
+  padding-bottom: 30px;
+}
+
+
+.picturebox {
+  position: relative;
+  box-shadow:#6A18A8;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  z-index: 11;
 }
 
 .profile_picture_frame {
-  border: solid 4px #6A18A8;
+  // border: solid 4px #6A18A8;
   border-radius: 20px;
+  
 }
+
+// .squares_container {
+//   position: relative;
+//   z-index: 10;
+
+// }
+
+.pink_box {
+  border-radius: 20px;
+  position: absolute;
+  /* top: 25%;
+  left: 25%; */
+  /* margin: 20px; */
+  width: 329px;
+  height: 386px;
+  
+  background-color: #d796ca;
+  z-index:9;
+  box-shadow:inset 0 0 20px 0 rgba(203, 79, 179, 1);
+  animation: pink_move 3s ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pink_move {
+  0% {
+    transform: translateX(0px);
+  }
+  20% {
+    transform: translateX(20px) translateY(10px);
+  }
+  40% {
+    transform: translateX(30px)
+    translateY(20px);
+  }
+  60% {
+    transform: translateX(10px)
+    translateY(10px);
+  }
+  80% {
+    transform: translateX(5px)
+    translateY(5px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+  
+}
+
+
+
+.green_box {
+  border-radius: 20px;
+  position: absolute;
+  /* top: 25%;
+  left: 25%; */
+  /* margin: 40px 0px 10px; */
+  width: 329px;
+  height: 386px;
+  background-color: #84DEC2;
+  z-index: index 8;
+  box-shadow:inset 0 0 20px 0 rgba(37, 191, 143, 1);
+  animation: green_move 3s ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes green_move {
+  0% {
+    transform: translateX(0px);
+  }
+  20% {
+    transform: translateX(-10px) translateY(20px);
+  }
+  40% {
+    transform: translateX(-20px)
+    translateY(40px);
+  }
+  60% {
+    transform: translateX(-10px)
+    translateY(20px);
+  }
+  80% {
+    transform: translateX(-5px)
+    translateY(10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+
+
+.blue_box {
+  border-radius: 20px;
+  position: absolute;
+  /* top: 25%;
+  left: 25%; */
+  width: 329px;
+  height: 386px;
+  background-color: #A8B3E6;
+  z-index:7;
+  box-shadow:inset 0 0 20px 0 rgba(97, 118, 216,1);
+  animation: blue_move 3s ease-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes blue_move {
+  0% {
+    transform: translateX(0px);
+  }
+  20% {
+    transform: translateX(-20px) translateY(-10px);
+  }
+  40% {
+    transform: translateX(-30px)
+    translateY(-30px);
+  }
+  60% {
+    transform: translateX(-20px)
+    translateY(-20px);
+  }
+  80% {
+    transform: translateX(-10px)
+    translateY(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+
+
+.turquoise_box {
+  border-radius: 20px;
+  position: absolute;
+  /* top: 25%;
+  left: 25%; */
+  width: 329px;
+  height: 386px;
+  background-color: #A1DFE2;
+  z-index:6;
+  box-shadow:inset 0 0 20px 0 rgba(50, 188, 195, 1);
+  animation: turquoise_move 3s ease-out;
+  animation-iteration-count: infinite;
+  
+}
+
+@keyframes turquoise_move {
+  0% {
+    transform: translateX(0px);
+  }
+  20% {
+    transform: translateX(10px) translateY(-30px);
+  }
+  40% {
+    transform: translateX(20px)
+    translateY(-40px);
+  }
+  60% {
+    transform: translateX(10px)
+    translateY(-30px);
+  }
+  80% {
+    transform: translateX(5px)
+    translateY(-10px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+
 
 .name_and_goal {
   display: flex;
@@ -80,10 +265,9 @@
   align-self: center;
   text-align: center;
   text-transform: uppercase;
-  color: white;
-  background-color: #E32EB0;
-  border-radius: 20px;
-  width: 25%;
+  color:white;
+  background-color:#6A18A8;
+  border-radius:5px;
   padding: 10px;
 }
 
@@ -439,8 +623,11 @@ hr {
     box-shadow:inset 0 0 20px 0 rgba(239, 198, 87, 1);
   }
 
+.search_results_text {
+  padding-bottom: 20px;
+}
+
 .profile_card_container_spacing {
-  margin-top: 40px;
   margin-bottom: 20px;
 }
 
@@ -454,6 +641,7 @@ hr {
   grid-template-rows: 1fr;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
+  box-shadow: inset 0 0 20px 0 rgba(205, 157, 242,1)
   }
   
   .profile_card_image {
@@ -558,7 +746,7 @@ hr {
   display: flex;
   width: 100%;
   justify-content: center;
-  padding-top: 40px;
+  padding:40px;
 }
 
   .entry_preview { 
