@@ -167,7 +167,7 @@ export default function MyHealthJournal (props) {
             </tr>
           }             
           return  <tr className="total_cals_row">
-                    <td colspan='2' className="total_calories">{(item.split(", ")[0].substring(0, 21))}</td>
+                    <td colspan='2' className="total_calories">{(item.split(", ")[0].substring(0, 22))}</td>
                   </tr>  
         })} 
 
