@@ -308,7 +308,9 @@ span {
   height: 598px;
   padding: 0 20px 10px;
   background-color: #E1D0EE;
-  overflow: auto;
+  scrollbar-width: none;
+  overflow-y:scroll;
+  // overflow: auto;
   box-shadow: inset 0 0 20px 0 rgba(205, 157, 242,1);
 }
 
@@ -341,7 +343,9 @@ span {
   height: 289px;
   padding: 0 20px 10px;
   background-color: #B4F1FA;
-  overflow: auto;
+  // overflow: auto;
+  scrollbar-width: none;
+  overflow-y:scroll;
   box-shadow: inset 0 0 20px 0 rgba(90, 232, 239, 1)
 }
 
@@ -351,7 +355,9 @@ span {
   height: 289px;
   padding: 0 20px 10px;
   background-color: #FFF1B4;
-  overflow: auto;
+  // overflow: auto;
+  scrollbar-width: none;
+  overflow-y:scroll;
   box-shadow: inset 0 0 20px 0 rgba(253, 230, 127, 1)
 }
 
