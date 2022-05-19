@@ -655,6 +655,8 @@ tr, th, td {
   grid-row-gap: 10px;
   box-shadow: inset 0 0 20px 0 rgba(205, 157, 242,1);
   overflow: hidden;
+  top: 0;
+  transition: top ease 0.5s;
   
 
     &:after {
@@ -679,6 +681,11 @@ tr, th, td {
     left: 120%;
     transition: all 1s ease-in;
   }
+}
+
+.outer_profile_card_container:hover{
+  box-shadow: 5px 7px 10px #7f53a0;
+  top: -5px;
 }
   
   .profile_card_image {
@@ -743,6 +750,7 @@ tr, th, td {
 
 .outer_entry_card_container {
   display: grid;
+  position: relative;
   grid-template-columns: 2fr repeat(2, 1fr);
   grid-template-rows: repeat(2, .125fr) 1fr;
   grid-column-gap: 0px;
@@ -750,7 +758,38 @@ tr, th, td {
   margin: auto;
   width: 70%;
   background-color: #E1D0EE;
-  box-shadow: inset 0 0 20px 0 rgba(205, 157, 242,1)
+  box-shadow: inset 0 0 20px 0 rgba(205, 157, 242,1);
+  overflow: hidden;
+  top: 0;
+  transition: top ease 0.5s;
+
+  &:after {
+    background: #FFF;
+    content: "";
+    height: 1500px;
+    left: -400px;
+    opacity: .2;
+    position: absolute;
+    top: -200px;
+    transform: rotate(25deg);
+    transition: all 1s ease-out;
+    width: 100px;
+    filter:blur(.5rem)
+    // z-index: 25
+  }
+}
+
+.outer_entry_card_container:hover {
+  
+  &:after {
+    left: 120%;
+    transition: all 1s ease-in;
+  }
+}
+
+.outer_entry_card_container:hover{
+  box-shadow: 5px 7px 10px #7f53a0;
+  top: -5px;
 }
 
 .entry_card_date { 
@@ -817,6 +856,7 @@ tr, th, td {
 /* logged in version -------------------*/
 
 .outer_entry_card_container_me {
+  position: relative;
   display: grid;
   grid-template-columns: .5fr repeat(3, .25fr);
   grid-template-rows: repeat(2, .125fr) 1fr;
@@ -826,7 +866,39 @@ tr, th, td {
   margin: auto;
   width: 70%;
   background-color: #E1D0EE;
-  box-shadow: inset 0 0 20px 0 rgba(205, 157, 242,1)
+  box-shadow: inset 0 0 20px 0 rgba(205, 157, 242,1);
+  overflow: hidden;
+  top: 0;
+  transition: top ease 0.5s;
+
+
+    &:after {
+    background: #FFF;
+    content: "";
+    height: 1500px;
+    left: -400px;
+    opacity: .2;
+    position: absolute;
+    top: -200px;
+    transform: rotate(25deg);
+    transition: all 1s ease-out;
+    width: 100px;
+    filter:blur(.5rem)
+    // z-index: 25
+  }
+}
+
+.outer_entry_card_container_me:hover {
+  
+  &:after {
+    left: 120%;
+    transition: all 1s ease-in;
+  }
+}
+
+.outer_entry_card_container_me:hover{
+  box-shadow: 5px 7px 10px #7f53a0;
+  top: -5px;
 }
 
 .entry_card_date_me { 
