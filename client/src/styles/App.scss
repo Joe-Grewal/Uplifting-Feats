@@ -966,6 +966,7 @@ overflow: auto;
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  
   }
   
   .small_like_image {
@@ -1012,13 +1013,14 @@ overflow: auto;
 
   .small_like_image_container {
     flex-grow: 0;
-    grid-area: 1 / 1 / 2 / 2; 
-    
+    grid-area: 1 / 1 / 2 / 2;
   }
 
   .stupid_button {
-    flex-grow: 0;
-    border: none;
+    border: 0;
+    background-color: transparent;
+    stroke-opacity: 0;
+    fill: 0;
     width: 110%;
   }
   .number_of_clicks {
