@@ -312,6 +312,10 @@ span {
   box-shadow: inset 0 0 20px 0 rgba(205, 157, 242,1);
 }
 
+.about_me::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
 //   &:after {
 //     background: #ffffff;
 //     content: "";
@@ -345,6 +349,10 @@ span {
   box-shadow: inset 0 0 20px 0 rgba(90, 232, 239, 1)
 }
 
+.health_tips::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
 .future_goals {
   border-radius: 20px;
   grid-area: 2 / 2 / 3 / 3;
@@ -353,6 +361,10 @@ span {
   background-color: #FFF1B4;
   overflow: auto;
   box-shadow: inset 0 0 20px 0 rgba(253, 230, 127, 1)
+}
+
+.future_goals::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }
 
 h2 {
@@ -424,6 +436,9 @@ h3 {
   overflow: auto;
   box-shadow: inset 0 0 20px 0 rgba(248,198, 196, 1)
 }
+.entry::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
 
 .my_workout_routine { 
   border-radius: 20px;
@@ -435,6 +450,9 @@ h3 {
   overflow: auto;
   box-shadow: inset 0 0 20px 0 rgba(182, 243, 245, 1)
 }
+.my_workout_routine::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
 
 .my_diet_diary { 
   border-radius: 20px;
@@ -445,6 +463,10 @@ h3 {
   background-color: #FFD5F3;
   overflow: auto;
   box-shadow: inset 0 0 20px 0 rgba(248, 186, 231, 1)
+}
+
+.my_diet_diary::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
 }
 
 .food_cals_table {
