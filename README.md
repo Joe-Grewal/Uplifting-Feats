@@ -37,4 +37,8 @@ Be inspired! Be inspirational! Uplifting feats!
 
 # Final Product
 
-coming soon...
+![login](./server/planning/finalProducts/login.png)
+![profile](./server/planning/finalProducts/profile.png)
+![journal](./server/planning/finalProducts/journal.png)
+![entries](./server/planning/finalProducts/entries.png)
+![search](./server/planning/finalProducts/search.png)
