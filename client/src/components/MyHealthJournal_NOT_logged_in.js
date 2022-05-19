@@ -14,6 +14,11 @@ export default function MyHealthJournal (props) {
   // const [allEntries, setAllEntries] = useState(""); // will come back later if needed
   // const [entryIndex, setEntryIndex] = useState(""); // for the next and previous buttons
 
+    //for using url params to find view entry index
+    const params = new URLSearchParams(window.location.search);
+    const viewIndex = params.get("entry");
+    console.log("ENTRYINDEX FROM PARAMS:", viewIndex);
+
   const [entries, setEntries] = useState([]);
   console.log("stateOfEntries:", entries);
   const [entryIndex, setEntryIndex] = useState(""); //for next and previous
@@ -60,6 +65,9 @@ export default function MyHealthJournal (props) {
           setEntries(allMyEntries);
           console.log("************LastEntryObject:", allMyEntries[allMyEntries.length - 1]);
           setEntryIndex(allMyEntries.length - 1);
+          if (viewIndex) {
+            setEntryIndex(viewIndex);
+           }
           setEntryId(allMyEntries[allMyEntries.length - 1].id);
           setStory(allMyEntries[allMyEntries.length - 1].my_story);
           setEntryName(allMyEntries[allMyEntries.length - 1].entry_name);
