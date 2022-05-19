@@ -59,7 +59,7 @@ export default function EntryCards (props) {
           </div>
 
           <div className="entry_card_view_entry_button">
-            <BViewEntry/>
+            <BViewEntry userId={props.userId} index={i}/>
           </div>
 
           <div className="entry_preview">
