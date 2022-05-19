@@ -1,9 +1,40 @@
-# Final Project - LHL
+## Final Project - Lighthouse Labs
 
-### Uplifting Feats
+# Uplifting Feats
 
-A fitness app to connect users to fitness plan that gives them the highest probability of reaching goals.
+Thinking of taking the fitness road but feeling demotivated? Do not worry, you are not alone.
 
-As everyone knows losing weight or gaining muscle and etc. is not easy. Our app looks to solve this problem by allowing users to post their own success stories to help others achieve their own fitness goals as we all know there isn’t any one solution that works for everyone.
+We have built an application that connects you with other people who feels the same way as you are before. Get inspiration from users who's been there done that.
+
+Our full stack app allow users to post their own success stories to help others achieve their own fitness goals as we all know there isn’t any one solution that works for everyone.
+
+Share their fitness stories to also help others, share yours as well.
 
 Be inspired! Be inspirational! Uplifting feats!
+
+### Our Stack
+
+- PostgreSQL
+- Express
+- React
+- Node
+
+## Getting Started
+
+### Client and Server
+
+#### Dependencies
+
+`npm install`
+
+#### To Run The App
+
+`npm start`
+
+#### To Reset Server Database
+
+`npm run db:reset`
+
+# Final Product
+
+coming soon...
