@@ -55,7 +55,6 @@ export default function Login3() {
     setUsername("");
     setPassword("");
     localStorage.clear();
-    // window.location.href = "/login";
     navigate("/login");
   };
 
@@ -73,11 +72,8 @@ export default function Login3() {
       const user = { username, password };
       try {
         const response = await axios.post("/api/login", user);
-        //console.log(response);
         setUser(response.data);
         localStorage.setItem("user_details", JSON.stringify(response.data));
-        //Put code here for redirecting to profile page
-        // navigate("My_Profile");
         console.log(response.data.user.user_name);
 
         return response;
@@ -130,16 +126,6 @@ export default function Login3() {
               className="form_fields2"
               id="edit-profile-form"
             >
-              {/* <label htmlFor="username">Username</label> */}
-              {/* <input
-            type="text"
-            id="username"
-            name="username"
-            autoComplete="off"
-            value={username}
-            required
-            onChange={(e) => setUsername(e.target.value)}
-          /> */}
               <TextField
                 sx={{
                   width: "60%",
@@ -171,15 +157,6 @@ export default function Login3() {
                 required
                 error={userNameError}
               />
-              {/* <label htmlFor="password">Password</label> */}
-              {/* <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          /> */}
               <FormControl
                 sx={{
                   width: "60%",
@@ -204,7 +181,6 @@ export default function Login3() {
                 <OutlinedInput
                   id="outlined-adornment-password"
                   type={values.showPassword ? "text" : "password"}
-                  // value={password}
                   variant="outlined"
                   color="secondary"
                   onChange={(e) => setPassword(e.target.value)}
@@ -242,7 +218,6 @@ export default function Login3() {
               Dont have an account? <a href="/signup">Sign Up</a>
             </p>
           </Container>
-          {/* <button type="submit">Sign In</button> */}
         </div>
       </section>
     </>

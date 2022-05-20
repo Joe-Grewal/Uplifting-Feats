@@ -16,8 +16,6 @@ import JournalEntries_NOT_logged_in from "../pages/JournalEntries_NOT_logged_in"
 import EditEntryForm from "../pages/EditEntryForm";
 
 export default function App() {
-  //currentUser = localStorage.getItem("user_details");
-
   return (
     <>
       <Nav />

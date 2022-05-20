@@ -3,11 +3,10 @@ import axios from "axios";
 // import Profile from "../images/Abby.jpg";
 
 export default function Bio() {
-  // const [name, setName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [age, setAge] = useState(0);
-  const [profileImg, setProfileImg] = useState(""); //this doesn't return the image
+  const [profileImg, setProfileImg] = useState("");
   const [fitGoal, setFitGoal] = useState("");
   const [gender, setGender] = useState("");
   const [height, setHeight] = useState(0);
@@ -17,7 +16,6 @@ export default function Bio() {
   const [weight, setWeight] = useState(0);
   const [bmi, setBmi] = useState(0);
 
-  // currently not updating values in database(edit form to include bmi as read only)
   useEffect(() => {
     if (age && weight && height) {
       const options = {
@@ -30,15 +28,11 @@ export default function Bio() {
             "39af0b6b19mshcb25c6004b475d1p1c84b4jsn4141178f10aa",
         },
       };
-      // console.log("age", age);
-      // console.log("height", height);
-      // console.log("weight", weight);
       axios
         .request(options)
         .then(function (response) {
           const bmi = response.data.data.bmi;
           const userDetails = JSON.parse(localStorage.getItem("user_details"));
-          //console.log(userDetails.user.id);
           axios.put(`/api/updatebmi/${userDetails.user.id}`, {
             bmi: bmi,
           });
@@ -53,8 +47,6 @@ export default function Bio() {
   const getBio = async () => {
     try {
       let response = await axios.get("/api/myprofile");
-      console.log("***response:", response);
-      // setName(response.data.user.user_name);
       setFirstName(response.data.user.first_name);
       setLastName(response.data.user.last_name);
       setAge(response.data.user.age);
