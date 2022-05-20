@@ -14,7 +14,6 @@ export default function Nav() {
 
   useEffect(() => {
     setLoggedInUser(localStorage.getItem("user_details"));
-    console.log("MyprofileLINK:", loggedInUser);
   }, [loggedInUser]);
 
   let myProfileLink = "";

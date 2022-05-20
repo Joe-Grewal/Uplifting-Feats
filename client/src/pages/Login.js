@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-  Button,
   Container,
   TextField,
   FormControl,
@@ -12,9 +11,7 @@ import {
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import LoginRoundedIcon from "@mui/icons-material/LoginRounded";
 import BSubmit from "../components/BSubmit";
-import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../styles/Login.scss";
@@ -51,6 +48,7 @@ export default function Login3() {
     }
   }, []);
 
+  //could delete/comment this out at the end since it's not being used here
   const handleLogout = () => {
     setUser({});
     setUsername("");
@@ -73,10 +71,9 @@ export default function Login3() {
       const user = { username, password };
       try {
         const response = await axios.post("/api/login", user);
-        //console.log(response);
         setUser(response.data);
         localStorage.setItem("user_details", JSON.stringify(response.data));
-        //Put code here for redirecting to profile page
+        //Put code here for redirecting to profile page ---> *** if possible ***
         console.log(response.data.user.user_name);
         return response;
       } catch (error) {
@@ -90,23 +87,6 @@ export default function Login3() {
   if (user) {
     window.location.reload(); //<---cause a page refresh so navbar can immediately change from showing login to logout
     navigate(`/users/${user.user.id}`); //changed this from myprofile
-    // return (
-    //   <section className="welcome">
-    //     <br />
-    //     <h1>
-    //       Welcome <span>{user.user.user_name} !</span>
-    //     </h1>
-    //     {/* <Button
-    //       onClick={handleLogout}
-    //       type="submit"
-    //       color="secondary"
-    //       variant="contained"
-    //       endIcon={<LogoutRoundedIcon />}
-    //     >
-    //       Logout
-    //     </Button> */}
-    //   </section>
-    // );
   }
 
   return (

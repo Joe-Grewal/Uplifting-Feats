@@ -15,26 +15,11 @@ import "../styles/EditProfile.scss"
 export default function EditCreateForm() {
 
   const navigate = useNavigate();
-  const loggedInUserId = localStorage.getItem("user_details");
-  const [loggedInUser, setLoggedInUser] = useState(JSON.parse(loggedInUserId).user.id);
+  const [loggedInUser, setLoggedInUser] = useState(JSON.parse(localStorage.getItem("user_details")).user.id);
   console.log("***loggedInUser1:", loggedInUser);
 
   const { id } = useParams();
   const [selectedEntry, setSelectedEntry] = useState(id);
-  // const [selectedUser, setSelectedUser] = useState("");
-
-  // const getUser = async () => {
-  //   try {
-  //     let response = await axios.get(`/api/users/${loggedInUser}`);
-  //     console.log("getUser response:", response);
-  //     setSelectedUser(response.data.user.id);
-  //     console.log("***selectedUser:", selectedUser);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // getUser();
 
   useEffect(() => {
     const getEntryFormInfo = async () => {

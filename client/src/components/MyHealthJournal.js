@@ -86,24 +86,7 @@ export default function MyHealthJournal(props) {
  useEffect(
    getEntries, []);
 
-  // const getEntries = async () => {
-  //   try {
-  //     let response = await axios.get("/api/myentry");
-  //     console.log(response);
-  //     setEntryId(response.data.user.id);
-  //     console.log("entryId:", response.data.user.id);
-  //     setStory(response.data.user.my_story);
-  //     setEntryname(response.data.user.entry_name);
-  //     //setmyDiet(response.data.user.my_diet);
-  //     setmyWorkout(response.data.user.my_workout);
-  //     setPostedAt(response.data.user.posted_at);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   const getCalories = async () => {
-    // const userDetails = JSON.parse(localStorage.getItem("user_details"));
     console.log("calorieId:", entries[entryIndex]);
     let response = await axios.get(`/api/calorie/${entries[entryIndex].id}`);
 
@@ -120,9 +103,6 @@ export default function MyHealthJournal(props) {
   }, [entryIndex]);
 
   const date = new Date(postedAt);
-  console.log("Date: "+date.getDate()+
-          "/"+(date.getMonth()+1)+
-          "/"+date.getFullYear());
 
   return (
     <div className="outer_container2">

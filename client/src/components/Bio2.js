@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 // import Profile from "../images/Abby.jpg";
 
-export default function Bio() {
+export default function Bio2 (props) {
   // const [name, setName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -37,9 +37,9 @@ export default function Bio() {
         .request(options)
         .then(function (response) {
           const bmi = response.data.data.bmi;
-          const userDetails = JSON.parse(localStorage.getItem("user_details"));
+          // const userDetails = JSON.parse(localStorage.getItem("user_details"));
           //console.log(userDetails.user.id);
-          axios.put(`/api/updatebmi/${userDetails.user.id}`, {
+          axios.put(`/api/updatebmi/${props.userId}`, {
             bmi: bmi,
           });
           setBmi(bmi);
@@ -52,7 +52,7 @@ export default function Bio() {
 
   const getBio = async () => {
     try {
-      let response = await axios.get("/api/myprofile");
+      let response = await axios.get(`/api/users/${props.userId}`);
       console.log("***response:", response);
       // setName(response.data.user.user_name);
       setFirstName(response.data.user.first_name);

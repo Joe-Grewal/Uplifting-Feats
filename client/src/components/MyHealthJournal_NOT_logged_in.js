@@ -20,7 +20,6 @@ export default function MyHealthJournal (props) {
     console.log("ENTRYINDEX FROM PARAMS:", viewIndex);
 
   const [entries, setEntries] = useState([]);
-  console.log("stateOfEntries:", entries);
   const [entryIndex, setEntryIndex] = useState(""); //for next and previous
 
   const [entryId, setEntryId] = useState("");
@@ -32,8 +31,6 @@ export default function MyHealthJournal (props) {
   const [userId, setUserId] = useState(props.userId);
 
   const navigate = useNavigate();
-
-  console.log("entryIndex1:", entryIndex, "entries.length1", entries.length);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -83,23 +80,6 @@ export default function MyHealthJournal (props) {
   useEffect(
     getEntries, []);
 
-  // const getEntries = async () => {
-  //   try {
-  //     let response = await axios.get("/api/myentry");
-  //     console.log("getEntries:", response);
-  //     setStory(response.data.user.my_story);
-  //     setEntryName(response.data.user.entry_name);
-  //     //setmyDiet(response.data.user.my_diet);
-  //     setMyWorkout(response.data.user.my_workout);
-  //     setPostedAt(response.data.user.posted_at);
-  //     console.log("response.data.user.user_id:", response.data.user.user_id)
-  //     setUserId(response.data.user.user_id);
-  //     console.log("userId", userId)
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   const getCalories = async () => {
     const userDetails = JSON.parse(localStorage.getItem("user_details"));
     console.log("userDetails:", userDetails);
@@ -118,10 +98,7 @@ export default function MyHealthJournal (props) {
     getCalories();
   }, [entryIndex]);
 
-  const date = new Date(postedAt); // change this date value to actual value (entries[entryIndex].posted_at)
-  console.log("Date: "+date.getDate()+
-          "/"+(date.getMonth()+1)+
-          "/"+date.getFullYear());
+  const date = new Date(postedAt); // date is set here for below function
 
   return (
     <div className="outer_container2">

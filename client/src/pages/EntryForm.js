@@ -18,6 +18,7 @@ export default function CreateEntryForm() {
   const [entryName, setEntryName] = useState("");
   const [myStory, setMyStory] = useState("");
   const [myWorkoutRoutine, setMyWorkoutRoutine] = useState("");
+  const [loggedInUser, setLoggedInUser] = useState(JSON.parse(localStorage.getItem("user_details")).user.id);
   const [inputFields, setInputFields] = useState([
     { my_diet: "" },
   ]);
@@ -84,7 +85,7 @@ export default function CreateEntryForm() {
     if (entryName && myStory && myWorkoutRoutine && !inputFieldsError) {
       axios.post("api/entries", {entry_name: entryName, my_story: myStory, my_workout: myWorkoutRoutine, 
         my_diet: values()})
-        .then(navigate("/users/2")) //<---- change this to user value or my profile
+        .then(navigate(`/users/${loggedInUser}`)) //<---- change this to user value or my profile
     }
   };
 
