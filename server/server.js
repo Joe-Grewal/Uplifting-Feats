@@ -25,8 +25,6 @@ db.connect();
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 
 app.use(morgan("dev"));
-//app.use(cookieParser());
-//app.use(cors(corsOptions));
 app.use(cors());
 app.use(express.json()); //req.body
 app.use(express.urlencoded({ extended: true })); // use to parse form data in req.body, extended: true to allow nested objects in req.body
@@ -42,7 +40,6 @@ const myEntriesRoutes = require("./src/routes/myentry.js");
 const updateBmiRoutes = require("./src/routes/bmi.js");
 const calorieRoutes = require("./src/routes/calorie.js");
 const allmyentriesRoutes = require("./src/routes/allmyentries.js");
-//const samplehomeRoutes = require("./src/routes/samplehome.js");
 
 app.use("/api/login", loginRoutes(db));
 app.use("/api/users", usersRoutes(db));

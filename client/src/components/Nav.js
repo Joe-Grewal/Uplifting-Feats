@@ -1,15 +1,6 @@
 import { React, useState, useEffect } from "react";
 
 export default function Nav() {
-  // const [currentUser, setCurrentUser] = useState(
-  //   JSON.parse(localStorage.getItem("user_details"))
-  // );
-
-  //   handleLogout = () => {
-  //     setCurrentUser({});
-  //     localStorage.clear();
-  //   };
-
   const [loggedInUser, setLoggedInUser] = useState("");
 
   useEffect(() => {

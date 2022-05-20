@@ -48,15 +48,6 @@ export default function Login3() {
     }
   }, []);
 
-  //could delete/comment this out at the end since it's not being used here
-  const handleLogout = () => {
-    setUser({});
-    setUsername("");
-    setPassword("");
-    localStorage.clear();
-    navigate("/login");
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setUserNameError(false);
@@ -124,16 +115,6 @@ export default function Login3() {
                 className="form_fields2"
                 id="edit-profile-form"
               >
-                {/* <label htmlFor="username">Username</label> */}
-                {/* <input
-            type="text"
-            id="username"
-            name="username"
-            autoComplete="off"
-            value={username}
-            required
-            onChange={(e) => setUsername(e.target.value)}
-          /> */}
                 <TextField
                   sx={{
                     width: "80%",
@@ -156,7 +137,6 @@ export default function Login3() {
                   }}
                   id="username"
                   className="text_field2"
-                  // value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   placeholder="Username *"
                   label="username"
@@ -165,15 +145,6 @@ export default function Login3() {
                   required
                   error={userNameError}
                 />
-                {/* <label htmlFor="password">Password</label> */}
-                {/* <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            required
-            onChange={(e) => setPassword(e.target.value)}
-          /> */}
                 <FormControl
                   sx={{
                     width: "80%",
@@ -198,7 +169,6 @@ export default function Login3() {
                   <OutlinedInput
                     id="outlined-adornment-password"
                     type={values.showPassword ? "text" : "password"}
-                    // value={password}
                     variant="outlined"
                     color="secondary"
                     onChange={(e) => setPassword(e.target.value)}
@@ -223,14 +193,6 @@ export default function Login3() {
                     label="Password"
                   />
                 </FormControl>
-                {/* <Button
-          type="submit" 
-          color="primary" 
-          variant="contained"
-          endIcon={<LoginRoundedIcon/>}
-        >
-          Sign In
-        </Button> */}
                 <BSubmit onClick={handleSubmit} />
               </form>
             </Container>
@@ -244,7 +206,6 @@ export default function Login3() {
             </p>
           </div>
         </div>
-        {/* </img> */}
       </div>
     </>
   );
