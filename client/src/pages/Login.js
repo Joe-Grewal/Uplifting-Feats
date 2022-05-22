@@ -87,11 +87,7 @@ export default function Login3() {
           <div className="login_heading">
             <h1>Welcome to Uplifting Feats!</h1>
           </div>
-
-          <div className="login_picture">
-            <img />
-          </div>
-
+          
           <div className="login_picture">
             <img />
           </div>
