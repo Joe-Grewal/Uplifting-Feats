@@ -36,7 +36,9 @@ export default function EntryCards (props) {
     const dateOfCard = new Date(postedAt);
     return "Date: "+dateOfCard.getDate()+
                 "/"+(dateOfCard.getMonth()+1)+
-                "/"+dateOfCard.getFullYear();
+                "/"+dateOfCard.getFullYear()+
+                " "+dateOfCard.getHours()+
+                ":"+dateOfCard.getMinutes();
   };
 
   return (
