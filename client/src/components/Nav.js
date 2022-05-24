@@ -29,7 +29,7 @@ export default function Nav() {
         <nav className="navigation">
           <div className="logo">
             <a className="logo_link" href="/home">
-              Uplifting Feats
+              Up<span className="lifting">lifting</span> F<span className="eats">eats</span>
             </a>
           </div>
           <div className="navlinks">
@@ -52,7 +52,7 @@ export default function Nav() {
       <nav className="navigation">
         <div className="logo">
           <a className="logo_link" href="/home">
-            Uplifting Feats
+          Up<span className="lifting">lifting</span> F<span className="eats">eats</span>
           </a>
         </div>
         <div className="navlinks">
