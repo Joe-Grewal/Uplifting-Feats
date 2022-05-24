@@ -18,7 +18,7 @@ module.exports = (db) => {
   });
   //filter results
   router.post("/", (req, res) => {
-    // const cookieId = req.session.user_id
+    const cookieId = req.session.user_id;
     const options = {
       minimumAge: req.body['minimum_age'],
       maximumAge: req.body['maximum_age'],
@@ -33,6 +33,9 @@ module.exports = (db) => {
     const queryParams = [];
 
     let queryString = `SELECT * FROM users `;
+
+    queryParams.push(options.cookieId);
+    queryString += `WHERE id != $${queryParams.length} `;
 
     if (options.minimumAge) {
       queryParams.push(options.minimumAge);
@@ -97,14 +100,14 @@ module.exports = (db) => {
       }
     }
 
-    if (options.cookieId) {
-      queryParams.push(options.cookieId);
-      if (queryParams.length > 1) {
-        queryString += `AND id != $${queryParams.length} `;
-      } else {
-        queryString += `WHERE id != $${queryParams.length} `;
-      }
-    }
+    // if (options.cookieId) {
+    //   queryParams.push(options.cookieId);
+    //   if (queryParams.length > 1) {
+    //     queryString += `AND id != $${queryParams.length} `;
+    //   } else {
+    //     queryString += `WHERE id != $${queryParams.length} `;
+    //   }
+    // }
 
     // if (options.postedAt.toUpperCase() === "ASC" || options.postedAt.toUpperCase() === "DESC") {
     //   queryString += `ORDER BY price ${options.postedAt};`;

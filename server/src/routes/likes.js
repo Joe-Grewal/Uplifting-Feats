@@ -55,7 +55,7 @@ module.exports = (db) => {
     let query = `INSERT INTO likes (user_who_likes, liked_profile)
                  VALUES ($1, $2)
                  RETURNING *;`;
-    const queryParams = [req.session.user_id, req.body["selectedUser"]];
+    const queryParams = [req.body["userId"], req.body["selectedUser"]];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
       .then((data) => {
@@ -68,9 +68,9 @@ module.exports = (db) => {
   });
   //delete a like
   router.delete("/:id", (req, res) => {
-    console.log("***req.body***:", req.body);
+    console.log("***req.body***:", req.body, "response", res);
     let query = `DELETE FROM likes WHERE user_who_likes = $1 AND liked_profile = $2;`;
-    const queryParams = [req.session.user_id, req.params.id];
+    const queryParams = [req.body["userId"], req.params.id];
     console.log("query:", query, "queryParams:", queryParams);
     db.query(query, queryParams)
       .then((data) => {
