@@ -28,11 +28,23 @@
 
 .logo_link {
   font-family: 'Quicksand', sans-serif;
-  font-weight: 700;
-  font-size: 1.33em;
+  font-weight: 400;
+  font-size: 1.125em;
+  letter-spacing: 2px;
   padding: 10px;
   color: #E32EB0;
+  text-transform: uppercase;
   text-decoration: none;
+}
+
+.lifting {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+}
+
+.eats {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
 }
 
 .right_links {
@@ -42,8 +54,12 @@
   padding: 10px;
   color: #6A18A8;
   text-decoration: none;
- 
 }
+
+.right_links:hover {
+  color:#E32EB0
+}
+
 
 /* BIO component -------------------*/
 
@@ -879,7 +895,7 @@ tr, th, td {
 .outer_entry_card_container_me {
   position: relative;
   display: grid;
-  grid-template-columns: .5fr repeat(3, .25fr);
+  grid-template-columns: .5fr repeat(3, .4fr);
   grid-template-rows: repeat(2, .125fr) 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px; 

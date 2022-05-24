@@ -99,19 +99,22 @@ export default function Bio2 (props) {
           <p className="name">
             {firstName} {lastName}
           </p>
-          <span className="fitnessgoal">
+          {/* <span className="fitnessgoal">
             <strong>{fitGoal}</strong>
-          </span>
+          </span> */}
         </div>
 
         <p className="profilestats">
           <strong>Age:</strong> {age} <span className="stick"> | </span>{" "}
           <strong>Gender:</strong> {gender} <span className="stick"> | </span>{" "}
-          <strong>Height:</strong> {height} <span className="stick"> | </span>{" "}
+          <strong>Height:</strong> {height}inches <span className="stick"> | </span>{" "}
           <strong>Country:</strong> {country} <br></br> <strong>Diet:</strong>{" "}
           {diet} <span className="stick"> | </span>{" "}
           <strong>Primary Workout:</strong> {primaryWorkout}{" "}
-          <span className="stick"> | </span> <strong>Weight:</strong> {weight}
+          <span className="stick"> | </span> 
+          <strong>Goal:</strong> {fitGoal}{" "}
+          <span className="stick"> | </span>
+          <strong>Weight:</strong> {weight}
           lbs. <span className="stick"> | </span> <strong>BMI:</strong> {bmi}{" "}
         </p>
       </section>
