@@ -16,7 +16,8 @@ export default function Like_small(props) {
       let response = await axios.get(`/api/likes/count/${props.selectedUser}`);
       console.log("likes response:", response);
       setLikes(response.data.likes.count);
-      let secondResponse = await axios.get(`/api/likes/${userDetails.user.id}`);
+      console.log("User?:", userDetails.user.id)
+      let secondResponse = await axios.get(`/api/likes/${JSON.parse(localStorage.getItem("user_details")).user.id}`);
       console.log("USER likes response:", secondResponse);
       setLoggedInUserLikes(secondResponse.data.likes);
       const usersLiked = secondResponse.data.likes;
@@ -53,11 +54,13 @@ export default function Like_small(props) {
     if (isLiked) {
       setIsLiked(false)
       subtractCount();
-      axios.delete(`/api/likes/${props.selectedUser}`)
+      console.log(JSON.parse(localStorage.getItem("user_details")).user.id);
+      const userId = JSON.parse(localStorage.getItem("user_details")).user.id;
+      axios.delete(`/api/likes/${props.selectedUser}`, { data: {userId} })
     } else {
       setIsLiked(true)
       incrementCount();
-      axios.post(`/api/likes`, {selectedUser: props.selectedUser}) //<---not sending props in req.body yet
+      axios.post(`/api/likes`, {userId: JSON.parse(localStorage.getItem("user_details")).user.id, selectedUser: props.selectedUser}) 
     }
   };
 
