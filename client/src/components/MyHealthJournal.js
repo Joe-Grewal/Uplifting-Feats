@@ -102,7 +102,7 @@ export default function MyHealthJournal(props) {
     getCalories();
   }, [entryIndex]);
 
-  const date = new Date(postedAt);
+  // const date = new Date(entries[entryIndex].posted_at);
 
   return (
     <div className="outer_container2">
@@ -127,9 +127,11 @@ export default function MyHealthJournal(props) {
       <div className="entry">
         {entries[entryIndex] && <h3 className="entry_name">{entries[entryIndex].entry_name}</h3>}
         <span className="date">
-          {"Date: "+date.getDate()+ // look into date here
-          "/"+(date.getMonth()+1)+
-          "/"+date.getFullYear()}
+          {entries[entryIndex] && "Date: "+new Date(entries[entryIndex].posted_at).getDate()+ // look into date here
+          "/"+(new Date(entries[entryIndex].posted_at).getMonth()+1)+
+          "/"+new Date(entries[entryIndex].posted_at).getFullYear()+
+          " "+new Date(entries[entryIndex].posted_at).getHours()+
+          ":"+new Date(entries[entryIndex].posted_at).getMinutes()}
         </span>
        {entries[entryIndex] && <p>{entries[entryIndex].my_story}</p> }
       </div>
