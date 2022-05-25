@@ -252,7 +252,6 @@
   font-weight: 700;
   font-size: 2em;
   display: inline;
-  padding-right: 10px;
   text-align: center;
   z-index: 20;
 }
@@ -296,6 +295,7 @@ p {
 .body_copy_padding {
   padding-left: 20px;
   padding-right: 20px;
+  padding-bottom: 20px;
 }
 
 span {
@@ -308,21 +308,21 @@ span {
 
 .outer_container {
   margin: auto;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   display: grid;
   width: 70%;
   grid-template-columns: 1.5fr 1fr;
   grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 
 }
 
 .about_me {
   border-radius: 20px;
   grid-area: 1 / 1 / 3 / 2; 
-  height: 598px;
-  padding: 0 20px 10px;
+  height: 608px;
+  padding: 0 30px 10px;
   background-color: #E1D0EE;
   overflow: auto;
   box-shadow: inset 0 0 20px 0 rgba(205, 157, 242,1);
@@ -359,7 +359,7 @@ span {
   border-radius: 20px;
   grid-area: 1 / 2 / 2 / 3;
   height: 289px;
-  padding: 0 20px 10px;
+  padding: 0 30px 10px;
   background-color: #B4F1FA;
   overflow: auto;
   box-shadow: inset 0 0 20px 0 rgba(90, 232, 239, 1)
@@ -373,7 +373,7 @@ span {
   border-radius: 20px;
   grid-area: 2 / 2 / 3 / 3;
   height: 289px;
-  padding: 0 20px 10px;
+  padding: 0 30px 10px;
   background-color: #FFF1B4;
   overflow: auto;
   box-shadow: inset 0 0 20px 0 rgba(253, 230, 127, 1)
@@ -410,6 +410,8 @@ h3 {
   width: 70%;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 75px 300px 200px 75px;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
   background-color: #CDD5F8;
   padding-bottom: 20px;
   box-shadow: inset 0 0 20px 0 rgba(173, 187, 250, 1)
@@ -418,7 +420,7 @@ h3 {
 .my_health_journal_w_buttons { 
   grid-area: 1 / 1 / 2 / 3;
   display: flex;
-  margin: 0px 20px;
+  margin: 0px 30px;
   padding-top: 15px;
   align-items: center;
   position: relative;
@@ -444,9 +446,8 @@ h3 {
 
 .entry {
   border-radius: 20px;
-  margin: 10px 20px;
-  margin-bottom: 10px;
-  padding: 0 20px 10px;
+  margin: 0px 30px 10px;
+  padding: 0 30px 10px;
   background-color: #FFE1E0;
   grid-area: 2 / 1 / 3 / 3; 
   overflow: auto;
@@ -458,9 +459,9 @@ h3 {
 
 .my_workout_routine { 
   border-radius: 20px;
-  margin-left: 20px;
+  margin-left: 30px;
   margin-right: 5px;
-  padding: 0 20px 10px;
+  padding: 0 30px 20px;
   grid-area: 3 / 1 / 4 / 2; 
   background-color: #DAF4F5;
   overflow: auto;
@@ -472,9 +473,9 @@ h3 {
 
 .my_diet_diary { 
   border-radius: 20px;
-  margin-right: 20px;
+  margin-right: 30px;
   margin-left: 5px;
-  padding: 0 20px 10px;
+  padding: 0 30px 10px;
   grid-area: 3 / 2 / 4 / 3; 
   background-color: #FFD5F3;
   overflow: auto;
@@ -544,7 +545,7 @@ tr, th, td {
   flex-direction: row;
   margin: auto;
   grid-area: 4 / 1 / 5 / 3; 
-  padding-top: 15px
+  // padding-top: 15px
 }
 
 
@@ -553,7 +554,6 @@ tr, th, td {
   padding-top: 80px;
   width: 70%;
   margin: auto;
-  padding-bottom: 20px;
 }
 
 .search_page_results_copy_container {
@@ -576,8 +576,8 @@ tr, th, td {
   width: 70%;
   height: 300px;
   margin: auto;
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
   background-color: white;
   }
   
@@ -830,13 +830,13 @@ tr, th, td {
 }
 
 .entry_card_date { 
-  margin-top: 20px;
-  margin-left: 40px;
+  margin-top: 30px;
+  margin-left: 30px;    
   grid-area: 1 / 1 / 2 / 2; 
 }
 
 .entry_card_entry_name { 
-  margin-left: 40px;
+  margin-left: 30px;
   grid-area: 2 / 1 / 3 / 2;
 }
 
@@ -873,7 +873,7 @@ tr, th, td {
 
 .button_spacing_container {
   display: flex;
-  width: 100%;
+  width: 70%;
   justify-content: center;
   padding:40px;
 }
@@ -881,9 +881,9 @@ tr, th, td {
   .entry_preview { 
   grid-area: 3 / 1 / 4 / 4;
   border-radius: 20px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-bottom: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
   background-color: #DAF4F5;
   box-shadow: inset 0 0 20px 0 rgba(182, 243, 245, 1);
   padding: 0 20px 10px;
@@ -939,13 +939,13 @@ tr, th, td {
 }
 
 .entry_card_date_me { 
-margin-top: 20px;
-margin-left: 40px;
+margin-top: 30px;
+margin-left: 30px;
 grid-area: 1 / 1 / 2 / 2; 
 }
 
 .entry_card_entry_name_me { 
-margin-left: 40px;
+margin-left: 30px;
 grid-area: 2 / 1 / 3 / 2;
 }
 
@@ -973,7 +973,7 @@ grid-area: 1 / 3 / 3 / 4
 display: flex;
 justify-content: flex-end;
 margin-top: 20px;
-margin-right: 10px;
+margin-right: 20px;
 grid-area: 1 / 4 / 3 / 5
 }
 
@@ -989,9 +989,9 @@ grid-area: 1 / 4 / 3 / 5
 .entry_preview_me { 
 grid-area: 3 / 1 / 4 / 5;
 border-radius: 20px;
-margin-bottom: 20px;
-margin-left: 20px;
-margin-right: 20px;
+margin-bottom: 30px;
+margin-left: 30px;
+margin-right: 30px;
 background-color: #DAF4F5;
 box-shadow: inset 0 0 20px 0 rgba(182, 243, 245, 1);
 padding: 0 20px 10px;
